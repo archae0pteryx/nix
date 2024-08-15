@@ -39,6 +39,7 @@
       gco = "git checkout";
       nixupdate = "sudo -i nix-channel --update && sudo -i nixos-rebuild switch && home-manager switch --flake ~/.config/home-manager";
       nixclean = "sudo -i nix-collect-garbage -di && sudo -i nix-store --optimise";
+      starshipconfig = "code $HOME/.config/starship.toml";
     };
     shellInit = ''
 if status --is-interactive

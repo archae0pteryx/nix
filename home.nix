@@ -56,6 +56,7 @@ in
   home.file = { ".vimrc".source = ./dotfiles/vimrc; };
   home.file = { ".config/copyq/copyq.conf".source = ./dotfiles/copyq.conf; };
   home.file = { ".tmux.conf".source = ./dotfiles/tmux.conf; };
+  home.file = { ".config/starship.toml".source = ./dotfiles/starship.toml; };
   xdg.configFile."xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml".text = builtins.readFile xfce4/xfce4-keyboard-shortcuts.xml;
 
   programs = import ./programs.nix;
