@@ -36,7 +36,11 @@
       nixclean = "sudo -i nix-collect-garbage -di && sudo -i nix-store --optimise";
     };
     shellInit = ''
-tmux new-session -A -s main
+if status --is-interactive
+    if not set -q TMUX
+        tmux new-session
+    end
+end
     '';
   };
   go = {
