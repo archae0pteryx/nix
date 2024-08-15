@@ -45,6 +45,11 @@ in
     pkgs.xsel
     pkgs.jq
     pkgs.k9s
+    pkgs.xfce.xfce4-pulseaudio-plugin
+    pkgs.emojipick
+    pkgs.python311
+    pkgs.xclip
+    pkgs.dmenu
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
 

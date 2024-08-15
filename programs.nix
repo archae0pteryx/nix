@@ -45,6 +45,7 @@ if status --is-interactive
     if not set -q TMUX
         tmux new-session
     end
+    starship init fish | source
 end
     '';
   };
