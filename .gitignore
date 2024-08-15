@@ -1,3 +1,6 @@
 tmp
 .vscode
 .DS_Store
+.venv
+venv
+.idea
