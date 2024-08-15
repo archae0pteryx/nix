@@ -12,17 +12,13 @@
         "titleBar.activeForeground": "#e7e7e7",
         "titleBar.inactiveBackground": "#9123ad99",
         "titleBar.inactiveForeground": "#e7e7e799",
-        "statusBar.background": "#9123ad",
-        "statusBar.foreground": "#e7e7e7",
-        "statusBarItem.hoverBackground": "#b32ed5",
-        "statusBarItem.remoteBackground": "#9123ad",
-        "statusBarItem.remoteForeground": "#e7e7e7"
     },
     "peacock.color": "#9123ad",
     "vim.handleKeys": {
         "<C-c>": false,
         "<C-v>": false,
         "<C-x>": false,
+        "<C-w>": false,
     },
     "vim.statusBarColors.insert": [
         "#00ff48",
