@@ -11,12 +11,17 @@
       rebuild = "home-manager switch --flake $HOME/.config/home-manager";
       opensource = "cd $HOME/Code/opensource";
       eyepop = "cd $HOME/Code/eyepop";
+      k = "kubectl";
+      kc = "kubectl config";
+      kns = "kubens";
+      kx = "kubectx";
       tf = "opentofu";
       tfa = "opentofu apply";
       tfd = "opentofu destroy";
       tfaa = "opentofu apply --auto-approve";
       tg = "terragrunt";
       tga = "terragrunt apply";
+			tgp = "terragrunt plan";
       tgd = "terragrunt destroy";
       tgaa = "terragrunt apply --auto-approve";
       ".." = "cd ..";
