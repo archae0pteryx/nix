@@ -28,6 +28,10 @@
       nixconfig =
         "cd $HOME/.config/home-manager && code $HOME/.config/home-manager";
       c = "cd $HOME/Code";
+      ga = "git add";
+      gc = "git commit -S -m";
+      gp = "git push";
+      gco = "git checkout";
     };
   };
   go = {
