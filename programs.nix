@@ -26,12 +26,14 @@
       dcb = "docker compose build";
       dcd = "docker compose down";
       nixconfig =
-        "cd $HOME/.config/home-manager && code $HOME/.config/home-manager";
+        "code $HOME/.config/home-manager";
       c = "cd $HOME/Code";
       ga = "git add";
       gc = "git commit -S -m";
       gp = "git push";
       gco = "git checkout";
+      nixupdate = "sudo -i nix-channel --update && sudo -i nixos-rebuild switch && home-manager switch --flake ~/.config/home-manager";
+      nixclean = "sudo -i nix-collect-garbage -di && sudo -i nix-store --optimise";
     };
   };
   go = {
