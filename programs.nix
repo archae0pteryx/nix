@@ -52,7 +52,8 @@ end
   };
   go = {
     enable = true;
-    goPath = "$HOME/Code/go";
+    goPath = "/home/rimraf/Code/go";
+    goBin = "/home/rimraf/Code/go/bin";
   };
   gh = {
     enable = true;
