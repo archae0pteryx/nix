@@ -76,18 +76,10 @@ format = '[ $symbol $branch ]($style)'
 [git_status]
 style = "dimmed white"
 format = '[$all_status$ahead_behind ]($style)'
-
-[modified]
-symbol = "💩"
-format = '[$symbol]($style)'
-
-[up_to_date]
-symbol = "🌈"
-format = '[$symbol]($style)'
-
-[ahead]
-symbol = '✈️"'
-format = '[$symbol]'
+ahead = '✈️'
+modified = "💩"
+up_to_date = "🌈"
+stashed = ""
 
 [golang]
 symbol = " "
