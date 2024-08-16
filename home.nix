@@ -24,7 +24,6 @@ in
     pkgs.fishPlugins.z
     pkgs.fishPlugins.fzf-fish
     pkgs.kubectl
-    pkgs.helm
     pkgs.opentofu
     pkgs.terragrunt
     pkgs.kubectx
@@ -50,6 +49,7 @@ in
     pkgs.python311
     pkgs.xclip
     pkgs.dmenu
+    pkgs.kubernetes-helm
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
 

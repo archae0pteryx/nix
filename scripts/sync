@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
+
 HOME_MANAGER_ROOT=$HOME/.config/home-manager
 
-# ******* sync keyboard shortcuts
+# ******* sync keyboard shortcuts ********
 
 # archive current
 mv $HOME_MANAGER_ROOT/xfce4/xfce4-keyboard-shortcuts.xml $HOME_MANAGER_ROOT/tmp/xfce4-keyboard-shortcuts.xml.$(date +%s)

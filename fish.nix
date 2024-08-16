@@ -35,6 +35,7 @@
     nixclean =
       "sudo -i nix-collect-garbage -di && sudo -i nix-store --optimise";
     starshipconfig = "code $HOME/.config/starship.toml";
+    activatefish = "source .venv/bin/activate.fish";
   };
   shellInit = ''
     if status --is-interactive
