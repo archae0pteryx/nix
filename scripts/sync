@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+HOME_MANAGER_ROOT=$HOME/.config/home-manager
+
+# ******* sync keyboard shortcuts
+
+# archive current
+mv $HOME_MANAGER_ROOT/xfce4/xfce4-keyboard-shortcuts.xml $HOME_MANAGER_ROOT/tmp/xfce4-keyboard-shortcuts.xml.$(date +%s)
+
+# copy current to hm
+cp $XDG_CONFIG_HOME/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml $HOME_MANAGER_ROOT/xfce4/
+
+# backup / move current sys vers
+mv $XDG_CONFIG_HOME/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml $XDG_CONFIG_HOME/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml.bak
+
+# ******** end sync keyboard shortcuts ********
+
+home-manager switch --flake $HOME_MANAGER_ROOT
