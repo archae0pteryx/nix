@@ -50,6 +50,9 @@ in
     pkgs.xclip
     pkgs.dmenu
     pkgs.kubernetes-helm
+    pkgs.stern
+    pkgs.kubectl
+    pkgs.kubectx
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
 
