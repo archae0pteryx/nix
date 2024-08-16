@@ -55,7 +55,7 @@ in
 
   home.file = { ".vimrc".source = ./dotfiles/vimrc; };
   home.file = { ".tmux.conf".source = ./dotfiles/tmux.conf; };
-  
+  xdg.configFile."starship.toml".text = builtins.readFile ./dotfiles/starship.toml; 
   xdg.configFile."copyq/copyq.conf".text = builtins.readFile ./dotfiles/copyq.conf;
   xdg.configFile."xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml".text = builtins.readFile ./xfce4/xfce4-keyboard-shortcuts.xml;
 
