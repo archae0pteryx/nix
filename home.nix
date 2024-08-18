@@ -53,6 +53,9 @@ in
     pkgs.stern
     pkgs.kubectl
     pkgs.kubectx
+    pkgs.terraform
+    pkgs.discord
+    pkgs.obsidian
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
 
