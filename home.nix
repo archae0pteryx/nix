@@ -56,6 +56,8 @@ in
     pkgs.terraform
     pkgs.discord
     pkgs.obsidian
+    pkgs.logseq
+    pkgs.pipx
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
 
