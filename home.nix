@@ -5,6 +5,9 @@ in
 {
   home.stateVersion = "24.05";
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-27.3.11"
+  ];
   home.username = "rimraf";
   home.homeDirectory = "/home/rimraf";
   home.sessionVariables = { EDITOR = "vim"; };
@@ -58,9 +61,12 @@ in
     pkgs.obsidian
     pkgs.logseq
     pkgs.pipx
+    pkgs.libreoffice
+    pkgs.hunspell
+    pkgs.figma-linux
+    pkgs.gnome-calculator
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
-
   home.file = { ".vimrc".source = ./dotfiles/vimrc; };
   home.file = { ".tmux.conf".source = ./dotfiles/tmux.conf; };
   xdg.configFile."starship.toml".text = builtins.readFile ./dotfiles/starship.toml; 
