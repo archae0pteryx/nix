@@ -1,0 +1,10 @@
+[Unit]
+Description=Display Setup Service
+After=xorg.target
+
+[Service]
+ExecStart=/usr/bin/arandr -c ~/.config/monitors/setup-monitors.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

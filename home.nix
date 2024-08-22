@@ -65,10 +65,13 @@ in
     pkgs.hunspell
     pkgs.figma-linux
     pkgs.gnome-calculator
+    pkgs.nextcloud-client
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
   home.file = { ".vimrc".source = ./dotfiles/vimrc; };
   home.file = { ".tmux.conf".source = ./dotfiles/tmux.conf; };
+
+  xdg.configFile."monitors/setup-monitors.sh".text = builtins.readFile ./scripts/setup-monitors.sh;
   xdg.configFile."starship.toml".text = builtins.readFile ./dotfiles/starship.toml; 
   xdg.configFile."copyq/copyq.conf".text = builtins.readFile ./dotfiles/copyq.conf;
   xdg.configFile."xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml".text = builtins.readFile ./xfce4/xfce4-keyboard-shortcuts.xml;
@@ -77,4 +80,18 @@ in
 
   services.gpg-agent = { enable = true; enableSshSupport = true; };
   services.copyq.enable = true;
+
+  # systemd.user.services.monitors = {
+  #   Unit = {
+  #     Description = "Display Setup Service";
+  #     After = "xorg.target";
+  #   };
+  #   Install = {
+  #     WantedBy = "multi-user.target";
+  #   };
+  #   Service = {
+  #     ExecStart = "${pkgs.arandr}/bin/arandr -c ~/.config/monitors/setup-monitors.sh";
+  #     Restart = "always";
+  #   };
+  # };
 }
