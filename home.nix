@@ -81,17 +81,22 @@ in
   services.gpg-agent = { enable = true; enableSshSupport = true; };
   services.copyq.enable = true;
 
-  # systemd.user.services.monitors = {
-  #   Unit = {
-  #     Description = "Display Setup Service";
-  #     After = "xorg.target";
-  #   };
-  #   Install = {
-  #     WantedBy = "multi-user.target";
-  #   };
-  #   Service = {
-  #     ExecStart = "${pkgs.arandr}/bin/arandr -c ~/.config/monitors/setup-monitors.sh";
-  #     Restart = "always";
-  #   };
-  # };
+  systemd.user = {
+    enable = true;
+    services.set-monitors = {
+      Unit = {
+        Description = "Display Setup Service";
+        After = "xorg.target";
+      };
+      Install = {
+        WantedBy =[ "multi-user.target"];
+      };
+      Service = {
+        ExecStart = ''
+        ~/.config/monitors/setup-monitors.sh
+        '';
+        Restart = "always";
+      };
+    };
+  };
 }
