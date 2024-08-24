@@ -66,6 +66,11 @@ in
     pkgs.figma-linux
     pkgs.gnome-calculator
     pkgs.nextcloud-client
+    pkgs.speedtest-cli
+    pkgs.ripgrep
+    pkgs.cmake
+    pkgs.gcc
+    pkgs.gdb
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
   home.file = { ".vimrc".source = ./dotfiles/vimrc; };
