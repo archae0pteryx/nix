@@ -71,6 +71,8 @@ in
     pkgs.cmake
     pkgs.gcc
     pkgs.gdb
+    pkgs.unzip
+    pkgs.zip
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
   home.file = { ".vimrc".source = ./dotfiles/vimrc; };
