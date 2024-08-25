@@ -14,10 +14,16 @@ $fill
 right_format = """
 $python\
 $nix_shell\
-$kubernetes
+$kubernetes\
 """
 [fill]
 symbol = ''
+
+[memory_usage]
+disabled = false
+threshold = -1
+symbol = ' '
+style = 'bold dimmed purple'
 
 [python]
 style = "dimmed white"
@@ -25,12 +31,13 @@ format = '[ $virtualenv]($style)'
 
 [kubernetes]
 disabled = false
-style = "dimmed orange"
-format = '[ $symbol $context]($style)'
+symbol = '✈️ '
+style = "dimmed yellow"
+format = '[$symbol $context]($style)'
 
 [nix_shell]
-style = "dimmed blue"
-format = ' [$name]($style)  '
+disabled = false
+format = '[👻 ( \($name\))](dimmed blue) '
 
 [username]
 show_always = true
