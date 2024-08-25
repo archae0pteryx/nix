@@ -72,6 +72,9 @@ in
     pkgs.gdb
     pkgs.unzip
     pkgs.zip
+    pkgs.mullvad-vpn
+    pkgs.traceroute
+    pkgs.font-manager
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
   home.file = { ".vimrc".source = ./dotfiles/vimrc; };
