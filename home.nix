@@ -31,7 +31,6 @@ in
     pkgs.terragrunt
     pkgs.kubectx
     pkgs.fzf
-    pkgs.mullvad-vpn
     pkgs.teller
     pkgs.brave
     pkgs.ffmpeg
