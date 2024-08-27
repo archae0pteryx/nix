@@ -7,6 +7,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    postman.url = "./postman";
   };
 
   outputs = { nixpkgs, home-manager, ... }:

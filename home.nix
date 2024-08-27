@@ -38,7 +38,6 @@ in
     pkgs.alacritty
     pkgs.tmux
     pkgs.nmap
-    pkgs.postman
     pkgs.beekeeper-studio
     pkgs.ripgrep
     pkgs.fd
@@ -75,6 +74,10 @@ in
     pkgs.mullvad-vpn
     pkgs.traceroute
     pkgs.font-manager
+    pkgs.volta
+    pkgs.gnumake
+    pkgs.postman
+    postman.${system}.postman
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
   home.file = { ".vimrc".source = ./dotfiles/vimrc; };
