@@ -47,6 +47,7 @@
       set search_string $argv[1]
       kubectl get crds -o name | grep $search_string | awk -F / '{ print $2 }' | xargs kubectl delete crd
     end
-    set -gx PATH /home/rimraf/.local/bin $PATH
+    set -gx VOLTA_HOME /home/rimraf/.volta
+    set -gx PATH /home/rimraf/.local/bin:/home/rimraf/.volta/bin $PATH
   '';
 }

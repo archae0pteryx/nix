@@ -77,7 +77,6 @@ in
     pkgs.volta
     pkgs.gnumake
     pkgs.postman
-    postman.${system}.postman
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
   home.file = { ".vimrc".source = ./dotfiles/vimrc; };
