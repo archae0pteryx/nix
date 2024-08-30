@@ -34,7 +34,7 @@
       commit.gpgsign = true;
       gpg.format = "ssh";
       user.signingkey = "~/.ssh/signing_rsa.pub";
-      pusth.autoSetupRemote = true;
+      push.autoSetupRemote = true;
     };
     ignores = [
       ".DS_Store"
