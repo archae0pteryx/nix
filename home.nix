@@ -74,7 +74,6 @@ in
     pkgs.mullvad-vpn
     pkgs.traceroute
     pkgs.font-manager
-    pkgs.volta
     pkgs.gnumake
     pkgs.postman
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
