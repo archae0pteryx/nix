@@ -82,10 +82,10 @@ in
   home.file = { ".vimrc".source = ./dotfiles/vimrc; };
   home.file = { ".tmux.conf".source = ./dotfiles/tmux.conf; };
 
-  xdg.configFile."monitors/setup-monitors.sh".text = builtins.readFile ./scripts/setup-monitors.sh;
+  # xdg.configFile."monitors/setup-monitors.sh".text = builtins.readFile ./scripts/setup-monitors.sh;
   xdg.configFile."starship.toml".text = builtins.readFile ./dotfiles/starship.toml; 
   xdg.configFile."copyq/copyq.conf".text = builtins.readFile ./dotfiles/copyq.conf;
-  xdg.configFile."xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml".text = builtins.readFile ./xfce4/xfce4-keyboard-shortcuts.xml;
+  # xdg.configFile."xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml".text = builtins.readFile ./xfce4/xfce4-keyboard-shortcuts.xml;
 
   programs = import ./programs.nix;
 
@@ -105,8 +105,8 @@ in
       Service = {
         RestartSec = 10;
         ExecStart = pkgs.writeShellScript "load-monitors" ''
-xrandr --output HDMI-3 --mode 1920x1080 --primary
-xrandr --output HDMI-2 --mode 1920x1080 --right-of HDMI-3
+xrandr --output HDMI-2 --mode 1920x1080 --primary
+xrandr --output HDMI-1 --mode 1920x1080 --right-of HDMI-2
         '';
         Restart = "always";
       };

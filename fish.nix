@@ -35,6 +35,7 @@
     nixclean =
       "sudo -i nix-collect-garbage -di && sudo -i nix-store --optimise";
     activatefish = "source .venv/bin/activate.fish";
+    i3config = "code $HOME/.config/i3";
   };
   shellInit = ''
     if status --is-interactive
