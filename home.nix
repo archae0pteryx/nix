@@ -85,6 +85,7 @@ in
   # xdg.configFile."monitors/setup-monitors.sh".text = builtins.readFile ./scripts/setup-monitors.sh;
   xdg.configFile."starship.toml".text = builtins.readFile ./dotfiles/starship.toml; 
   xdg.configFile."copyq/copyq.conf".text = builtins.readFile ./dotfiles/copyq.conf;
+  xdg.configFile."i3/config".text = builtins.readFile ./dotfiles/i3-config;
   # xdg.configFile."xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml".text = builtins.readFile ./xfce4/xfce4-keyboard-shortcuts.xml;
 
   programs = import ./programs.nix;
