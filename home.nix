@@ -61,7 +61,6 @@ in
     pkgs.pipx
     pkgs.libreoffice
     pkgs.hunspell
-    pkgs.figma-linux
     pkgs.gnome-calculator
     pkgs.nextcloud-client
     pkgs.speedtest-cli
