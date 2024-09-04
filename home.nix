@@ -75,6 +75,9 @@ in
     pkgs.font-manager
     pkgs.gnumake
     pkgs.postman
+    pkgs.pamixer
+    pkgs.playerctl
+    pkgs.xorg.xmodmap
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
   home.file = { ".vimrc".source = ./dotfiles/vimrc; };

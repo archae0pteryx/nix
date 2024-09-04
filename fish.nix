@@ -8,10 +8,12 @@
     kc = "kubectl config";
     kns = "kubens";
     kx = "kubectx";
-    tf = "opentofu";
-    tfa = "opentofu apply";
-    tfd = "opentofu destroy";
-    tfaa = "opentofu apply --auto-approve";
+    tf = "tofu";
+    tfa = "tofu apply";
+    tfd = "tofu destroy";
+    tfp = "tofu plan";
+    tfda = "tofu destroy -auto-approve";
+    tfaa = "tofu apply -auto-approve";
     tg = "terragrunt";
     tga = "terragrunt apply";
     tgp = "terragrunt plan";
