@@ -55,4 +55,5 @@
     enable = true;
     theme = "gruvbox-dark-soft";
   };
+  i3status-rust.enable = true;
 }
