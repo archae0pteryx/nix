@@ -4,6 +4,7 @@
     rebuild = "home-manager switch --flake $HOME/.config/home-manager";
     opensource = "cd $HOME/Code/opensource";
     eyepop = "cd $HOME/Code/eyepop";
+    codespace = "code $HOME/Code/eyepop/eyepop.code-workspace";
     k = "kubectl";
     kc = "kubectl config";
     kns = "kubens";
@@ -33,11 +34,10 @@
     gp = "git push";
     gco = "git checkout";
     nixupdate =
-      "sudo -i nix-channel --update && sudo -i nixos-rebuild switch && home-manager switch --flake ~/.config/home-manager";
+      "sudo -i nix-channel --update && sudo -i nixos-rebuild switch && home-manager switch --flake $HOME/.config/home-manager";
     nixclean =
-      "sudo -i nix-collect-garbage -di && sudo -i nix-store --optimise";
+      "sudo -i nix-collect-garbage -d && sudo -i nix-store --optimise";
     activatefish = "source .venv/bin/activate.fish";
-    i3config = "code $HOME/.config/i3";
   };
   shellInit = ''
     if status --is-interactive
@@ -56,6 +56,9 @@
             return 1
         end
         echo -n $argv | tr -d '\n' | base64 | xsel -bi
+    end
+    function ggg
+      git add . && git commit -S -am "$argv" && git push
     end
     set -gx PATH /home/rimraf/.local/bin $PATH
   '';
