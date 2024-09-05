@@ -79,6 +79,7 @@ in
     pkgs.playerctl
     pkgs.xorg.xmodmap
     pkgs.xfce.xfce4-panel
+    pkgs.usbutils
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
   home.file = { ".vimrc".source = ./dotfiles/vimrc; };

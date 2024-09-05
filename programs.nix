@@ -54,6 +54,10 @@
   rofi = {
     enable = true;
     theme = "gruvbox-dark-soft";
+    pass.enable = true;
+    extraConfig = {
+      modi = "combi,window,run";
+    };
   };
   i3status-rust.enable = true;
 }

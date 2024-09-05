@@ -50,6 +50,13 @@
       set search_string $argv[1]
       kubectl get crds -o name | grep $search_string | awk -F / '{ print $2 }' | xargs kubectl delete crd
     end
+    function bencode
+        if test (count $argv) -eq 0
+            echo "Usage: bencode <string>"
+            return 1
+        end
+        echo -n $argv | tr -d '\n' | base64 | xsel -bi
+    end
     set -gx PATH /home/rimraf/.local/bin $PATH
   '';
 }
