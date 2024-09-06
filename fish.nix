@@ -58,7 +58,7 @@
         echo -n $argv | tr -d '\n' | base64 | xsel -bi
     end
     function ggg
-      git add . && git commit -S -am "$argv" && git push
+      git add . && sleep 1 && git commit -S -am "$argv" && git push
     end
     set -gx PATH /home/rimraf/.local/bin $PATH
   '';

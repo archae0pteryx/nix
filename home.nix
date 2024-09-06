@@ -18,7 +18,7 @@ in
     pkgs.vscode
     pkgs.spotify
     google-cloud-sdk
-    pkgs.bitwarden
+    pkgs.bitwarden-cli
     pkgs.starship
     pkgs.vscode
     pkgs.keepassxc
@@ -62,7 +62,6 @@ in
     pkgs.libreoffice
     pkgs.hunspell
     pkgs.gnome-calculator
-    pkgs.nextcloud-client
     pkgs.speedtest-cli
     pkgs.ripgrep
     pkgs.cmake
@@ -80,6 +79,8 @@ in
     pkgs.xorg.xmodmap
     pkgs.xfce.xfce4-panel
     pkgs.usbutils
+    pkgs.openlens
+    pkgs.openssl
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
   home.file = { ".vimrc".source = ./dotfiles/vimrc; };
@@ -97,7 +98,8 @@ in
 
   services.gpg-agent = { enable = true; enableSshSupport = true; };
   services.copyq.enable = true;
-
+  services.megasync.enable = true;
+  
   systemd.user = {
     enable = true;
     services.set-monitors = {
