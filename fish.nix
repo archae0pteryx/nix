@@ -60,6 +60,10 @@
     function ggg
       git add . && sleep 1 && git commit -S -am "$argv" && git push
     end
-    set -gx PATH /home/rimraf/.local/bin $PATH
+    set -gx PATH $HOME/.local/bin $PATH
+    set -gx GOBIN $HOME/.local/bin
+    set -gx GOPATH $HOME/Code/go
+
+    set -gx PATH $HOME/.cargo/bin $PATH
   '';
 }
