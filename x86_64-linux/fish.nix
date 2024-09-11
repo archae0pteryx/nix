@@ -1,7 +1,7 @@
 {
   enable = true;
   shellAliases = {
-    rebuild = "home-manager switch --flake $HOME/.config/home-manager";
+    rebuild = "home-manager switch --flake $HOME/.config/nix/x86_64-linux";
     opensource = "cd $HOME/Code/opensource";
     eyepop = "cd $HOME/Code/eyepop";
     codespace = "code $HOME/Code/eyepop/eyepop.code-workspace";

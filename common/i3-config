@@ -123,12 +123,12 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # ****************************************** App shortcuts ***********************************************************
 
-assign [class="Brave-browser"] 1
-assign [class="Firefox"] 1
-assign [class="Code"] 2
-assign [class="Slack"] 3
-assign [class="Spotify"] 4
-assign [class="Thunderbird"] 4
+# assign [class="Brave-browser"] 1
+# assign [class="Firefox"] 1
+# assign [class="Code"] 2
+# assign [class="Slack"] 3
+# assign [class="Spotify"] 4
+# assign [class="Thunderbird"] 4
 
 bindsym Mod1+Tab exec "rofi -show combi -kb-accept-entry '!Alt-Tab,Return' -kb-row-down 'Alt-Tab' -kb-row-up 'Alt+Shift+Tab'"
 
