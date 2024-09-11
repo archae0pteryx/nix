@@ -26,7 +26,7 @@
     dc = "docker compose";
     dcb = "docker compose build";
     dcd = "docker compose down";
-    nixconfig = "code $HOME/.config/home-manager";
+    nixconfig = "code $HOME/.config/nix";
     alacrittyconfig = "code $HOME/.config/alacritty";
     c = "cd $HOME/Code";
     ga = "git add";
