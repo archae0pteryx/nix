@@ -3,7 +3,7 @@
   programs.home-manager.enable = true;
   programs.vscode.enable = true;
   programs.vscode.extensions = [ pkgs.vscode-extensions.bbenoist.nix ];
-  programs.fish.enable = true;
+  programs.fish = import ../common/fish.nix;
   programs.starship.enable = true;
   xdg.configFile."starship.toml".text = builtins.readFile ../common/starship.toml; 
  }
