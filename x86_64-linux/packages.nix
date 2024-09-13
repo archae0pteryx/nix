@@ -1,4 +1,7 @@
-{ pkgs }: [
+{ pkgs }: 
+let
+  google-cloud-sdk = pkgs.google-cloud-sdk.withExtraComponents [pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin];
+in [
     pkgs.slack
     pkgs.thunderbird
     pkgs.spotify
