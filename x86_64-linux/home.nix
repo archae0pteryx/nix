@@ -12,10 +12,8 @@ in
   home.homeDirectory = "/home/rimraf";
   home.sessionVariables = { EDITOR = "vim"; };
   home.packages = [
-    pkgs.git
     pkgs.slack
     pkgs.thunderbird
-    pkgs.vscode
     pkgs.spotify
     google-cloud-sdk
     pkgs.bitwarden-cli
