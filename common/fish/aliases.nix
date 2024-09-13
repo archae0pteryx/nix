@@ -34,39 +34,4 @@
     "sudo -i nix-channel --update && sudo -i nixos-rebuild switch && home-manager switch --flake $HOME/.config/home-manager";
   nixclean = "sudo -i nix-collect-garbage -d && sudo -i nix-store --optimise";
   activatefish = "source .venv/bin/activate.fish";
-  {
-    # rebuild = "home-manager switch --flake $HOME/.config/home-manager";
-    rebuild = "darwin-rebuild switch --flake $HOME/.config/nix/aarch64-darwin";
-    opensource = "cd $HOME/Code/opensource";
-    eyepop = "cd $HOME/Code/eyepop";
-    codespace = "code $HOME/Code/eyepop/eyepop.code-workspace";
-    k = "kubectl";
-    kc = "kubectl config";
-    kns = "kubens";
-    kx = "kubectx";
-    tf = "tofu";
-    tfa = "tofu apply";
-    tfd = "tofu destroy";
-    tfp = "tofu plan";
-    tfda = "tofu destroy -auto-approve";
-    tfaa = "tofu apply -auto-approve";
-    tg = "terragrunt";
-    tga = "terragrunt apply";
-    tgp = "terragrunt plan";
-    tgd = "terragrunt destroy";
-    tgaa = "terragrunt apply --auto-approve";
-    ".." = "cd ..";
-    "..." = "cd ../..";
-    "...." = "cd ../../..";
-    dc = "docker compose";
-    dcb = "docker compose build";
-    dcd = "docker compose down";
-    alacrittyconfig = "code $HOME/.config/alacritty";
-    c = "cd $HOME/Code";
-    ga = "git add";
-    gc = "git commit -S -m";
-    gp = "git push";
-    gco = "git checkout";
-
-  };
 }

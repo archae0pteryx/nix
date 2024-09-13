@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 let
   google-cloud-sdk = pkgs.google-cloud-sdk.withExtraComponents [pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin];
 in
@@ -11,78 +11,7 @@ in
   home.username = "rimraf";
   home.homeDirectory = "/home/rimraf";
   home.sessionVariables = { EDITOR = "vim"; };
-  home.packages = [
-    pkgs.slack
-    pkgs.thunderbird
-    pkgs.spotify
-    google-cloud-sdk
-    pkgs.bitwarden-cli
-    pkgs.starship
-    pkgs.vscode
-    pkgs.keepassxc
-    pkgs.devbox
-    pkgs.nixfmt-classic
-    pkgs.fishPlugins.z
-    pkgs.fishPlugins.fzf-fish
-    pkgs.kubectl
-    pkgs.opentofu
-    pkgs.terragrunt
-    pkgs.kubectx
-    pkgs.fzf
-    pkgs.teller
-    pkgs.brave
-    pkgs.ffmpeg
-    pkgs.tdrop
-    pkgs.alacritty
-    pkgs.tmux
-    pkgs.nmap
-    pkgs.beekeeper-studio
-    pkgs.ripgrep
-    pkgs.fd
-    pkgs.dnsutils
-    pkgs.xsel
-    pkgs.jq
-    pkgs.k9s
-    pkgs.xfce.xfce4-pulseaudio-plugin
-    pkgs.emojipick
-    pkgs.python311
-    pkgs.xclip
-    pkgs.dmenu
-    pkgs.kubernetes-helm
-    pkgs.stern
-    pkgs.kubectl
-    pkgs.kubectx
-    pkgs.terraform
-    pkgs.discord
-    pkgs.obsidian
-    pkgs.logseq
-    pkgs.pipx
-    pkgs.libreoffice
-    pkgs.hunspell
-    pkgs.gnome-calculator
-    pkgs.speedtest-cli
-    pkgs.ripgrep
-    pkgs.cmake
-    pkgs.gcc
-    pkgs.gdb
-    pkgs.unzip
-    pkgs.zip
-    pkgs.mullvad-vpn
-    pkgs.traceroute
-    pkgs.font-manager
-    pkgs.gnumake
-    pkgs.postman
-    pkgs.pamixer
-    pkgs.playerctl
-    pkgs.xorg.xmodmap
-    pkgs.xfce.xfce4-panel
-    pkgs.usbutils
-    pkgs.openlens
-    pkgs.openssl
-    pkgs.tigervnc
-    pkgs.edid-decode
-    (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
-  ];
+  home.packages = import ./packages.nix { inherit pkgs; };
   home.file = { ".vimrc".source = ../common/vimrc; };
   home.file = { ".tmux.conf".source = ../common/tmux.conf; };
 
@@ -94,7 +23,7 @@ in
 
   # xdg.configFile."xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml".text = builtins.readFile ./xfce4/xfce4-keyboard-shortcuts.xml;
 
-  programs = import ./programs.nix;
+  programs = import ./programs.nix { inherit lib;};
 
   services.gpg-agent = { enable = true; enableSshSupport = true; };
   services.copyq.enable = true;
