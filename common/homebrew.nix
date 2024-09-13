@@ -1,6 +1,14 @@
 {
     enable = true;
     brews = [
-        kitty
+ 
     ];
+    casks = [
+    "alacritty"
+    "resilio-sync"
+    ];
+    onActivation = {
+        autoUpdate = true;
+        cleanup = "uninstall";
+    };
 }

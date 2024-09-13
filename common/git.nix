@@ -1,6 +1,5 @@
 {
- git = {
-    enable = true;
+ enable = true;
     userName = "archae0pteryx";
     userEmail = "github@pocketcereal.com";
     diff-so-fancy.enable = true;
@@ -12,7 +11,7 @@
       color.ui = "auto";
       commit.gpgsign = true;
       gpg.format = "ssh";
-      user.signingkey = "~/.ssh/signing_rsa.pub";
+      user.signingkey = "~/.ssh/signing_ed25519.pub";
       push.autoSetupRemote = true;
     };
     ignores = [
@@ -28,5 +27,4 @@
       "__pycache__"
       ".pytest_cache"
     ];
-  };
 }

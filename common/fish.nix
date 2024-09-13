@@ -66,5 +66,6 @@
     set -gx GOPATH $HOME/Code/go
 
     set -gx PATH $HOME/.cargo/bin $PATH
+    set -gx PATH /opt/homebrew/bin $PATH
   '';
 }

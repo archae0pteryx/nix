@@ -3,14 +3,14 @@
 {
   nix.package = pkgs.nix;
 
-  environment.systemPackages = [ pkgs.vim pkgs.nixfmt-classic pkgs.devbox pkgs.alacritty pkgs.kitty pkgs.gh pkgs.resilio-sync ];
+  environment.systemPackages = with pkgs; [ vim tmux ];
   environment.shells = [ pkgs.fish pkgs.bash ];
 
-  nixpkgs.hostPlatform = "aarch64-darwin";
+  # nixpkgs.hostPlatform = "aarch64-apple-darwin";
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-27.3.11"
-  ];
+  # nixpkgs.config.permittedInsecurePackages = [
+  #   "electron-27.3.11"
+  # ];
   services.nix-daemon.enable = true;
 
   programs.zsh.enable = false;
@@ -33,5 +33,5 @@
     home = "/Users/ryan";
     shell = pkgs.bash;
   };
-  homebrew = import ./homebrew.nix;
+  homebrew = import ../common/homebrew.nix;
 }
