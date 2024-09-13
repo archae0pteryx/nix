@@ -1,0 +1,6 @@
+{
+    enable = true;
+    brews = [
+        kitty
+    ];
+}

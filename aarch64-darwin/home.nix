@@ -18,13 +18,13 @@ in
     pkgs.slack
     pkgs.spotify
     google-cloud-sdk
-    pkgs.bitwarden-cli
+    # pkgs.bitwarden-cli
     pkgs.vscode
     pkgs.keepassxc
     pkgs.devbox
-    # pkgs.nixfmt-classic
-    # pkgs.fishPlugins.z
-    # pkgs.fishPlugins.fzf-fish
+    pkgs.nixfmt-classic
+    pkgs.fishPlugins.z
+    pkgs.fishPlugins.fzf-fish
     # pkgs.kubectl
     # pkgs.opentofu
     # pkgs.terragrunt
@@ -35,7 +35,7 @@ in
     # pkgs.ffmpeg
     # pkgs.tdrop
     # pkgs.alacritty
-    # pkgs.tmux
+    pkgs.tmux
     # pkgs.nmap
     # pkgs.beekeeper-studio
     # pkgs.ripgrep
@@ -55,8 +55,8 @@ in
     # pkgs.kubectx
     # pkgs.terraform
     # pkgs.discord
-    # pkgs.obsidian
-    # pkgs.logseq
+    pkgs.obsidian
+    pkgs.logseq
     # pkgs.pipx
     # pkgs.libreoffice
     # pkgs.hunspell
@@ -68,11 +68,11 @@ in
     # pkgs.gdb
     # pkgs.unzip
     # pkgs.zip
-    # pkgs.mullvad-vpn
+    pkgs.mullvad-vpn
     # pkgs.traceroute
     # pkgs.font-manager
     # pkgs.gnumake
-    # pkgs.postman
+    pkgs.postman
     # pkgs.pamixer
     # pkgs.playerctl
     # pkgs.xorg.xmodmap
@@ -82,4 +82,5 @@ in
     # pkgs.openssl
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
+  # programs.git = import ../common/git.nix;
  }
