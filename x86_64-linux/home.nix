@@ -120,20 +120,4 @@ xrandr --output HDMI-1 --mode 1920x1080 --right-of HDMI-2
       };
     };
   };
-  # services.xserver = {
-  #   enable = true;
-  #   layout = "us";
-  #   monitorSection = ''
-  #     Section "Monitor"
-  #         Identifier "HDMI-2"
-  #         Option "PreferredMode" "1920x1080"
-  #         Option "Position" "0 0"
-  #     EndSection
-  #     Section "Monitor"
-  #         Identifier "HDMI-3"
-  #         Option "PreferredMode" "1920x1080"
-  #         Option "Position" "1920 0"
-  #     EndSection
-  #   '';
-  # };
 }

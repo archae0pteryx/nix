@@ -6,7 +6,7 @@
     forwardAgent = true;
   };
 
-  fish = import ./fish.nix;
+  fish = import ../common/fish;
   go = {
     enable = true;
     goPath = "/home/rimraf/Code/go";
