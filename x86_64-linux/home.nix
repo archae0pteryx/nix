@@ -79,16 +79,18 @@ in
     pkgs.usbutils
     pkgs.openlens
     pkgs.openssl
+    pkgs.tigervnc
+    pkgs.edid-decode
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
-  home.file = { ".vimrc".source = ./dotfiles/vimrc; };
-  home.file = { ".tmux.conf".source = ./dotfiles/tmux.conf; };
+  home.file = { ".vimrc".source = ../common/vimrc; };
+  home.file = { ".tmux.conf".source = ../common/tmux.conf; };
 
   # xdg.configFile."monitors/setup-monitors.sh".text = builtins.readFile ./scripts/setup-monitors.sh;
-  xdg.configFile."starship.toml".text = builtins.readFile ./dotfiles/starship.toml; 
-  xdg.configFile."copyq/copyq.conf".text = builtins.readFile ./dotfiles/copyq.conf;
-  xdg.configFile."i3/config".text = builtins.readFile ./dotfiles/i3-config;
-  xdg.configFile."i3status-rust/config.toml".text = builtins.readFile ./dotfiles/i3status-rust;
+  xdg.configFile."starship.toml".text = builtins.readFile ../common/starship.toml; 
+  xdg.configFile."copyq/copyq.conf".text = builtins.readFile ../common/copyq.conf;
+  xdg.configFile."i3/config".text = builtins.readFile ../common/i3-config;
+  xdg.configFile."i3status-rust/config.toml".text = builtins.readFile ../common/i3status-rust;
 
   # xdg.configFile."xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml".text = builtins.readFile ./xfce4/xfce4-keyboard-shortcuts.xml;
 
@@ -118,4 +120,20 @@ xrandr --output HDMI-1 --mode 1920x1080 --right-of HDMI-2
       };
     };
   };
+  # services.xserver = {
+  #   enable = true;
+  #   layout = "us";
+  #   monitorSection = ''
+  #     Section "Monitor"
+  #         Identifier "HDMI-2"
+  #         Option "PreferredMode" "1920x1080"
+  #         Option "Position" "0 0"
+  #     EndSection
+  #     Section "Monitor"
+  #         Identifier "HDMI-3"
+  #         Option "PreferredMode" "1920x1080"
+  #         Option "Position" "1920 0"
+  #     EndSection
+  #   '';
+  # };
 }
