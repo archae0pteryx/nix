@@ -30,6 +30,6 @@
   gc = "git commit -S -m";
   gp = "git push";
   gco = "git checkout";
-
+  sess = "sessionizer";
   activatefish = "source .venv/bin/activate.fish";
 }
