@@ -34,4 +34,5 @@
     shell = pkgs.bash;
   };
   homebrew = import ../common/homebrew.nix;
+  system = import ./system.nix;
 }
