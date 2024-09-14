@@ -1,13 +1,17 @@
 { pkgs, ... }:
 let
   google-cloud-sdk = pkgs.google-cloud-sdk.withExtraComponents [pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin];
+  commonFish = import ../common/fish {  };
+  macFishAliases = import ./aliases.nix {};
+  mergedFish = lib.recursiveUpdate commonFish macFishAliases;
 in
 {
   home.stateVersion = "24.11";
   programs.home-manager.enable = true;
   programs.vscode.enable = true;
   programs.vscode.extensions = [ pkgs.vscode-extensions.bbenoist.nix ];
-  programs.fish = import ../common/fish.nix;
+  programs.fish = mergedFish;
+
   programs.starship.enable = true;
   home.file = { ".vimrc".source = ../common/vimrc; };
   home.file = { ".tmux.conf".source = ../common/tmux.conf; };

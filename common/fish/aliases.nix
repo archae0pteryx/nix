@@ -1,4 +1,5 @@
 {
+  nixconfig = "code $HOME/.config/nix";
   opensource = "cd $HOME/Code/opensource";
   eyepop = "cd $HOME/Code/eyepop";
   codespace = "code $HOME/Code/eyepop/eyepop.code-workspace";
