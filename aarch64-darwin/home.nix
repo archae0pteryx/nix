@@ -28,6 +28,7 @@ in
     pkgs.python311
     pkgs.slack
     pkgs.spotify
+    pkgs.kitty
     # pkgs.alacritty
     # pkgs.beekeeper-studio
     # pkgs.bitwarden-cli

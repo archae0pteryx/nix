@@ -1,14 +1,11 @@
 {
-    enable = true;
-    brews = [
- 
-    ];
-    casks = [
-    "alacritty"
-    "resilio-sync"
-    ];
-    onActivation = {
-        autoUpdate = true;
-        cleanup = "uninstall";
-    };
+  enable = true;
+  brews = [
+
+  ];
+  casks = [ "alacritty" "firefox" "copyq"  ];
+  onActivation = {
+    autoUpdate = true;
+    cleanup = "uninstall";
+  };
 }

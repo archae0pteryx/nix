@@ -26,7 +26,6 @@
       fi
     '';
   };
-  system.stateVersion = 4;
 
   users.users.ryan = {
     name = "ryan";

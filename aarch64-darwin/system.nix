@@ -1,6 +1,8 @@
 {
+    stateVersion = 4;
     defaults = {
         NSGlobalDomain = {
+            AppleInterfaceStyle = "Dark";
             AppleShowAllExtensions = true;
             AppleShowAllFiles = true;
             NSAutomaticWindowAnimationsEnabled = false;
@@ -19,15 +21,12 @@
             AppleShowAllExtensions = true;
             AppleShowAllFiles = true;
             FXEnableExtensionChangeWarning = false;
-            FXPreferredViewStyle = Nlsv;
+            FXPreferredViewStyle = "Nlsv";
             ShowPathbar = true;
             ShowStatusBar = true;
             _FXShowPosixPathInTitle = true;
         };
-        loginwindow = {
-            LoginWindowText = "foobar";
-        };
-        universalAccess = {
+        universalaccess = {
             reduceMotion = true;
         };
     };
