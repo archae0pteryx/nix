@@ -3,7 +3,7 @@
   brews = [
 
   ];
-  casks = [ "alacritty" "firefox" "copyq"  ];
+  casks = [ "alacritty" "firefox" "copyq" "beekeeper-studio" ];
   onActivation = {
     autoUpdate = true;
     cleanup = "uninstall";

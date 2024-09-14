@@ -34,7 +34,6 @@ in
     pkgs.spotify
     pkgs.kitty
     # pkgs.alacritty
-    # pkgs.beekeeper-studio
     # pkgs.bitwarden-cli
     # pkgs.brave
     # pkgs.cmake
@@ -68,11 +67,10 @@ in
     # pkgs.pamixer
     # pkgs.playerctl
     # pkgs.ripgrep
-    # pkgs.ripgrep
     # pkgs.speedtest-cli
     # pkgs.stern
-    # pkgs.tdrop
     # pkgs.teller
+    # pkgs.tdrop
     # pkgs.terraform
     # pkgs.terragrunt
     # pkgs.tmux

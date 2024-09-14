@@ -32,6 +32,6 @@
     home = "/Users/ryan";
     shell = pkgs.bash;
   };
-  homebrew = import ../common/homebrew.nix;
+  homebrew = import ./homebrew.nix;
   system = import ./system.nix;
 }
