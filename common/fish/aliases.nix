@@ -1,5 +1,4 @@
 {
-  nixconfig = "code $HOME/.config/nix";
   opensource = "cd $HOME/Code/opensource";
   eyepop = "cd $HOME/Code/eyepop";
   codespace = "code $HOME/Code/eyepop/eyepop.code-workspace";
@@ -24,7 +23,6 @@
   dc = "docker compose";
   dcb = "docker compose build";
   dcd = "docker compose down";
-  nixconfig = "code $HOME/.config/home-manager";
   alacrittyconfig = "code $HOME/.config/alacritty";
   c = "cd $HOME/Code";
   ga = "git add";
