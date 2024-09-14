@@ -1,3 +1,9 @@
+{ lib }:
+let
+commonFish = import ../common/fish {  };
+nixosFishAliases = import ./fish/aliases.nix {};
+mergedFish = lib.recursiveUpdate commonFish nixosFishAliases;
+in
 {
   home-manager.enable = true;
   gpg.enable = true;
@@ -6,7 +12,7 @@
     forwardAgent = true;
   };
 
-  fish = import ./fish.nix;
+  fish = mergedFish;
   go = {
     enable = true;
     goPath = "/home/rimraf/Code/go";
