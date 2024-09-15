@@ -1,7 +1,7 @@
 { lib }:
 let
 commonFish = import ../common/fish {  };
-nixosFishAliases = import ./fish/aliases.nix {};
+nixosFishAliases = import ./aliases.nix {};
 mergedFish = lib.recursiveUpdate commonFish nixosFishAliases;
 in
 {
