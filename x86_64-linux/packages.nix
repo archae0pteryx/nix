@@ -71,5 +71,8 @@ in [
     pkgs.openssl
     pkgs.tigervnc
     pkgs.edid-decode
+    pkgs.vlc
+    pkgs.awscli
+    pkgs.meld
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ]

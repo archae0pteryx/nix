@@ -83,9 +83,10 @@ bindsym $mod+a focus parent
 workspace 1 output HDMI-3
 workspace 2 output HDMI-3
 workspace 3 output HDMI-3
-workspace 4 output HDMI-2
+workspace 4 output HDMI-3
 workspace 5 output HDMI-2
 workspace 6 output HDMI-2
+workspace 7 output HDMI-2
 
 set $ws1 "1"
 set $ws2 "2"
@@ -124,12 +125,12 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # ****************************************** App shortcuts ***********************************************************
 
-# assign [class="Brave-browser"] 1
-# assign [class="Firefox"] 1
-# assign [class="Code"] 2
-# assign [class="Slack"] 3
-# assign [class="Spotify"] 4
-# assign [class="Thunderbird"] 4
+# assign [class="Brave-browser"] $ws1
+# assign [class="Firefox"] $ws1
+# assign [class="Code"] 
+# assign [class="Slack"] $ws7
+# assign [class="Spotify"] $ws7
+# assign [class="Thunderbird"] $ws7
 
 bindsym Mod1+Tab exec "rofi -show combi -kb-accept-entry '!Alt-Tab,Return' -kb-row-down 'Alt-Tab' -kb-row-up 'Alt+Shift+Tab'"
 

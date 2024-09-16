@@ -13,11 +13,11 @@
   home.file = { ".vimrc".source = ../common/vimrc; };
   home.file = { ".tmux.conf".source = ../common/tmux.conf; };
 
-  # xdg.configFile."monitors/setup-monitors.sh".text = builtins.readFile ./scripts/setup-monitors.sh;
+  xdg.configFile."monitors/setup-monitors.sh".text = builtins.readFile ./scripts/setup-monitors.sh;
   xdg.configFile."starship.toml".text = builtins.readFile ../common/starship.toml; 
   xdg.configFile."copyq/copyq.conf".text = builtins.readFile ../common/copyq.conf;
-  xdg.configFile."i3/config".text = builtins.readFile ../config/i3-config;
-  xdg.configFile."i3status-rust/config.toml".text = builtins.readFile ../config/i3status-rust;
+  xdg.configFile."i3/config".text = builtins.readFile ./config/i3-config;
+  xdg.configFile."i3status-rust/config.toml".text = builtins.readFile ./config/i3status-rust;
 
   # xdg.configFile."xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml".text = builtins.readFile ./xfce4/xfce4-keyboard-shortcuts.xml;
 
