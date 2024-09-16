@@ -73,6 +73,6 @@ in [
     pkgs.edid-decode
     pkgs.vlc
     pkgs.awscli
-    pkgs.meld
+    pkgs.delta
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ]
