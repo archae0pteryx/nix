@@ -164,7 +164,7 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status-rs
         position top
-        output HDMI-2
+        output HDMI-3
         tray_padding 5px
         padding 5px
         colors {

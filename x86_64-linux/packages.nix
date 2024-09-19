@@ -74,5 +74,6 @@ in [
     pkgs.vlc
     pkgs.awscli
     pkgs.delta
+    pkgs.meld
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ]

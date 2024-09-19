@@ -8,7 +8,7 @@
   ];
   home.username = "rimraf";
   home.homeDirectory = "/home/rimraf";
-  home.sessionVariables = { EDITOR = "vim"; KUBECTL_EXTERNAL_DIFF = "delta"; };
+  home.sessionVariables = { EDITOR = "vim"; KUBECTL_EXTERNAL_DIFF = "meld"; };
   home.packages = import ./packages.nix { inherit pkgs; };
   home.file = { ".vimrc".source = ../common/vimrc; };
   home.file = { ".tmux.conf".source = ../common/tmux.conf; };
