@@ -69,7 +69,7 @@ in [
     pkgs.usbutils
     pkgs.openlens
     pkgs.openssl
-    pkgs.tigervnc
+    pkgs.realvnc-vnc-viewer
     pkgs.edid-decode
     pkgs.vlc
     pkgs.awscli
