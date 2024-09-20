@@ -12,7 +12,7 @@
   home.packages = import ./packages.nix { inherit pkgs; };
   home.file = { ".vimrc".source = ../common/vimrc; };
   home.file = { ".tmux.conf".source = ../common/tmux.conf; };
-  xdg.configFile."rofi/open_rofi".text = builtins.readFile ./scripts/open_rofi;
+  # xdg.configFile."rofi/open_rofi".text = builtins.readFile ./scripts/open_rofi;
   xdg.configFile."monitors/setup-monitors.sh".text = builtins.readFile ./scripts/setup-monitors.sh;
   xdg.configFile."starship.toml".text = builtins.readFile ../common/starship.toml; 
   xdg.configFile."copyq/copyq.conf".text = builtins.readFile ../common/copyq.conf;

@@ -2,5 +2,5 @@
 
 rofi -show combi \
     -kb-accept-entry '!Alt-Tab,Return' \
-    -kb-row-down 'Alt-Tab' \
-    -kb-row-up 'Alt+Shift+Tab'
+    -kb-row-down 'Alt-Tab,Down' \
+    -kb-row-up 'Alt+Shift+Tab,Up'
