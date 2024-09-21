@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+rofi -show combi \
+    -kb-accept-entry '!Alt-Tab,Return' \
+    -kb-row-down 'Alt-Tab' \
+    -kb-row-up 'Alt+Shift+Tab'

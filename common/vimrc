@@ -8,7 +8,10 @@ set si
 set wrap
 colorscheme habamax
 syntax on
-set smarttab
-set shiftwidth=2
-set tabstop=2
 
+set shiftwidth=2 
+set smarttab
+set tabstop=2 
+set softtabstop=0
+
+inoremap jk <Esc>

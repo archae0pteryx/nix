@@ -32,7 +32,7 @@ format = '[ $virtualenv]($style)'
 disabled = false
 symbol = ''
 style = "bright-yellow"
-format = '[\[$context\]]($style)'
+format = '[\[$context\($namespace\)\]]($style)'
 
 [nix_shell]
 disabled = false
