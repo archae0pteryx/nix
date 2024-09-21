@@ -1,7 +1,11 @@
 { ... }: 
 {
   enable = true;
+  useBabelfish = true;
   shellAliases = import ./aliases.nix;
+  vendor.completions.enable = true;
+  vendor.config.enable = true;
+  vendor.functions.enable = true;
   shellInit = ''
     if status --is-interactive
         if not set -q TMUX
@@ -24,10 +28,11 @@
       git add . && sleep 1 && git commit -S -am "$argv" && git push
     end
     set -gx PATH $HOME/.local/bin $PATH
-    set -gx GOBIN $HOME/.local/bin
     set -gx GOPATH $HOME/Code/go
-
+    set -gx GOBIN $GOPATH/bin
+    set -gx PATH $GOPATH/bin $PATH
     set -gx PATH $HOME/.cargo/bin $PATH
     set -gx PATH /opt/homebrew/bin $PATH
+
   '';
 }

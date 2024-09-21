@@ -18,8 +18,8 @@
   tgd = "terragrunt destroy";
   tgaa = "terragrunt apply --auto-approve";
   ".." = "cd ..";
-  "..." = "cd ../..";
-  "...." = "cd ../../..";
+  "...." = "cd ../..";
+  "......" = "cd ../../..";
   dc = "docker compose";
   dcb = "docker compose build";
   dcd = "docker compose down";
@@ -31,4 +31,5 @@
   gco = "git checkout";
   sess = "sessionizer";
   activatefish = "source .venv/bin/activate.fish";
+  l = "ls -hal";
 }
