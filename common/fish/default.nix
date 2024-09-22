@@ -8,9 +8,7 @@
   vendor.functions.enable = true;
   shellInit = ''
     if status --is-interactive
-        if not set -q TMUX
-            tmux new-session
-        end
+        $HOME/.config/nix/common/scripts/tmux_auto_attach.sh
         starship init fish | source
     end
     function delete_crds

@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
     darwin.url = "github:lnl7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
@@ -13,6 +14,7 @@
     darwinConfigurations = {
       eyepop = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
+
         modules = [
           ./configuration.nix
           home-manager.darwinModules.home-manager

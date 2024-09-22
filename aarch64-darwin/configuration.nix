@@ -5,12 +5,14 @@ let
   mergedFish = lib.recursiveUpdate commonFish macFishAliases;
 in
 {
+  # remove before upgrading to sequoia
+  ids.uids.nixbld = 300;
   nix.package = pkgs.nix;
-
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes
+  '';
   environment.systemPackages = with pkgs; [ vim tmux  rustup];
   environment.shells = [ pkgs.fish pkgs.bash pkgs.zsh ];
-
-  # nixpkgs.hostPlatform = "aarch64-apple-darwin";
   nixpkgs.config.allowUnfree = true;
   # nixpkgs.config.permittedInsecurePackages = [
   #   "electron-27.3.11"

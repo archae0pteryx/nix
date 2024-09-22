@@ -29,7 +29,7 @@
   gc = "git commit -S -m";
   gp = "git push";
   gco = "git checkout";
-  sess = "sessionizer";
+  sess = "$HOME/.config/nix/common/scripts/sessionizer.sh";
   activatefish = "source .venv/bin/activate.fish";
   l = "ls -hal";
 }

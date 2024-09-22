@@ -18,32 +18,32 @@ in {
     google-cloud-sdk
     pkgs.devbox
     pkgs.discord
+    pkgs.fishPlugins.fzf
+    pkgs.fishPlugins.z
     pkgs.fzf
+    pkgs.go
+    pkgs.jq
+    pkgs.k9s
     pkgs.keepassxc
+    pkgs.kitty
+    pkgs.kubectl
+    pkgs.kubectx
+    pkgs.kubernetes-helm
     pkgs.logseq
     pkgs.nixfmt-classic
+    pkgs.nmap
     pkgs.obsidian
+    pkgs.opentofu
     pkgs.pipx
     pkgs.postman
     pkgs.python311
     pkgs.slack
-    pkgs.spotify
-    pkgs.kitty
-    pkgs.jq
-    pkgs.k9s
-    pkgs.kubectl
-    pkgs.kubectx
-    pkgs.kubernetes-helm
-    pkgs.nmap
-    pkgs.opentofu
     pkgs.speedtest-cli
+    pkgs.spotify
     pkgs.stern
     pkgs.teller
     pkgs.terraform
     pkgs.terragrunt
-    pkgs.fishPlugins.fzf
-    pkgs.fishPlugins.z
-    pkgs.go
   ];
   programs.direnv.enable = true;
   programs.direnv.enableFishIntegration = true;
