@@ -19,6 +19,8 @@ in {
   home.packages = [
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
     google-cloud-sdk
+    pkgs.argo
+    pkgs.argocd
     pkgs.colima
     pkgs.devbox
     pkgs.discord
