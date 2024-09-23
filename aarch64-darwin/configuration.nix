@@ -32,7 +32,7 @@ in
       fi
     '';
   };
-  xdg.configFile."fish/completions/devbox".text = builtins.readFile ../common/fish/completions/devbox;
+
   users.users.ryan = {
     name = "ryan";
     home = "/Users/ryan";
