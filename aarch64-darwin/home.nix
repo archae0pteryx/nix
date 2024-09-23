@@ -19,8 +19,10 @@ in {
   home.packages = [
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
     google-cloud-sdk
+    pkgs.colima
     pkgs.devbox
     pkgs.discord
+    pkgs.docker
     pkgs.fishPlugins.fzf
     pkgs.fishPlugins.z
     pkgs.fzf
