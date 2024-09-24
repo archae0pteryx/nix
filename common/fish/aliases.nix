@@ -18,12 +18,13 @@
   tgd = "terragrunt destroy";
   tgaa = "terragrunt apply --auto-approve";
   ".." = "cd ..";
-  "...." = "cd ../..";
-  "......" = "cd ../../..";
+  "..." = "cd ../..";
+  "...." = "cd ../../..";
   dc = "docker compose";
   dcb = "docker compose build";
   dcd = "docker compose down";
   alacrittyconfig = "code $HOME/.config/alacritty";
+  kittyconfig = "code $HOME/.config/kitty";
   c = "cd $HOME/Code";
   ga = "git add";
   gc = "git commit -S -m";

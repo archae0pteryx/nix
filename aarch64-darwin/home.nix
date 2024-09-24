@@ -1,10 +1,9 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, mac-app-util, ... }:
 let
   google-cloud-sdk = pkgs.google-cloud-sdk.withExtraComponents
     [ pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin ];
 in {
   home.stateVersion = "24.11";
-
   home.file = { ".vimrc".source = ../common/vimrc; };
   home.file = { ".tmux.conf".source = ../common/tmux.conf; };
 
@@ -21,6 +20,7 @@ in {
     google-cloud-sdk
     pkgs.argo
     pkgs.argocd
+    pkgs.awscli
     pkgs.colima
     pkgs.devbox
     pkgs.discord
@@ -32,6 +32,7 @@ in {
     pkgs.jq
     pkgs.k9s
     pkgs.keepassxc
+    pkgs.kind
     pkgs.kitty
     pkgs.kubectl
     pkgs.kubectx
@@ -54,7 +55,7 @@ in {
   ];
   programs.direnv.enable = true;
   programs.direnv.enableFishIntegration = true;
-  
+
   programs.home-manager.enable = true;
 
   programs.vscode.enable = true;

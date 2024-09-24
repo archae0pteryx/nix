@@ -1,12 +1,18 @@
 {
   enable = true;
-  brews = [
-    "luarocks"
+  brews = [ "luarocks" ];
+  casks = [
+    "alacritty"
+    "firefox"
+    "copyq"
+    "beekeeper-studio"
+    "megasync"
+    "mullvadvpn"
+    "transmission"
+    "mac-mouse-fix"
   ];
-  casks = [ "alacritty" "firefox" "copyq" "beekeeper-studio" "megasync" "mullvadvpn" ];
   onActivation = {
     autoUpdate = true;
     cleanup = "uninstall";
   };
 }
- 
