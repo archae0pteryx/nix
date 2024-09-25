@@ -1,0 +1,22 @@
+{
+    "packages": [
+      "rustup@latest",
+      "libiconv@latest",
+      "autoconf@latest",
+      "automake@latest",
+      "libtool@latest",
+      "wget@latest",
+      "sox@latest",
+      "gfortran@latest"
+    ],
+    "shell": {
+      "init_hook": [
+        "projectDir=$(dirname $(readlink -f \"$0\"))",
+        "rustupHomeDir=\"$projectDir\"/.rustup",
+        "mkdir -p $rustupHomeDir",
+        "export RUSTUP_HOME=$rustupHomeDir",
+        "export LIBRARY_PATH=$LIBRARY_PATH:\"$projectDir/nix/profile/default/lib\""
+      ],
+    },
+  }
+  
