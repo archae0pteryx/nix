@@ -81,44 +81,47 @@ in {
     autosuggestion.enable = true;
     autocd = true;
     antidote.enable = true;
-    antidote.plugins = ["agkozak/zsh-z"];
+    antidote.plugins = [ "agkozak/zsh-z" ];
+    shellAliases = {
+      rebuild =
+        "darwin-rebuild switch --flake $HOME/.config/nix/aarch64-darwin";
+      nixconfig = "code $HOME/.config/nix";
+      hammerconfig = "code $HOME/.hammerspoon";
+      l = "ls -hal";
+      ".." = "cd ..";
+      "..." = "cd ../..";
+      "...." = "cd ../../..";
+      dc = "docker compose";
+      dcb = "docker compose build";
+      dcd = "docker compose down";
+      alacrittyconfig = "code $HOME/.config/alacritty";
+      kittyconfig = "code $HOME/.config/kitty";
+      c = "cd $HOME/Code";
+      ga = "git add";
+      gc = "git commit -S -m";
+      gp = "git push";
+      gco = "git checkout";
+      sess = "$HOME/.config/nix/common/scripts/sessionizer.sh";
+      activatefish = "source .venv/bin/activate.fish";
+      tf = "tofu";
+      tfa = "tofu apply";
+      tfd = "tofu destroy";
+      tfp = "tofu plan";
+      tfda = "tofu destroy -auto-approve";
+      tfaa = "tofu apply -auto-approve";
+      tg = "terragrunt";
+      tga = "terragrunt apply";
+      tgp = "terragrunt plan";
+    };
+    syntaxHighlighting.enable = true;
     envExtra = ''
-alias rebuild='darwin-rebuild switch --flake $HOME/.config/nix/aarch64-darwin'
-alias nixconfig='code $HOME/.config/nix'
-alias hammerconfig='code $HOME/.hammerspoon'
-alias l='ls -hal'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias dc='docker compose'
-alias dcb='docker compose build'
-alias dcd='docker compose down'
-alias alacrittyconfig='code $HOME/.config/alacritty'
-alias kittyconfig='code $HOME/.config/kitty'
-alias c='cd $HOME/Code'
-alias ga='git add'
-alias gc='git commit -S -m'
-alias gp='git push'
-alias gco='git checkout'
-alias sess='$HOME/.config/nix/common/scripts/sessionizer.sh'
-alias activatefish='source .venv/bin/activate.fish'
-alias tf='tofu'
-alias tfa='tofu apply'
-alias tfd='tofu destroy'
-alias tfp='tofu plan'
-alias tfda='tofu destroy -auto-approve'
-alias tfaa='tofu apply -auto-approve'
-alias tg='terragrunt'
-alias tga='terragrunt apply'
-alias tgp='terragrunt plan'
+      export PATH=$HOME/.local/bin:$PATH
+      export GOPATH=$HOME/Code/go
+      export GOBIN=$GOPATH/bin
+      export PATH=$GOPATH/bin:$PATH
 
-export PATH=$HOME/.local/bin:$PATH
-export GOPATH=$HOME/Code/go
-export GOBIN=$GOPATH/bin
-export PATH=$GOPATH/bin:$PATH
-
-$HOME/.config/nix/common/scripts/tmux_auto_attach.sh
-source <(fzf --zsh)
+      $HOME/.config/nix/common/scripts/tmux_auto_attach.sh
+      source <(fzf --zsh)
     '';
   };
 }
