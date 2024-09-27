@@ -111,7 +111,15 @@ in {
       tfaa = "tofu apply -auto-approve";
       tg = "terragrunt";
       tga = "terragrunt apply";
+      tgaa = "terragrunt apply -auto-approve";
       tgp = "terragrunt plan";
+      tgda = "terragrunt destroy -auto-approve";
+      kx = "kubectx";
+      k = "kubectl";
+      kns = "kubens";
+      kc = "kubectl config";
+      codespace = "code $HOME/Code/eyepop/eyepop.code-workspace";
+      p = "ping 8.8.8.8";
     };
     syntaxHighlighting.enable = true;
     envExtra = ''
