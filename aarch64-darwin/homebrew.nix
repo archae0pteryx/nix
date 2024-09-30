@@ -10,6 +10,7 @@
     "mullvadvpn"
     "transmission"
     "mac-mouse-fix"
+    "amethyst"
   ];
   onActivation = {
     autoUpdate = true;

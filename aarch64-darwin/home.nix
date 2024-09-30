@@ -13,7 +13,8 @@ in {
     builtins.readFile ../common/alacritty.toml;
   xdg.configFile."fish/completions/devbox".text =
     builtins.readFile ../common/fish/completions/devbox;
-
+  xdg.configFile."amethyst/amethyst.yml".text =
+    builtins.readFile ../common/amethyst.yml;
   home.sessionVariables = { EDITOR = "vim"; };
   home.packages = [
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
@@ -130,6 +131,7 @@ in {
 
       $HOME/.config/nix/common/scripts/tmux_auto_attach.sh
       source <(fzf --zsh)
+      eval "$(/opt/homebrew/bin/brew shellenv)"
     '';
   };
 }
