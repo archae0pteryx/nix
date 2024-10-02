@@ -11,6 +11,7 @@
     "transmission"
     "mac-mouse-fix"
     "amethyst"
+    "anythingllm"
   ];
   onActivation = {
     autoUpdate = true;

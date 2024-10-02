@@ -26,6 +26,7 @@ in {
     pkgs.devbox
     pkgs.discord
     pkgs.docker
+    pkgs.dive
     pkgs.fishPlugins.fzf
     pkgs.fishPlugins.z
     pkgs.ffmpeg
@@ -55,6 +56,7 @@ in {
     pkgs.terraform
     pkgs.terragrunt
     pkgs.autoconf
+    pkgs.zoom-us
   ];
 
   programs.direnv.enable = true;
