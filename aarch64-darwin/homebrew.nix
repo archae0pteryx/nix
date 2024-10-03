@@ -1,18 +1,15 @@
 {
   enable = true;
-  brews = [ "cairo" "pkg-config" "luarocks" ];
+  brews = [ "luarocks" ];
   casks = [
-    "alacritty"
-    "firefox"
-    "copyq"
+    "amethyst"
+    "anythingllm"
     "beekeeper-studio"
+    "copyq"
+    "firefox"
     "megasync"
     "mullvadvpn"
     "transmission"
-    "mac-mouse-fix"
-    "amethyst"
-    "anythingllm"
-
   ];
   onActivation = {
     autoUpdate = true;

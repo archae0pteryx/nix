@@ -31,4 +31,9 @@ tmux_auto_attach() {
   fi
 }
 
+if [ "$1" = "--no-tmux" ] || [ "$TERM_PROGRAM" = "vscode" ]; then
+  echo "Skipping tmux auto-attach..."
+  exit 0
+fi
+
 tmux_auto_attach

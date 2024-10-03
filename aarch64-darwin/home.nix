@@ -19,9 +19,11 @@ in {
   home.packages = [
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
     google-cloud-sdk
+    pkgs.alacritty
     pkgs.argo
     pkgs.argocd
     pkgs.awscli
+    pkgs.cmake
     pkgs.colima
     pkgs.devbox
     pkgs.discord
@@ -45,6 +47,7 @@ in {
     pkgs.nmap
     pkgs.nushell
     pkgs.obsidian
+    pkgs.openssl
     pkgs.opentofu
     pkgs.pipx
     pkgs.pkg-config
@@ -75,18 +78,9 @@ in {
     enable = true;
     gitCredentialHelper.enable = true;
   };
-  programs.gpg.enable = true;
-  programs.ssh = {
+  programs.nushell = {
     enable = true;
-    forwardAgent = true;
-  };
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    autocd = true;
-    antidote.enable = true;
-    antidote.plugins = [ "agkozak/zsh-z" ];
+    loginFile = "../common/nushell.nu";
     shellAliases = {
       rebuild =
         "darwin-rebuild switch --flake $HOME/.config/nix/aarch64-darwin";
@@ -98,7 +92,9 @@ in {
       "...." = "cd ../../..";
       dc = "docker compose";
       dcb = "docker compose build";
-      dcd = "docker compose down";
+      dcd = "docker compose down --remove-orphans";
+      dcu = "docker compose up";
+      dcdv = "docker compose down --remove-orphans -v";
       alacrittyconfig = "code $HOME/.config/alacritty";
       kittyconfig = "code $HOME/.config/kitty";
       c = "cd $HOME/Code";
@@ -125,6 +121,64 @@ in {
       kc = "kubectl config";
       codespace = "code $HOME/Code/eyepop/eyepop.code-workspace";
       p = "ping 8.8.8.8";
+      kapply = "devbox run kapply";
+      kdiff = "devbox run kdiff";
+    };
+  };
+  programs.gpg.enable = true;
+  programs.ssh = {
+    enable = true;
+    forwardAgent = true;
+  };
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    autocd = true;
+    antidote.enable = true;
+    antidote.plugins = [ "agkozak/zsh-z" ];
+    shellAliases = {
+      rebuild =
+        "darwin-rebuild switch --flake $HOME/.config/nix/aarch64-darwin";
+      nixconfig = "code $HOME/.config/nix";
+      hammerconfig = "code $HOME/.hammerspoon";
+      l = "ls -hal";
+      ".." = "cd ..";
+      "..." = "cd ../..";
+      "...." = "cd ../../..";
+      dc = "docker compose";
+      dcb = "docker compose build";
+      dcd = "docker compose down --remove-orphans";
+      dcu = "docker compose up";
+      dcdv = "docker compose down --remove-orphans -v";
+      alacrittyconfig = "code $HOME/.config/alacritty";
+      kittyconfig = "code $HOME/.config/kitty";
+      c = "cd $HOME/Code";
+      ga = "git add";
+      gc = "git commit -S -m";
+      gp = "git push";
+      gco = "git checkout";
+      sess = "$HOME/.config/nix/common/scripts/sessionizer.sh";
+      activatefish = "source .venv/bin/activate.fish";
+      tf = "tofu";
+      tfa = "tofu apply";
+      tfd = "tofu destroy";
+      tfp = "tofu plan";
+      tfda = "tofu destroy -auto-approve";
+      tfaa = "tofu apply -auto-approve";
+      tg = "terragrunt";
+      tga = "terragrunt apply";
+      tgaa = "terragrunt apply -auto-approve";
+      tgp = "terragrunt plan";
+      tgda = "terragrunt destroy -auto-approve";
+      kx = "kubectx";
+      k = "kubectl";
+      kns = "kubens";
+      kc = "kubectl config";
+      codespace = "code $HOME/Code/eyepop/eyepop.code-workspace";
+      p = "ping 8.8.8.8";
+      kapply = "devbox run kapply";
+      kdiff = "devbox run kdiff";
     };
     syntaxHighlighting.enable = true;
     envExtra = ''
@@ -132,7 +186,6 @@ in {
       export GOPATH=$HOME/Code/go
       export GOBIN=$GOPATH/bin
       export PATH=$GOPATH/bin:$PATH
-
       $HOME/.config/nix/common/scripts/tmux_auto_attach.sh
       source <(fzf --zsh)
       eval "$(/opt/homebrew/bin/brew shellenv)"
