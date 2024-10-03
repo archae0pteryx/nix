@@ -43,9 +43,11 @@ in {
     pkgs.logseq
     pkgs.nixfmt-classic
     pkgs.nmap
+    pkgs.nushell
     pkgs.obsidian
     pkgs.opentofu
     pkgs.pipx
+    pkgs.pkg-config
     pkgs.postman
     pkgs.python311
     pkgs.slack
@@ -134,6 +136,7 @@ in {
       $HOME/.config/nix/common/scripts/tmux_auto_attach.sh
       source <(fzf --zsh)
       eval "$(/opt/homebrew/bin/brew shellenv)"
+      export PKG_CONFIG_PATH=$(pkg-config --variable pc_path pkg-config)
     '';
   };
 }

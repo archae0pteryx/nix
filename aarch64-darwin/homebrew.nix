@@ -1,6 +1,6 @@
 {
   enable = true;
-  brews = [ "luarocks" ];
+  brews = [ "cairo" "pkg-config" "luarocks" ];
   casks = [
     "alacritty"
     "firefox"
@@ -12,6 +12,7 @@
     "mac-mouse-fix"
     "amethyst"
     "anythingllm"
+
   ];
   onActivation = {
     autoUpdate = true;
