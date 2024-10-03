@@ -80,7 +80,7 @@ in {
   };
   programs.nushell = {
     enable = true;
-    loginFile = "../common/nushell.nu";
+    # loginFile.source = "../common/nushell.nu";
     shellAliases = {
       rebuild =
         "darwin-rebuild switch --flake $HOME/.config/nix/aarch64-darwin";

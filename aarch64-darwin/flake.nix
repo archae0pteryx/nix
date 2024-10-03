@@ -25,6 +25,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.ryan = import ./home.nix;
             home-manager.sharedModules = [ mac-app-util.homeManagerModules.default ];
+            home-manager.backupFileExtension = "nixbak";
           }
         ];
       };

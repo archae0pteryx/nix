@@ -1,0 +1,23 @@
+[ nu_plugin_inc<\n>  nu_plugin_polars<\n>  nu_plugin_gstat<\n>  nu_plugin_formats<\n>  nu_plugin_query<\n>] | each { cargo install $in } | ignore
+ls
+ps | where cpu > 5
+ps | where mem > 5
+ps | where memory > 5
+ps | where mem > 5
+clear
+z api
+api
+./eyepop-web-api
+//eyepop
+path
+cd help
+cargo nu_plugin_z
+cargo install nu_plugin_z
+dirs
+dirs --help
+dir 
+polars
+clear
+cd Code
+cd eyepop
+codespace
