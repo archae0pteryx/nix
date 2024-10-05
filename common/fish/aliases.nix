@@ -24,11 +24,13 @@
   dcb = "docker compose build";
   dcd = "docker compose down";
   alacrittyconfig = "code $HOME/.config/alacritty";
+  kittyconfig = "code $HOME/.config/kitty";
   c = "cd $HOME/Code";
   ga = "git add";
   gc = "git commit -S -m";
   gp = "git push";
   gco = "git checkout";
-  sess = "sessionizer";
+  sess = "$HOME/.config/nix/common/scripts/sessionizer.sh";
   activatefish = "source .venv/bin/activate.fish";
+  l = "ls -hal";
 }
