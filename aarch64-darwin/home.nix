@@ -22,6 +22,7 @@ in {
     pkgs.alacritty
     pkgs.argo
     pkgs.argocd
+    pkgs.audacity
     pkgs.awscli
     pkgs.cmake
     pkgs.colima
@@ -73,6 +74,11 @@ in {
   programs.vscode.extensions = [ pkgs.vscode-extensions.bbenoist.nix ];
 
   programs.starship.enable = true;
+  programs.starship.enableNushellIntegration = true;
+  programs.starship.enableFishIntegration = true;
+  programs.starship.enableZshIntegration = true;
+  programs.starship.enableBashIntegration = true;
+
   programs.git = import ../common/git.nix;
   programs.gh = {
     enable = true;
@@ -83,27 +89,23 @@ in {
     # loginFile.source = "../common/nushell.nu";
     shellAliases = {
       rebuild =
-        "darwin-rebuild switch --flake $HOME/.config/nix/aarch64-darwin";
-      nixconfig = "code $HOME/.config/nix";
-      hammerconfig = "code $HOME/.hammerspoon";
+        "darwin-rebuild switch --flake /Users/ryan/.config/nix/aarch64-darwin";
+      nixconfig = "code /Users/ryan/.config/nix";
+      hammerconfig = "code /Users/ryan/.hammerspoon";
       l = "ls -hal";
-      ".." = "cd ..";
-      "..." = "cd ../..";
-      "...." = "cd ../../..";
       dc = "docker compose";
       dcb = "docker compose build";
       dcd = "docker compose down --remove-orphans";
       dcu = "docker compose up";
       dcdv = "docker compose down --remove-orphans -v";
-      alacrittyconfig = "code $HOME/.config/alacritty";
-      kittyconfig = "code $HOME/.config/kitty";
-      c = "cd $HOME/Code";
+      alacrittyconfig = "code /Users/ryan/.config/alacritty";
+      kittyconfig = "code /Users/ryan/.config/kitty";
+      c = "cd /Users/ryan/Code";
       ga = "git add";
       gc = "git commit -S -m";
       gp = "git push";
       gco = "git checkout";
-      sess = "$HOME/.config/nix/common/scripts/sessionizer.sh";
-      activatefish = "source .venv/bin/activate.fish";
+      sess = "/Users/ryan/.config/nix/common/scripts/sessionizer.sh";
       tf = "tofu";
       tfa = "tofu apply";
       tfd = "tofu destroy";
@@ -119,7 +121,7 @@ in {
       k = "kubectl";
       kns = "kubens";
       kc = "kubectl config";
-      codespace = "code $HOME/Code/eyepop/eyepop.code-workspace";
+      codespace = "code /Users/ryan/Code/eyepop/eyepop.code-workspace";
       p = "ping 8.8.8.8";
       kapply = "devbox run kapply";
       kdiff = "devbox run kdiff";
