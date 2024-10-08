@@ -30,6 +30,7 @@ in {
     pkgs.discord
     pkgs.docker
     pkgs.dive
+    pkgs.dnsutils
     pkgs.fishPlugins.fzf
     pkgs.fishPlugins.z
     pkgs.ffmpeg

@@ -10,6 +10,7 @@
     "megasync"
     "mullvadvpn"
     "transmission"
+    "backblaze"
   ];
   onActivation = {
     autoUpdate = true;
