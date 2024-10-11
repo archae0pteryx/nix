@@ -45,6 +45,7 @@ in {
     pkgs.kubectx
     pkgs.kubernetes-helm
     pkgs.logseq
+    pkgs.meld
     pkgs.nixfmt-classic
     pkgs.nmap
     pkgs.nushell
@@ -63,11 +64,13 @@ in {
     pkgs.terraform
     pkgs.terragrunt
     pkgs.autoconf
+    pkgs.utm
     pkgs.zoom-us
   ];
 
   programs.direnv.enable = true;
   programs.direnv.enableFishIntegration = true;
+  programs.direnv.enableZshIntegration = true;
 
   programs.home-manager.enable = true;
 
@@ -161,7 +164,6 @@ in {
       gc = "git commit -S -m";
       gp = "git push";
       gco = "git checkout";
-      sess = "$HOME/.config/nix/common/scripts/sessionizer.sh";
       activatefish = "source .venv/bin/activate.fish";
       tf = "tofu";
       tfa = "tofu apply";
@@ -182,6 +184,11 @@ in {
       p = "ping 8.8.8.8";
       kapply = "devbox run kapply";
       kdiff = "devbox run kdiff";
+      patternconfig = "code $HOME/.config/fabric";
+      fabshell = "fabric -p shell";
+      fabp = "fabric -p";
+      autoattach = "$HOME/.config/nix/common/scripts/tmux_auto_attach.sh";
+      sess = "$HOME/.config/nix/common/scripts/sessionizer.sh";
     };
     syntaxHighlighting.enable = true;
     envExtra = ''
@@ -189,10 +196,12 @@ in {
       export GOPATH=$HOME/Code/go
       export GOBIN=$GOPATH/bin
       export PATH=$GOPATH/bin:$PATH
-      $HOME/.config/nix/common/scripts/tmux_auto_attach.sh
       source <(fzf --zsh)
       eval "$(/opt/homebrew/bin/brew shellenv)"
       export PKG_CONFIG_PATH=$(pkg-config --variable pc_path pkg-config)
+      export NVM_DIR="$HOME/.nvm"
+      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+      [ -s "$NVM_DIR/zsh_completion" ] && \. "$NVM_DIR/zsh_completion"
     '';
   };
 }

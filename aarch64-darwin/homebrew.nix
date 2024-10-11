@@ -1,6 +1,6 @@
 {
   enable = true;
-  brews = [ "luarocks" ];
+  brews = [ "luarocks" "cairo" ];
   casks = [
     "amethyst"
     "anythingllm"
