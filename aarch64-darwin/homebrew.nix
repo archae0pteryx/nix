@@ -1,6 +1,6 @@
 {
   enable = true;
-  brews = [ "luarocks" "cairo" ];
+  brews = [ "luarocks" "cairo"];
   casks = [
     "amethyst"
     "anythingllm"
@@ -8,9 +8,10 @@
     "copyq"
     "firefox"
     "megasync"
+    "monokle"
     "mullvadvpn"
+    "openlens"
     "transmission"
-    "backblaze"
   ];
   onActivation = {
     autoUpdate = true;
