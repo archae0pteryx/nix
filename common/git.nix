@@ -5,7 +5,7 @@
     diff-so-fancy.enable = true;
     extraConfig = {
       init.defaultBranch = "main";
-      pull.rebase = "false";
+      pull.rebase = "true";
       core.editor = "code --wait";
       core.excludesfile = "~/.gitignore";
       color.ui = "auto";
@@ -13,6 +13,8 @@
       gpg.format = "ssh";
       user.signingkey = "~/.ssh/signing_ed25519.pub";
       push.autoSetupRemote = true;
+      rerere.enabled = true;
+      diff.tool = "meld";
     };
     ignores = [
       ".DS_Store"
