@@ -2,79 +2,80 @@
 let
   google-cloud-sdk = pkgs.google-cloud-sdk.withExtraComponents [pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin];
 in [
-    pkgs.slack
-    pkgs.thunderbird
-    pkgs.spotify
     google-cloud-sdk
-    pkgs.bitwarden-cli
-    pkgs.starship
-    pkgs.vscode
-    pkgs.keepassxc
-    pkgs.devbox
-    pkgs.nixfmt-classic
-    pkgs.fishPlugins.z
-    pkgs.fishPlugins.fzf-fish
-    pkgs.kubectl
-    pkgs.opentofu
-    pkgs.terragrunt
-    pkgs.kubectx
-    pkgs.fzf
-    pkgs.teller
-    pkgs.brave
-    pkgs.ffmpeg
-    pkgs.tdrop
     pkgs.alacritty
-    pkgs.tmux
-    pkgs.nmap
+    pkgs.awscli
     pkgs.beekeeper-studio
-    pkgs.ripgrep
-    pkgs.fd
-    pkgs.dnsutils
-    pkgs.xsel
-    pkgs.jq
-    pkgs.k9s
-    pkgs.xfce.xfce4-pulseaudio-plugin
-    pkgs.emojipick
-    pkgs.python311
-    pkgs.xclip
-    pkgs.dmenu
-    pkgs.kubernetes-helm
-    pkgs.stern
-    pkgs.kubectl
-    pkgs.kubectx
-    pkgs.terraform
-    pkgs.discord
-    pkgs.obsidian
-    pkgs.logseq
-    pkgs.pipx
-    pkgs.libreoffice
-    pkgs.hunspell
-    pkgs.gnome-calculator
-    pkgs.speedtest-cli
-    pkgs.ripgrep
+    pkgs.bitwarden-cli
+    pkgs.brave
+    pkgs.cachix
     pkgs.cmake
+    pkgs.delta
+    pkgs.devbox
+    pkgs.discord
+    pkgs.dmenu
+    pkgs.dnsutils
+    pkgs.edid-decode
+    pkgs.emojipick
+    pkgs.fd
+    pkgs.ffmpeg
+    pkgs.fishPlugins.fzf-fish
+    pkgs.fishPlugins.z
+    pkgs.font-manager
+    pkgs.fzf
     pkgs.gcc
     pkgs.gdb
-    pkgs.unzip
-    pkgs.zip
-    pkgs.mullvad-vpn
-    pkgs.traceroute
-    pkgs.font-manager
+    pkgs.gnome-calculator
     pkgs.gnumake
-    pkgs.postman
-    pkgs.pamixer
-    pkgs.playerctl
-    pkgs.xorg.xmodmap
-    pkgs.xfce.xfce4-panel
-    pkgs.usbutils
+    pkgs.hunspell
+    pkgs.jq
+    pkgs.k9s
+    pkgs.keepassxc
+    pkgs.kubectl
+    pkgs.kubectl
+    pkgs.kubectx
+    pkgs.kubectx
+    pkgs.kubernetes-helm
+    pkgs.libreoffice
+    pkgs.logseq
+    pkgs.meld
+    pkgs.mullvad-vpn
+    pkgs.nixfmt-classic
+    pkgs.nmap
+    pkgs.obsidian
     pkgs.openlens
     pkgs.openssl
-    pkgs.edid-decode
-    pkgs.vlc
-    pkgs.awscli
-    pkgs.delta
-    pkgs.meld
+    pkgs.opentofu
+    pkgs.pamixer
+    pkgs.pipx
+    pkgs.pkg-config
+    pkgs.playerctl
+    pkgs.postman
+    pkgs.python311
     pkgs.remmina
-    pkgs.cachix
+    pkgs.ripgrep
+    pkgs.ripgrep
+    pkgs.slack
+    pkgs.speedtest-cli
+    pkgs.spotify
+    pkgs.starship
+    pkgs.stern
+    pkgs.tdrop
+    pkgs.teller
+    pkgs.terraform
+    pkgs.terragrunt
+    pkgs.thunderbird
+    pkgs.tmux
+    pkgs.traceroute
+    pkgs.unzip
+    pkgs.usbutils
+    pkgs.vlc
+    pkgs.vscode
+    pkgs.xclip
+    pkgs.xfce.xfce4-panel
+    pkgs.xfce.xfce4-pulseaudio-plugin
+    pkgs.xorg.xmodmap
+    pkgs.xsel
+    pkgs.zip
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ]
