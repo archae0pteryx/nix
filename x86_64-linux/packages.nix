@@ -75,5 +75,6 @@ in [
     pkgs.delta
     pkgs.meld
     pkgs.remmina
+    pkgs.cachix
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ]

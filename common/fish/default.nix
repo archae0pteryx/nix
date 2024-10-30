@@ -1,16 +1,15 @@
 { ... }: 
 {
   enable = true;
-  useBabelfish = true;
   shellAliases = import ./aliases.nix;
-  vendor.completions.enable = true;
-  vendor.config.enable = true;
-  vendor.functions.enable = true;
+  # vendor.completions.enable = true;
+  # vendor.config.enable = true;
+  # vendor.functions.enable = true;
   shellInit = ''
-    if status --is-interactive
-        $HOME/.config/nix/common/scripts/tmux_auto_attach.sh
-        starship init fish | source
-    end
+    # if status --is-interactive
+    #     $HOME/.config/nix/common/scripts/tmux_auto_attach.sh
+    #     starship init fish | source
+    # end
     function delete_crds
       set search_string $argv[1]
       kubectl get crds -o name | grep $search_string | awk -F / '{ print $2 }' | xargs kubectl delete crd

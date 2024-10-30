@@ -1,8 +1,8 @@
 { lib }:
 let
-commonFish = import ../common/fish {  };
-nixosFishAliases = import ./aliases.nix {};
-mergedFish = lib.recursiveUpdate commonFish nixosFishAliases;
+# commonFish = import ../common/fish {  };
+# nixosFishAliases = import ./aliases.nix {};
+# mergedFish = lib.recursiveUpdate commonFish nixosFishAliases;
 in
 {
   home-manager.enable = true;
@@ -12,7 +12,8 @@ in
     forwardAgent = true;
   };
 
-  fish = mergedFish;
+  # fish = mergedFish;
+  zsh = import ../common/zsh.nix {};
   go = {
     enable = true;
     goPath = "/home/rimraf/Code/go";
@@ -56,7 +57,7 @@ in
       ".pytest_cache"
     ];
   };
-  direnv.enable = true;
+  # direnv.enable = true;
   rofi = {
     enable = true;
     theme = "gruvbox-dark-soft";

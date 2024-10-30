@@ -2,14 +2,16 @@
 
 set $mod Mod4
 
-font pango:monospace 12
+font pango:monospace 13
 
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
+exec --no-startup-id xfce4-panel --disable-wm-check
 
-set $refresh_i3status killall -SIGUSR1 i3status
+set $refresh_i3status killall -SIGUSR1 i3status-rs
 
+bindsym $mod+Tab focus right
 
 bindsym XF86AudioRaiseVolume exec pamixer -i 5
 bindsym XF86AudioLowerVolume exec pamixer -d 5
@@ -80,14 +82,21 @@ bindsym $mod+a focus parent
 
 # *************************************** workspace **********************************************************
 
-workspace 1 output HDMI-3
-workspace 2 output HDMI-3
-workspace 3 output HDMI-3
+workspace 1 output HDMI-2
+workspace 2 output HDMI-2
+workspace 3 output HDMI-2
 workspace 4 output HDMI-3
-workspace 5 output HDMI-2
-workspace 6 output HDMI-2
-workspace 7 output HDMI-2
+workspace 5 output HDMI-3
+workspace 6 output HDMI-3
+workspace 7 output HDMI-3
 
+# workspace 1 output HDMI-3
+# workspace 2 output HDMI-3
+# workspace 3 output HDMI-3
+# workspace 4 output HDMI-3
+# workspace 5 output HDMI-2
+# workspace 6 output HDMI-2
+# workspace 7 output HDMI-2
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -160,21 +169,46 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-bar {
-        status_command i3status-rs
-        position top
-        output HDMI-3
-        tray_padding 5px
-        padding 5px
-        colors {
-                background #000000
-                statusline #ffffff
-                separator #666666
-                focused_workspace #4c7899 #285577 #ffffff
-                active_workspace #333333 #5f676a #ffffff
-                inactive_workspace #333333 #222222 #888888
-                urgent_workspace #2f343a #900000 #ffffff
-        }
-}
-exec --no-startup-id xfce4-panel --disable-wm-check
 
+# bar {
+#         status_command i3status-rs
+#         position top
+#         output HDMI-3
+#         tray_padding 5px
+#         padding 5px
+#         colors {
+                # background #000000
+                # statusline #ffffff
+                # separator #666666
+                # focused_workspace #4c7899 #285577 #ffffff
+                # active_workspace #333333 #5f676a #ffffff
+                # inactive_workspace #333333 #222222 #888888
+                # urgent_workspace #2f343a #900000 #ffffff
+#         }
+# }
+
+
+focus_on_window_activation focus
+bar {
+    font pango:DejaVu Sans Mono, FontAwesome 12
+    output HDMI-2
+    position top
+    padding 5px
+    status_command i3status-rs
+    colors {
+        background #000000
+        statusline #ffffff
+        separator #666666
+        focused_workspace #4c7899 #285577 #ffffff
+        active_workspace #333333 #5f676a #ffffff
+        inactive_workspace #333333 #222222 #888888
+        urgent_workspace #2f343a #900000 #ffffff 
+        # separator #666666
+        # background #222222
+        # statusline #dddddd
+        # focused_workspace #0088CC #0088CC #ffffff
+        # active_workspace #333333 #333333 #ffffff
+        # inactive_workspace #333333 #333333 #888888
+        # urgent_workspace #2f343a #900000 #ffffff
+    }
+}
