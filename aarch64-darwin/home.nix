@@ -7,8 +7,8 @@ in {
   home.file = { ".vimrc".source = ../common/vimrc; };
   home.file = { ".tmux.conf".source = ../common/tmux.conf; };
 
-  xdg.configFile."starship.toml".text =
-    builtins.readFile ../common/starship.toml;
+  # xdg.configFile."starship.toml".text =
+  #   builtins.readFile ../common/starship.toml;
   xdg.configFile."alacritty/alacritty.toml".text =
     builtins.readFile ../common/alacritty.toml;
   xdg.configFile."fish/completions/devbox".text =
@@ -64,6 +64,7 @@ in {
     pkgs.terraform
     pkgs.terragrunt
     pkgs.autoconf
+    pkgs.qbittorrent
     pkgs.utm
     pkgs.zoom-us
   ];
