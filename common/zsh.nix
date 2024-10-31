@@ -49,7 +49,7 @@
     fabshell = "fabric -p shell";
     fabp = "fabric -p";
     autoattach = "$HOME/.config/nix/common/scripts/tmux_auto_attach.sh";
-    sess = "$HOME/.config/nix/common/scripts/sessionizer.sh";
+    sessionizer = "$HOME/.config/nix/common/scripts/sessionizer.sh";
   };
   syntaxHighlighting.enable = true;
   envExtra = ''
@@ -62,5 +62,22 @@
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
     [ -s "$NVM_DIR/zsh_completion" ] && \. "$NVM_DIR/zsh_completion"
+  '';
+  initExtra = ''
+    bindkey '^F' end-of-line
+    bindkey '^A' beginning-of-line
+    bindkey '^R' history-incremental-search-backward
+    bindkey '^P' up-line-or-history
+    bindkey '^N' down-line-or-history
+    bindkey '^W' backward-kill-word
+    bindkey '^U' backward-kill-line
+    bindkey '^L' clear-screen
+    bindkey '^E' autosuggest-accept
+    bindkey '^D' autosuggest-execute
+    bindkey '^P' autosuggest-up
+    bindkey '^N' autosuggest-down
+    bindkey '^I' autosuggest-accept
+
+    source <(fzf --zsh)
   '';
 }

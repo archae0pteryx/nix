@@ -58,6 +58,7 @@ in [
     pkgs.slack
     pkgs.speedtest-cli
     pkgs.spotify
+    pkgs.sshfs
     pkgs.starship
     pkgs.stern
     pkgs.tdrop
