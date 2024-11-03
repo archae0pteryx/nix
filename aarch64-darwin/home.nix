@@ -64,6 +64,7 @@ in {
     pkgs.terraform
     pkgs.terragrunt
     pkgs.autoconf
+    pkgs.qbittorrent
     pkgs.utm
     pkgs.zoom-us
   ];
