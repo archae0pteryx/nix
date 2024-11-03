@@ -58,7 +58,7 @@
     export GOBIN=$GOPATH/bin
     export PATH=$GOPATH/bin:$PATH
     source <(fzf --zsh)
-    export PKG_CONFIG_PATH=$(pkg-config --variable pc_path pkg-config)
+    # export PKG_CONFIG_PATH=$(pkg-config --variable pc_path pkg-config)
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
     [ -s "$NVM_DIR/zsh_completion" ] && \. "$NVM_DIR/zsh_completion"

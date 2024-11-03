@@ -9,6 +9,7 @@
   home.sessionVariables = {
     EDITOR = "vim";
     KUBECTL_EXTERNAL_DIFF = "meld";
+    LD_LIBRARY_PATH = lib.makeLibraryPath [ pkgs.stdenv.cc.cc ];
   };
   home.packages = import ./packages.nix { inherit pkgs; };
   home.file = { ".vimrc".source = ../common/vimrc; };
