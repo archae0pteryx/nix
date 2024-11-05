@@ -82,13 +82,12 @@ bindsym $mod+a focus parent
 
 # *************************************** workspace **********************************************************
 
-workspace 1 output HDMI-2
-workspace 2 output HDMI-2
-workspace 3 output HDMI-2
-workspace 4 output HDMI-3
-workspace 5 output HDMI-3
-workspace 6 output HDMI-3
-workspace 7 output HDMI-3
+workspace 1 output HDMI-3
+workspace 2 output HDMI-3
+workspace 3 output HDMI-3
+workspace 4 output HDMI-2
+workspace 5 output HDMI-2
+workspace 6 output HDMI-2
 
 # workspace 1 output HDMI-3
 # workspace 2 output HDMI-3
@@ -121,7 +120,7 @@ bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+1 move container to workspace number $ws1 && 
 bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
 bindsym $mod+Shift+4 move container to workspace number $ws4
@@ -191,7 +190,7 @@ bindsym $mod+r mode "resize"
 focus_on_window_activation focus
 bar {
     font pango:DejaVu Sans Mono, FontAwesome 12
-    output HDMI-2
+    output HDMI-3
     position top
     padding 5px
     status_command i3status-rs

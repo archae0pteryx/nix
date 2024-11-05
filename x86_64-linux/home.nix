@@ -45,9 +45,9 @@
       Install = { WantedBy = [ "multi-user.target" ]; };
       Service = {
         RestartSec = 10;
-        ExecStart = pkgs.writeShellScript "load-monitors" ''
-          xrandr --output HDMI-3 --mode 1920x1080 --primary
-          xrandr --output HDMI-2 --mode 1920x1080 --right-of HDMI-3
+        ExecStart = pkgs.writeShellScript "set-monitors" ''
+          xrandr --output HDMI-2 --mode 1920x1080 --primary
+          xrandr --output HDMI-3 --mode 1920x1080 --right-of HDMI-2
         '';
         Restart = "always";
       };

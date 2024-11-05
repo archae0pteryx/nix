@@ -50,6 +50,7 @@
     fabp = "fabric -p";
     autoattach = "$HOME/.config/nix/common/scripts/tmux_auto_attach.sh";
     sessionizer = "$HOME/.config/nix/common/scripts/sessionizer.sh";
+    setmonitors = "$HOME/.config/nix/common/scripts/sessionizer.sh";
   };
   syntaxHighlighting.enable = true;
   envExtra = ''
