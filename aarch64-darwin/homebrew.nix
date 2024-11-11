@@ -5,6 +5,7 @@
     "giflib"
     "icu4c"
     "jpeg"
+    "libmagic"
     "libpng"
     "librsvg"
     "luarocks"
@@ -14,11 +15,14 @@
   casks = [
     "amethyst"
     "anythingllm"
+    "aptakube"
+    "backblaze"
     "balenaetcher"
     "beekeeper-studio"
     "copyq"
     "figma"
     "firefox"
+    "headlamp"
     "megasync"
     "monokle"
     "mullvadvpn"
@@ -26,8 +30,12 @@
     "transmission"
     "unetbootin"
   ];
+  global = {
+    autoUpdate = true;
+  };
   onActivation = {
     autoUpdate = true;
+    upgrade = true;
     cleanup = "uninstall";
   };
 }

@@ -24,6 +24,7 @@ in {
     pkgs.argocd
     pkgs.audacity
     pkgs.awscli
+    pkgs.chromedriver
     pkgs.cmake
     pkgs.colima
     pkgs.devbox
@@ -35,6 +36,7 @@ in {
     pkgs.fishPlugins.z
     pkgs.ffmpeg
     pkgs.fzf
+    pkgs.geckodriver
     pkgs.go
     pkgs.jq
     pkgs.k9s
