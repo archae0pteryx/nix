@@ -27,6 +27,7 @@ in [
     pkgs.gdb
     pkgs.gnome-calculator
     pkgs.gnumake
+    pkgs.gparted
     pkgs.hunspell
     pkgs.jq
     pkgs.k9s
