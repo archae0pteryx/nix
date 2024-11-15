@@ -12,7 +12,7 @@
 
   outputs = inputs@{ nixpkgs, home-manager, darwin, mac-app-util, ... }:
     let
-      systemConfis = {
+      systemConfigs = {
         eyepop = {
           system = "aarch64-darwin";
           user = "ryan";
@@ -23,6 +23,10 @@
     in {
       darwinConfigurations = builtins.mapAttrs (name: config:
         darwin.lib.darwinSystem {
+          specialArgs = {
+            inherit (config) system user hostname;
+          };
+
           system = config.system;
 
           modules = [
@@ -40,7 +44,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.${config.user} = import ../home-manager.nix;
+                users.${config.user} = import ./home-manager.nix;
                 sharedModules = [ mac-app-util.homeManagerModules.default ];
                 backupFileExtension = "nixbak";
               };
