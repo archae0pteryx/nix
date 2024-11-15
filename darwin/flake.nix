@@ -14,7 +14,7 @@
     let
       systemConfigs = {
         eyepop = {
-          system = "aarch64-darwin";
+          systemArch = "aarch64";
           curUser = "ryan";
           hostname = "eyepop";
           configRoot = ./aarch64;
@@ -24,10 +24,10 @@
       darwinConfigurations = builtins.mapAttrs (name: config:
         darwin.lib.darwinSystem {
           specialArgs = {
-            inherit (config) system curUser hostname;
+            inherit (config) systemArch curUser hostname;
           };
 
-          system = config.system;
+          system = "${config.systemArch}-darwin";
 
           modules = [
             ./configuration.nix

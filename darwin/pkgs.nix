@@ -1,4 +1,8 @@
-{ pkgs, system, ... }: {
+{ pkgs, ... }:
+let
+  google-cloud-sdk = pkgs.google-cloud-sdk.withExtraComponents
+    [ pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin ];
+in {
   home.packages = [
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
     google-cloud-sdk

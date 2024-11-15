@@ -1,10 +1,18 @@
-{ lib, system, config, pkgs, curUser, ... }:
+{ lib, pkgs, systemArch, curUser, ... }:
 let
-homeManager = import ./home-manager.nix;
-extraHomeManager = import ${system}/extra-home-manager.nix;
-combinedHomeManager = lib.recursiveUpdate homeManager extraHomeManager;
-in
-{
+  homeManager =
+    import ./home-manager.nix { inherit pkgs lib curUser systemArch; };
+
+  extraHomeManager = if builtins.pathExists
+  (builtins.toString ./. + "/${systemArch}/extra-home-manager.nix") then
+    import (builtins.toString ./. + "/${systemArch}/extra-home-manager.nix") {
+      inherit pkgs lib curUser systemArch;
+    }
+  else
+    { };
+
+  combinedHomeManager = lib.recursiveUpdate homeManager extraHomeManager;
+in {
   # remove before upgrading to sequoia
   ids.uids.nixbld = 300;
 
@@ -31,10 +39,9 @@ in
 
   homebrew = import ../common/homebrew.nix;
   system = import ./system.nix;
-  home-manager = combinedHomeManager {
-    inherit lib pkgs mac-app-util;
-    inherit (system) system;
-    inherit (system) hostname;
-    inherit (system) curUser;
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.${curUser} = combinedHomeManager;
   };
 }
