@@ -2,6 +2,7 @@
 {
   # remove before upgrading to sequoia
   ids.uids.nixbld = 300;
+
   nix.package = pkgs.nix;
   nix.extraOptions = ''
     experimental-features = nix-command flakes
@@ -14,25 +15,15 @@
   # ];
   services.nix-daemon.enable = true;
 
-  # programs.zsh.enable = true;
-  #programs.fish = mergedFish;
-  # programs.bash.enable = true;
-
-  # programs.bash = {
-  #   interactiveShellInit = ''
-  #     if [[ $(${pkgs.procps}/bin/ps -p $PPID -o command | tail -n +2) != "fish" && -z $BASH_EXECUTION_STRING ]]
-  #     then
-  #       shopt -q login_shell && LOGIN_OPTION="--login" || LOGIN_OPTION=""
-  #       exec fish $LOGIN_OPTION
-  #     fi
-  #   '';
-  # };
+  programs.zsh.enable = true;
+  programs.bash.enable = true;
  
   users.users.ryan = {
     name = "ryan";
     home = "/Users/ryan";
     shell = pkgs.zsh;
   };
-  homebrew = import ./homebrew.nix;
-  system = import ./system.nix;
+
+  homebrew = import ../../common/homebrew.nix;
+  system = import ../system.nix;
 }

@@ -4,17 +4,17 @@ let
     [ pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin ];
 in {
   home.stateVersion = "24.11";
-  home.file = { ".vimrc".source = ../../common/vimrc; };
-  home.file = { ".tmux.conf".source = ../../common/tmux.conf; };
+  home.file = { ".vimrc".source = ../common/vimrc; };
+  home.file = { ".tmux.conf".source = ../common/tmux.conf; };
 
   xdg.configFile."starship.toml".text =
-    builtins.readFile ../../common/starship.toml;
+    builtins.readFile ../common/starship.toml;
   xdg.configFile."alacritty/alacritty.toml".text =
-    builtins.readFile ../../common/alacritty.toml;
+    builtins.readFile ../common/alacritty.toml;
   #xdg.configFile."fish/completions/devbox".text =
-  #  builtins.readFile ../../common/fish/completions/devbox;
+  #  builtins.readFile ../common/fish/completions/devbox;
   # xdg.configFile."amethyst/amethyst.yml".text =
-  #   builtins.readFile ../../common/amethyst.yml;
+  #   builtins.readFile ../common/amethyst.yml;
   home.sessionVariables = { EDITOR = "vim"; };
   home.packages = [
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
@@ -70,11 +70,11 @@ in {
     pkgs.utm
     pkgs.zoom-us
   ];
-  programs.bash.enable = true;
-  programs.zsh.enable = true;
-  programs.direnv.enable = true;
-  #programs.direnv.enableFishIntegration = true;
-  programs.direnv.enableZshIntegration = true;
+  # programs.bash.enable = true;
+  # programs.zsh.enable = true;
+  # programs.direnv.enable = true;
+  # #programs.direnv.enableFishIntegration = true;
+  # programs.direnv.enableZshIntegration = true;
 
   programs.home-manager.enable = true;
 
@@ -87,14 +87,14 @@ in {
   programs.starship.enableZshIntegration = true;
   programs.starship.enableBashIntegration = true;
 
-  programs.git = import ../../common/git.nix;
+  programs.git = import ../common/git.nix;
   programs.gh = {
     enable = true;
     gitCredentialHelper.enable = true;
   };
   programs.nushell = {
     enable = true;
-    # loginFile.source = "../../common/nushell.nu";
+    # loginFile.source = "../common/nushell.nu";
     shellAliases = {
       rebuild =
         "darwin-rebuild switch --flake /Users/ryan/.config/nix/aarch64-darwin";
