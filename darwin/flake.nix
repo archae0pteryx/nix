@@ -15,7 +15,7 @@
       systemConfigs = {
         eyepop = {
           system = "aarch64-darwin";
-          user = "ryan";
+          curUser = "ryan";
           hostname = "eyepop";
           configRoot = ./aarch64;
         };
@@ -24,7 +24,7 @@
       darwinConfigurations = builtins.mapAttrs (name: config:
         darwin.lib.darwinSystem {
           specialArgs = {
-            inherit (config) system user hostname;
+            inherit (config) system curUser hostname;
           };
 
           system = config.system;
@@ -44,7 +44,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.${config.user} = import ./home-manager.nix;
+                users.${config.curUser} = import ./home-manager.nix;
                 sharedModules = [ mac-app-util.homeManagerModules.default ];
                 backupFileExtension = "nixbak";
               };

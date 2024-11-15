@@ -1,5 +1,4 @@
-{ lib, config, pkgs, user, ... }:
-{
+{ lib, config, pkgs, curUser, ... }: {
   # remove before upgrading to sequoia
   ids.uids.nixbld = 300;
 
@@ -17,10 +16,10 @@
 
   programs.zsh.enable = true;
   programs.bash.enable = true;
- 
-  users.users.${user} = {
-    name = ${user};
-    home = "/Users/${user}";
+
+  users.users.${curUser} = {
+    name = "${curUser}";
+    home = "/Users/${curUser}";
     shell = pkgs.zsh;
   };
 
