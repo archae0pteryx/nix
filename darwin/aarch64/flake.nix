@@ -23,7 +23,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.ryan = import ./home.nix;
+            home-manager.users.ryan = import ../home-manager.nix;
             home-manager.sharedModules = [ mac-app-util.homeManagerModules.default ];
             home-manager.backupFileExtension = "nixbak";
           }

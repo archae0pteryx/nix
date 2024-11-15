@@ -1,9 +1,4 @@
 { lib, config, pkgs, ... }:
-let
-#  commonFish = import ../common/fish { };
-#  macFishAliases = import ./aliases.nix { };
-#  mergedFish = lib.recursiveUpdate commonFish macFishAliases;
-in
 {
   # remove before upgrading to sequoia
   ids.uids.nixbld = 300;
@@ -11,7 +6,7 @@ in
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
-  environment.systemPackages = with pkgs; [ vim tmux  rustup];
+  environment.systemPackages = with pkgs; [ vim tmux rustup ];
   environment.shells = [ pkgs.bash pkgs.zsh ];
   nixpkgs.config.allowUnfree = true;
   # nixpkgs.config.permittedInsecurePackages = [
@@ -19,9 +14,9 @@ in
   # ];
   services.nix-daemon.enable = true;
 
-  programs.zsh.enable = true;
+  # programs.zsh.enable = true;
   #programs.fish = mergedFish;
-  programs.bash.enable = true;
+  # programs.bash.enable = true;
 
   # programs.bash = {
   #   interactiveShellInit = ''

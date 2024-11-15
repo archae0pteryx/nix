@@ -70,7 +70,8 @@ in {
     pkgs.utm
     pkgs.zoom-us
   ];
-
+  programs.bash.enable = true;
+  programs.zsh.enable = true;
   programs.direnv.enable = true;
   #programs.direnv.enableFishIntegration = true;
   programs.direnv.enableZshIntegration = true;
