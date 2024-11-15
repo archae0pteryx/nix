@@ -11,8 +11,8 @@ in {
     builtins.readFile ../common/starship.toml;
   xdg.configFile."alacritty/alacritty.toml".text =
     builtins.readFile ../common/alacritty.toml;
-  xdg.configFile."fish/completions/devbox".text =
-    builtins.readFile ../common/fish/completions/devbox;
+  #xdg.configFile."fish/completions/devbox".text =
+  #  builtins.readFile ../common/fish/completions/devbox;
   # xdg.configFile."amethyst/amethyst.yml".text =
   #   builtins.readFile ../common/amethyst.yml;
   home.sessionVariables = { EDITOR = "vim"; };
@@ -32,8 +32,8 @@ in {
     pkgs.docker
     pkgs.dive
     pkgs.dnsutils
-    pkgs.fishPlugins.fzf
-    pkgs.fishPlugins.z
+    #pkgs.fishPlugins.fzf
+    #pkgs.fishPlugins.z
     pkgs.ffmpeg
     pkgs.fzf
     pkgs.geckodriver
@@ -72,7 +72,7 @@ in {
   ];
 
   programs.direnv.enable = true;
-  programs.direnv.enableFishIntegration = true;
+  #programs.direnv.enableFishIntegration = true;
   programs.direnv.enableZshIntegration = true;
 
   programs.home-manager.enable = true;
@@ -82,7 +82,7 @@ in {
 
   programs.starship.enable = true;
   programs.starship.enableNushellIntegration = true;
-  programs.starship.enableFishIntegration = true;
+  #programs.starship.enableFishIntegration = true;
   programs.starship.enableZshIntegration = true;
   programs.starship.enableBashIntegration = true;
 
