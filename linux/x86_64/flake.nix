@@ -1,5 +1,5 @@
 {
-  description = "Home Manager configuration of rimraf";
+  description = "Linux x86_64";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
