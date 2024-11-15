@@ -1,4 +1,4 @@
-{}:
+{ }:
 let
   shellAliases = {
     nixconfig = "code $HOME/.config/nix";
