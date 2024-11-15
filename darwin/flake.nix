@@ -31,24 +31,11 @@
 
           modules = [
             ./configuration.nix
-
-            # System-specific configuration
-            "${config.configRoot}/configuration.nix"
+            # # System-specific configuration
+            # "${config.configRoot}/configuration.nix"
 
             mac-app-util.darwinModules.default
             home-manager.darwinModules.home-manager
-
-            {
-              networking.hostname = config.hostname;
-
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.${config.curUser} = import ./home-manager.nix;
-                sharedModules = [ mac-app-util.homeManagerModules.default ];
-                backupFileExtension = "nixbak";
-              };
-            }
           ];
         }) systemConfigs;
     };
