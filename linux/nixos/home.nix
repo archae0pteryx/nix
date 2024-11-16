@@ -6,6 +6,7 @@
   nixpkgs.config.permittedInsecurePackages = [ "electron-27.3.11" ];
   home.username = "rimraf";
   home.homeDirectory = "/home/rimraf";
+  home.sessionPath = [ "$HOME/.local/bin" ];
   home.sessionVariables = {
     EDITOR = "vim";
     KUBECTL_EXTERNAL_DIFF = "meld";
