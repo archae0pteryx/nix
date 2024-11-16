@@ -15,9 +15,13 @@
       systemConfigs = {
         eyepop = {
           systemArch = "aarch64";
-          curUser = "ryan";
+          systemUser = "ryan";
           hostname = "eyepop";
-          configRoot = ./aarch64;
+        };
+        claire = {
+          systemArch = "x96_64";
+          systemUser = "rimraf";
+          hostname = "claire";
         };
       };
     in {
