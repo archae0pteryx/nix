@@ -7,7 +7,7 @@
   antidote.plugins = [ "agkozak/zsh-z" ];
   shellAliases = {
     nixconfig = "code $HOME/.config/nix";
-    rebuild = "home-manager switch --flake $HOME/.config/nix/x86_64-linux/";
+    rebuild = "home-manager switch --flake $HOME/.config/nix/linux/nixos";
     l = "ls -hal";
     ".." = "cd ..";
     "..." = "cd ../..";
