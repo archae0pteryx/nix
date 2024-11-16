@@ -13,16 +13,16 @@
     LD_LIBRARY_PATH = lib.makeLibraryPath [ pkgs.stdenv.cc.cc ];
   };
   home.packages = import ./packages.nix { inherit pkgs; };
-  home.file = { ".vimrc".source = ../common/vimrc; };
-  home.file = { ".tmux.conf".source = ../common/tmux.conf; };
+  home.file = { ".vimrc".source = ../../common/vimrc; };
+  home.file = { ".tmux.conf".source = ../../common/tmux.conf; };
   home.file = { ".local/bin/nvidia-offload".source = "./scripts/nvidia-offload"; };
   # xdg.configFile."rofi/open_rofi".text = builtins.readFile ./scripts/open_rofi;
   xdg.configFile."monitors/setup-monitors.sh".text =
     builtins.readFile ./scripts/setup-monitors.sh;
   xdg.configFile."starship.toml".text =
-    builtins.readFile ../common/starship.toml;
+    builtins.readFile ../../common/starship.toml;
   xdg.configFile."copyq/copyq.conf".text =
-    builtins.readFile ../common/copyq.conf;
+    builtins.readFile ../../common/copyq.conf;
   xdg.configFile."i3/config".text = builtins.readFile ./config/i3-config;
   xdg.configFile."i3status-rust/config.toml".text =
     builtins.readFile ./config/i3status-rust;
