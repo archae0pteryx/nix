@@ -6,7 +6,6 @@
 
   programs.starship.enable = true;
   programs.starship.enableNushellIntegration = true;
-  #programs.starship.enableFishIntegration = true;
   programs.starship.enableZshIntegration = true;
   programs.starship.enableBashIntegration = true;
 

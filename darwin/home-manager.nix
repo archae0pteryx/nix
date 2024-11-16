@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ ... }:
 {
   imports = [ ./pkgs.nix ./programs.nix ];
   home.stateVersion = "24.11";
@@ -14,6 +14,4 @@
   # xdg.configFile."amethyst/amethyst.yml".text =
   #   builtins.readFile ../common/amethyst.yml;
   home.sessionVariables = { EDITOR = "vim"; };
-
-  
 }

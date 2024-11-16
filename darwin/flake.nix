@@ -28,15 +28,14 @@
       darwinConfigurations = builtins.mapAttrs (name: config:
         darwin.lib.darwinSystem {
           specialArgs = {
-            inherit (config) systemArch curUser hostname;
+            inherit (config) systemArch systemUser hostname;
           };
 
           system = "${config.systemArch}-darwin";
 
           modules = [
             ./configuration.nix
-            # # System-specific configuration
-            # "${config.configRoot}/configuration.nix"
+            # "${config.hostname}/configuration.nix"
 
             mac-app-util.darwinModules.default
             home-manager.darwinModules.home-manager

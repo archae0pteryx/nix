@@ -1,15 +1,13 @@
-{ lib, pkgs, systemArch, curUser, ... }:
+{ pkgs, lib, systemArch, systemUser, hostname, ... }:
 let
   homeManager =
-    import ./home-manager.nix { inherit pkgs lib curUser systemArch; };
+    import ./home-manager.nix {
+      inherit pkgs lib systemUser systemArch;
+    };
 
-  extraHomeManager = if builtins.pathExists
-  (builtins.toString ./. + "/${systemArch}/extra-home-manager.nix") then
-    import (builtins.toString ./. + "/${systemArch}/extra-home-manager.nix") {
-      inherit pkgs lib curUser systemArch;
-    }
-  else
-    { };
+  extraHomeManager = import (builtins.toString ./. + "/${hostname}/extra-home-manager.nix") {
+      inherit pkgs lib systemUser systemArch;
+    };
 
   combinedHomeManager = lib.recursiveUpdate homeManager extraHomeManager;
 in {
@@ -31,17 +29,17 @@ in {
   programs.zsh.enable = true;
   programs.bash.enable = true;
 
-  users.users.${curUser} = {
-    name = "${curUser}";
-    home = "/Users/${curUser}";
+  users.users.${systemUser} = {
+    name = "${systemUser}";
+    home = "/Users/${systemUser}";
     shell = pkgs.zsh;
   };
 
   homebrew = import ../common/homebrew.nix;
-  system = import ./system.nix;
+  system = import ./system-prefs.nix;
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.${curUser} = combinedHomeManager;
+    users.${systemUser} = combinedHomeManager;
   };
 }
