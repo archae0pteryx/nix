@@ -7,7 +7,7 @@
   home.file = { ".tmux.conf".source = ../common/tmux.conf; };
   xdg.configFile."starship.toml".text =
     builtins.readFile ../common/starship.toml;
-  xdg.configFile."alacritty/alacritty.toml".text =
+  xdg.configFile."config/alacritty.toml".text =
     builtins.readFile ../common/alacritty.toml;
   # xdg.configFile."amethyst/amethyst.yml".text =
   #   builtins.readFile ../common/amethyst.yml;

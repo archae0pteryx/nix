@@ -19,7 +19,7 @@
           hostname = "eyepop";
         };
         claire = {
-          systemArch = "x96_64";
+          systemArch = "x86_64";
           systemUser = "rimraf";
           hostname = "claire";
         };
