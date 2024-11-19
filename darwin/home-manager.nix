@@ -12,4 +12,5 @@
   # xdg.configFile."amethyst/amethyst.yml".text =
   #   builtins.readFile ../common/amethyst.yml;
   home.sessionVariables = { EDITOR = "vim"; };
+  home.shellAliases = import ../common/aliases.nix;
 }

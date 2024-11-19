@@ -1,4 +1,9 @@
-{ pkgs, ... }: {
+{ pkgs, ... }: 
+let
+# merge shell aliases
+
+in
+{
   programs.home-manager.enable = true;
 
   programs.vscode.enable = true;
