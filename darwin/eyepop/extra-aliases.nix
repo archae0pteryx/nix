@@ -1,11 +1,6 @@
-{ }:
-let
-  shellAliases = {
-    nixconfig = "code $HOME/.config/nix";
-    rebuild = "darwin-rebuild switch --flake $HOME/.config/nix/aarch64-darwin";
-    hammerconfig = "code $HOME/.hammerspoon";
-  };
-in
 {
-  inherit shellAliases;
+  rebuild = "darwin-rebuild switch --flake $HOME/.config/nix/darwin#claire";
+  kapply = "devbox run kapply";
+  kdiff = "devbox run kdiff";
+  hammerconfig = "code $HOME/.hammerspoon";
 }

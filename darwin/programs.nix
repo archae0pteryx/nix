@@ -1,4 +1,4 @@
-{ hostname, pkgs, ... }: 
+{ userHome, hostname, pkgs, ... }: 
 {
   programs.home-manager.enable = true;
 
@@ -7,12 +7,12 @@
 
   programs.starship = {
     enable = true;
-    starship.enableNushellIntegration = true;
-    starship.enableZshIntegration = true;
-    starship.enableBashIntegration = true;
+    enableNushellIntegration = true;
+    enableZshIntegration = true;
+    enableBashIntegration = true;
   };
   
-  programs.git = import ../common/git.nix;
+  programs.git = import ../common/git.nix { inherit userHome; };
   programs.gh = {
     enable = true;
     gitCredentialHelper.enable = true;
@@ -22,5 +22,5 @@
     enable = true;
     forwardAgent = true;
   };
-  programs.zsh = import ./zsh.nix;
+  programs.zsh = import ./zsh.nix { inherit hostname; };
 }

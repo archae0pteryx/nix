@@ -1,11 +1,11 @@
-{
+{ hostname, ... }: {
   enable = true;
   enableCompletion = true;
   autosuggestion.enable = true;
   autocd = true;
   antidote.enable = true;
   antidote.plugins = [ "agkozak/zsh-z" ];
-  shellAliases = import "${hostname}/extra-aliases.nix";
+  shellAliases = import ./${hostname}/extra-aliases.nix;
   syntaxHighlighting.enable = true;
   envExtra = ''
     source <(fzf --zsh)

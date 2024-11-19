@@ -29,6 +29,7 @@
         darwin.lib.darwinSystem {
           specialArgs = {
             inherit (config) systemArch systemUser hostname;
+            userHome = "/Users/${config.systemUser}";
           };
 
           system = "${config.systemArch}-darwin";

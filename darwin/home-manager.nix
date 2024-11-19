@@ -1,6 +1,6 @@
-{ ... }:
+{ userHome, hostname, pkgs, ... }:
 {
-  imports = [ ./pkgs.nix ./programs.nix ];
+  imports = [ ./pkgs.nix (import ./programs.nix { inherit hostname pkgs userHome; }) ];
 
   home.stateVersion = "24.11";
   home.file = { ".vimrc".source = ../common/vimrc; };

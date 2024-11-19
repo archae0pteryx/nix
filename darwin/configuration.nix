@@ -1,12 +1,12 @@
-{ pkgs, lib, systemArch, systemUser, hostname, ... }:
+{ pkgs, lib, systemArch, systemUser, hostname, userHome, ... }:
 let
   homeManager =
     import ./home-manager.nix {
-      inherit pkgs lib systemUser systemArch;
+      inherit pkgs lib systemUser systemArch hostname userHome;
     };
 
   extraHomeManager = import (builtins.toString ./. + "/${hostname}/extra-home-manager.nix") {
-      inherit pkgs lib systemUser systemArch;
+      inherit pkgs lib systemUser systemArch hostname userHome;
     };
 
   combinedHomeManager = lib.recursiveUpdate homeManager extraHomeManager;
