@@ -31,10 +31,9 @@ in [
     pkgs.hunspell
     pkgs.jq
     pkgs.k9s
+		pkgs.kind
     pkgs.keepassxc
     pkgs.kubectl
-    pkgs.kubectl
-    pkgs.kubectx
     pkgs.kubectx
     pkgs.kubernetes-helm
     pkgs.libreoffice

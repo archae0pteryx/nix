@@ -10,12 +10,12 @@
   home.sessionVariables = {
     EDITOR = "vim";
     KUBECTL_EXTERNAL_DIFF = "meld";
-    LD_LIBRARY_PATH = lib.makeLibraryPath [ pkgs.stdenv.cc.cc ];
+    LD_LIBRARY_PATH = lib.makeLibraryPath [ pkgs.stdenv.cc.cc pkgs.cudatoolkit ];
   };
   home.packages = import ./packages.nix { inherit pkgs; };
   home.file = { ".vimrc".source = ../../common/vimrc; };
   home.file = { ".tmux.conf".source = ../../common/tmux.conf; };
-  home.file = { ".local/bin/nvidia-offload".source = "./scripts/nvidia-offload.sh"; };
+  #home.file = { ".local/bin/nvidia-offload".source = "./scripts/nvidia-offload.sh"; };
 
   # xdg.configFile."rofi/open_rofi".text = builtins.readFile ./scripts/open_rofi;
   xdg.configFile."monitors/setup-monitors.sh".text =
