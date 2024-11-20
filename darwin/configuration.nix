@@ -12,7 +12,7 @@ let
   combinedHomeManager = lib.recursiveUpdate homeManager extraHomeManager;
 in {
   # remove before upgrading to sequoia
-  ids.uids.nixbld = 300;
+  ids.uids.nixbld = 350;
 
   nix.package = pkgs.nix;
   nix.extraOptions = ''

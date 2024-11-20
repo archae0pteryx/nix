@@ -1,18 +1,19 @@
 {
   enable = true;
   brews = [
-    "cairo"
-    "giflib"
-    "icu4c"
-    "jpeg"
-    "libmagic"
-    "libpng"
-    "librsvg"
+    # "cairo"
+    # "giflib"
+    # "icu4c"
+    # "jpeg"
+    # "libmagic"
+    # "libpng"
+    # "librsvg"
     "luarocks"
-    "pango"
-    "pkg-config"
+    # "pango"
+    # "pkg-config"
   ];
   casks = [
+    "alfred"
     "amethyst"
     "anythingllm"
     "aptakube"
@@ -22,13 +23,10 @@
     "copyq"
     "figma"
     "firefox"
-    "headlamp"
+    "iterm2"
     "megasync"
-    "monokle"
     "mullvadvpn"
     "openlens"
-    "transmission"
-    "unetbootin"
   ];
   global = {
     autoUpdate = true;
