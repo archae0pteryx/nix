@@ -61,6 +61,7 @@ in [
     pkgs.sshfs
     pkgs.starship
     pkgs.stern
+		pkgs.tailscale
     pkgs.tdrop
     pkgs.teller
     pkgs.terraform

@@ -5,7 +5,7 @@
   autocd = true;
   antidote.enable = true;
   antidote.plugins = [ "agkozak/zsh-z" ];
-  shellAliases = import ./aliases.nix;
+  shellAliases = import ./extra-aliases.nix;
   syntaxHighlighting.enable = true;
   envExtra = ''
     export PATH=$HOME/.local/bin:$PATH

@@ -8,7 +8,7 @@
   };
 
   # fish = mergedFish;
-  zsh = import ../../common/zsh.nix;
+  zsh = import ./zsh.nix;
   go = {
     enable = true;
     goPath = "/home/rimraf/Code/go";
