@@ -1,5 +1,4 @@
-{ userHome, hostname, pkgs, ... }: 
-{
+{ userHome, hostname, pkgs, ... }: {
   programs.home-manager.enable = true;
 
   programs.vscode.enable = true;
@@ -11,7 +10,7 @@
     enableZshIntegration = true;
     enableBashIntegration = true;
   };
-  
+
   programs.git = import ../common/git.nix { inherit userHome; };
   programs.gh = {
     enable = true;

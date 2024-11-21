@@ -27,6 +27,7 @@
   xdg.configFile."i3/config".text = builtins.readFile ./config/i3-config;
   xdg.configFile."i3status-rust/config.toml".text =
     builtins.readFile ./config/i3status-rust;
+  xdg.configFile."kitty/kitty.conf".text = builtins.readFile ../common/kitty.conf;
   # xdg.configFile."xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml".text = builtins.readFile ./xfce4/xfce4-keyboard-shortcuts.xml;
 
   programs = import ./programs.nix { inherit lib; };
