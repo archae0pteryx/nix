@@ -1,11 +1,11 @@
 { pkgs, lib, systemArch, systemUser, hostname, userHome, ... }:
 let
-  homeManager =
-    import ./home-manager.nix {
-      inherit pkgs lib systemUser systemArch hostname userHome;
-    };
+  homeManager = import ./home-manager.nix {
+    inherit pkgs lib systemUser systemArch hostname userHome;
+  };
 
-  extraHomeManager = import (builtins.toString ./. + "/${hostname}/extra-home-manager.nix") {
+  extraHomeManager =
+    import (builtins.toString ./. + "/${hostname}/extra-home-manager.nix") {
       inherit pkgs lib systemUser systemArch hostname userHome;
     };
 
