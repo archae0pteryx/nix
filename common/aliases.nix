@@ -10,6 +10,7 @@
   dcdv = "docker compose down --remove-orphans -v";
   alacrittyconfig = "vim $HOME/.config/alacritty";
   kittyconfig = "vim $HOME/.config/kitty";
+  nixconfig = "code $HOME/.config/nix";
   c = "cd $HOME/Code";
   ga = "git add";
   gc = "git commit -S -m";
