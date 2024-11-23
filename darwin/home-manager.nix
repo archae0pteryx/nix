@@ -1,12 +1,12 @@
 { userHome, hostname, pkgs, ... }:
-let
-  shellAliases = import ../common/aliases.nix;
 {
   imports = [ ./pkgs.nix (import ./programs.nix { inherit hostname pkgs userHome; }) ];
+  
   home.sessionVariables = { EDITOR = "vim"; };
   home.shellAliases = import ../common/aliases.nix;
-
+  
   home.stateVersion = "24.11";
+
   home.file = { ".vimrc".source = ../common/vimrc; };
   home.file = { ".tmux.conf".source = ../common/tmux.conf; };
   xdg.configFile."starship.toml".text =

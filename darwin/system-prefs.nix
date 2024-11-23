@@ -12,16 +12,16 @@
       "com.apple.mouse.tapBehavior" = 1;
       "com.apple.sound.beep.feedback" = 1;
       "com.apple.springing.enabled" = false;
-      autohide = true;
-      autohide-delay = 0;
-      expose-animation-duration = 0.1;
-      expose-group-by-app = false;
-      launchanim = false;
-      mru-spaces = false;
     };
     dock = {
       orientation = "left";
       show-recents = false;
+      autohide = true;
+      autohide-delay = 0.1;
+      expose-animation-duration = 0.1;
+      expose-group-by-app = false;
+      launchanim = false;
+      mru-spaces = false;
     };
     finder = {
       AppleShowAllExtensions = true;
