@@ -33,7 +33,11 @@ in {
     name = "${systemUser}";
     home = "/Users/${systemUser}";
     shell = pkgs.zsh;
-    openssh.authorizedKeys.keyFiles = [ "../common/ssh/claire.local.pub", "../common/ssh/eyepop.local.pub", "../common/ssh/nixos.local.pub" ];
+    openssh.authorizedKeys.keyFiles = [ 
+      ../common/ssh/claire.local.pub
+      ../common/ssh/eyepop.local.pub
+      ../common/ssh/nixos.local.pub
+    ];
   };
 
   homebrew = import ../common/homebrew.nix;
