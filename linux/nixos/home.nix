@@ -1,5 +1,4 @@
 { lib, config, pkgs, ... }:
-
 {
   home.stateVersion = "24.05";
   nixpkgs.config.allowUnfree = true;

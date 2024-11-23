@@ -1,4 +1,6 @@
 { userHome, hostname, pkgs, ... }:
+let
+  shellAliases = import ../common/aliases.nix;
 {
   imports = [ ./pkgs.nix (import ./programs.nix { inherit hostname pkgs userHome; }) ];
   home.sessionVariables = { EDITOR = "vim"; };

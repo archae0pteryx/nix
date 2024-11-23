@@ -21,5 +21,5 @@
     enable = true;
     forwardAgent = true;
   };
-  programs.zsh = import ./zsh.nix { inherit hostname; };
+  programs.zsh = import ../common/zsh.nix { inherit hostname; };
 }

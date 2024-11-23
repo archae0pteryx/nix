@@ -23,6 +23,7 @@
     "copyq"
     "figma"
     "firefox"
+    "hammerspoon"
     "iterm2"
     "megasync"
     "mullvadvpn"
