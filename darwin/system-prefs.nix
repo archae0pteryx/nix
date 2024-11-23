@@ -1,4 +1,4 @@
-{
+{ hostname, ... }: {
   stateVersion = 4;
   defaults = {
     NSGlobalDomain = {
@@ -22,17 +22,52 @@
       expose-group-by-app = false;
       launchanim = false;
       mru-spaces = false;
+      # persistent-apps = {};
+      # persistent-others = {};
+      tilesize = 40;
+      showhidden = true;
+      static-only = true;
     };
     finder = {
       AppleShowAllExtensions = true;
       AppleShowAllFiles = true;
+      FXDefaultSearchScope = "SCcf";
       FXEnableExtensionChangeWarning = false;
       FXPreferredViewStyle = "Nlsv";
+      FXRemoveOldTrashItems = true;
+      NewWindowTarget = "Home";
+      # NewWindowTargetPath = "file:///Users/foo/long%20cat%20pics";
+      ShowExternalHardDrivesOnDesktop = true;
+      ShowHardDrivesOnDesktop = true;
+      ShowMountedServersOnDesktop = true;
       ShowPathbar = true;
+      ShowRemovableMediaOnDesktop = true;
       ShowStatusBar = true;
       _FXShowPosixPathInTitle = true;
+      _FXSortFoldersFirst = false;
+      _FXSortFoldersFirstOnDesktop = true;
     };
-    universalaccess = { reduceMotion = true; };
+    loginwindow = {
+      GuestEnabled = false;
+      LoginwindowText = "8===)~";
+      SHOWFULLNAME = false;
+    };
+    menuExtraClock = { ShowDayOfWeek = true; };
+    screencapture = {
+      show-thumbnail = false;
+      location = "~/Desktop";
+      type = "png";
+    };
+    smb = { NetBIOSName = "${hostname}"; };
+    spaces = { spans-displays = true; };
+    trackpad = {
+      Clicking = true;
+      TrackpadRightClick = true;
+    };
+    universalaccess = {
+      reduceMotion = true;
+      reduceTransparency = true;
+    };
   };
   startup = { chime = false; };
 }

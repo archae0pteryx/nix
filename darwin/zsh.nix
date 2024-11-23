@@ -9,7 +9,7 @@
   syntaxHighlighting.enable = true;
   envExtra = ''
     source <(fzf --zsh)
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+    eval "$($(which brew) shellenv)"
     export PATH=$HOME/.local/bin:$PATH
     export GOPATH=$HOME/Code/go
     export GOBIN=$GOPATH/bin

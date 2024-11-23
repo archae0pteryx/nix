@@ -33,10 +33,13 @@ in {
     name = "${systemUser}";
     home = "/Users/${systemUser}";
     shell = pkgs.zsh;
+    openssh.authorizedKeys.keyFiles = [ "../common/ssh/claire.local.pub", "../common/ssh/eyepop.local.pub", "../common/ssh/nixos.local.pub" ];
   };
 
   homebrew = import ../common/homebrew.nix;
-  system = import ./system-prefs.nix;
+  system = import ./system-prefs.nix {
+    inherit hostname;
+  };
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
