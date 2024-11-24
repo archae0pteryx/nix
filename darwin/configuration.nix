@@ -1,18 +1,18 @@
 { pkgs, lib, systemArch, systemUser, hostname, userHome, ... }:
 let
-  homeManager =
-    import ./home-manager.nix {
-      inherit pkgs lib systemUser systemArch hostname userHome;
-    };
+  homeManager = import ./home-manager.nix {
+    inherit pkgs lib systemUser systemArch hostname userHome;
+  };
 
-  extraHomeManager = import (builtins.toString ./. + "/${hostname}/extra-home-manager.nix") {
+  extraHomeManager =
+    import (builtins.toString ./. + "/${hostname}/extra-home-manager.nix") {
       inherit pkgs lib systemUser systemArch hostname userHome;
     };
 
   combinedHomeManager = lib.recursiveUpdate homeManager extraHomeManager;
 in {
   # remove before upgrading to sequoia
-  ids.uids.nixbld = 300;
+  ids.uids.nixbld = 350;
 
   nix.package = pkgs.nix;
   nix.extraOptions = ''
@@ -33,10 +33,17 @@ in {
     name = "${systemUser}";
     home = "/Users/${systemUser}";
     shell = pkgs.zsh;
+    openssh.authorizedKeys.keyFiles = [ 
+      ../common/ssh/claire.local.pub
+      ../common/ssh/eyepop.local.pub
+      ../common/ssh/nixos.local.pub
+    ];
   };
 
   homebrew = import ../common/homebrew.nix;
-  system = import ./system-prefs.nix;
+  system = import ./system-prefs.nix {
+    inherit hostname;
+  };
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
