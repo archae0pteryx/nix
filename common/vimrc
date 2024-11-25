@@ -3,15 +3,14 @@ set mouse=a
 set ignorecase
 set whichwrap+=<,>,h,l
 set backspace=eol,start,indent
-set ai
-set si
 set wrap
 colorscheme habamax
 syntax on
 
+set tabstop=2 
 set shiftwidth=2 
 set smarttab
-set tabstop=2 
-set softtabstop=0
+set expandtab
+set smartindent
 
 inoremap jk <Esc>

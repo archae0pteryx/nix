@@ -28,6 +28,7 @@ in [
     pkgs.gnome-calculator
     pkgs.gnumake
     pkgs.gparted
+    pkgs.htop
     pkgs.hunspell
     pkgs.jq
     pkgs.k9s
@@ -61,7 +62,6 @@ in [
     pkgs.sshfs
     pkgs.starship
     pkgs.stern
-		pkgs.tailscale
     pkgs.tdrop
     pkgs.teller
     pkgs.terraform

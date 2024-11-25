@@ -31,7 +31,6 @@
   # xdg.configFile."xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml".text = builtins.readFile ./xfce4/xfce4-keyboard-shortcuts.xml;
 
   programs = import ./programs.nix { inherit lib; };
-
   services.gpg-agent = {
     enable = true;
     enableSshSupport = true;
