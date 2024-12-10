@@ -1,9 +1,6 @@
 { userHome, hostname, pkgs, ... }: {
   programs.home-manager.enable = true;
 
-  programs.vscode.enable = true;
-  programs.vscode.extensions = [ pkgs.vscode-extensions.bbenoist.nix ];
-
   programs.starship = {
     enable = true;
     enableNushellIntegration = true;

@@ -24,10 +24,14 @@
     "figma"
     "firefox"
     "hammerspoon"
-    "iterm2"
+    "headlamp"
     "megasync"
     "mullvadvpn"
     "openlens"
+    "postman"
+    "transmission"
+    "unetbootin"
+    "visual-studio-code"
   ];
   global = {
     autoUpdate = true;

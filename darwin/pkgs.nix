@@ -41,7 +41,6 @@ in {
     pkgs.opentofu
     pkgs.pipx
     pkgs.pkg-config
-    pkgs.postman
     pkgs.python311
     pkgs.slack
     pkgs.speedtest-cli
