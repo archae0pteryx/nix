@@ -12,7 +12,7 @@ let
   combinedHomeManager = lib.recursiveUpdate homeManager extraHomeManager;
 in {
   # remove before upgrading to sequoia
-  ids.uids.nixbld = 350;
+  ids.uids.nixbld = 300;
 
   nix.package = pkgs.nix;
   nix.extraOptions = ''
@@ -20,6 +20,17 @@ in {
   '';
   environment.systemPackages = with pkgs; [ vim tmux rustup ];
   environment.shells = [ pkgs.bash pkgs.zsh ];
+  environment.variables = {
+    EDITOR = "vim";
+    CARGO_HOME = "${userHome}/.cargo";
+    GOPATH = "${userHome}/Code/go";
+    GOBIN = "${userHome}/Code/go/bin";
+    PATH = "${userHome}/.local/bin:${userHome}/Code/go/bin:${userHome}/.cargo/bin:$PATH";
+    PKG_CONFIG_PATH = "${pkgs.pkg-config}/lib/pkgconfig:/opt/homebrew/lib/pkgconfig:$PKG_CONFIG_PATH";
+    NVM_DIR = "${userHome}/.nvm";
+    GSETTINGS_SCHEMA_DIR = "/usr/local/share/glib-2.0/schemas";
+    XDG_DATA_DIR = "${pkgs.xdg-user-dirs}/share";
+  };
   nixpkgs.config.allowUnfree = true;
   # nixpkgs.config.permittedInsecurePackages = [
   #   "electron-27.3.11"

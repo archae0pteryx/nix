@@ -1,19 +1,17 @@
 {
   enable = true;
   brews = [
-    # "cairo"
-    # "giflib"
-    # "icu4c"
-    # "jpeg"
-    # "libmagic"
-    # "libpng"
-    # "librsvg"
+    "adwaita-icon-theme"
+    "gtk4"
+    "gtk-vnc"
+    "libheif"
+    "libraw"
+    "librsvg"
     "luarocks"
-    # "pango"
-    # "pkg-config"
+    "rustup"
   ];
   casks = [
-    "alfred"
+    # "alfred"
     "amethyst"
     "anythingllm"
     "aptakube"
@@ -23,8 +21,9 @@
     "copyq"
     "figma"
     "firefox"
-    "hammerspoon"
+    # "hammerspoon"
     "headlamp"
+    "mediaelch"
     "megasync"
     "mullvadvpn"
     "openlens"
@@ -33,9 +32,7 @@
     "unetbootin"
     "visual-studio-code"
   ];
-  global = {
-    autoUpdate = true;
-  };
+  global = { autoUpdate = true; };
   onActivation = {
     autoUpdate = true;
     upgrade = true;
