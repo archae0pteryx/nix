@@ -3,7 +3,7 @@
   brews = [
     "adwaita-icon-theme"
     "gtk4"
-    "gtk-vnc"
+    "handbrake"
     "libheif"
     "libraw"
     "librsvg"
@@ -32,6 +32,7 @@
     # "tinymediamanager"
     "transmission"
     "unetbootin"
+    "vlc"
     "visual-studio-code"
   ];
   global = { autoUpdate = true; };

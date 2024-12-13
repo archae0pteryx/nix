@@ -10,15 +10,16 @@ in {
     pkgs.argo
     pkgs.argocd
     pkgs.audacity
+    pkgs.autoconf
     pkgs.awscli
     pkgs.chromedriver
     pkgs.cmake
     pkgs.colima
     pkgs.devbox
     pkgs.discord
-    pkgs.docker
     pkgs.dive
     pkgs.dnsutils
+    pkgs.docker
     pkgs.ffmpeg
     pkgs.fzf
     pkgs.geckodriver
@@ -33,6 +34,7 @@ in {
     pkgs.kubernetes-helm
     pkgs.logseq
     pkgs.meld
+    pkgs.neovim
     pkgs.nixfmt-classic
     pkgs.nmap
     pkgs.nushell
@@ -42,6 +44,7 @@ in {
     pkgs.pipx
     pkgs.pkg-config
     pkgs.python311
+    pkgs.qbittorrent
     pkgs.slack
     pkgs.speedtest-cli
     pkgs.spotify
@@ -49,8 +52,6 @@ in {
     pkgs.teller
     pkgs.terraform
     pkgs.terragrunt
-    pkgs.autoconf
-    pkgs.qbittorrent
     pkgs.utm
     pkgs.zoom-us
   ];
