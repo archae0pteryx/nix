@@ -12,7 +12,8 @@ let
   combinedHomeManager = lib.recursiveUpdate homeManager extraHomeManager;
 in {
   # remove before upgrading to sequoia
-  ids.uids.nixbld = 300;
+  # ids.uids.nixbld = 300;
+  ids.uids.nixbld = 350;
 
   nix.package = pkgs.nix;
   nix.extraOptions = ''
@@ -54,7 +55,7 @@ in {
     };
   };
 
-  homebrew = import ../common/homebrew.nix;
+  homebrew = combinedHomebrew;
   system = import ./system-prefs.nix { inherit hostname; };
   home-manager = {
     useGlobalPkgs = true;

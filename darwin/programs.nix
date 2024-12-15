@@ -19,4 +19,4 @@
     forwardAgent = true;
   };
   programs.zsh = import ./zsh.nix { inherit hostname; };
-}
+ }
