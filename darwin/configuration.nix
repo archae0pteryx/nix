@@ -55,7 +55,7 @@ in {
     };
   };
 
-  homebrew = combinedHomebrew;
+  homebrew = import ../common/homebrew.nix { inherit hostname; };
   system = import ./system-prefs.nix { inherit hostname; };
   home-manager = {
     useGlobalPkgs = true;

@@ -1,5 +1,6 @@
-{ ... }: let
-casks = [
+{ hostname, ... }:
+let
+  casks = [
     "amethyst"
     "anythingllm"
     "aptakube"
@@ -22,8 +23,8 @@ casks = [
     "vlc"
     "visual-studio-code"
   ];
-extraCasks = builtins.toString ../darwin + "/${hostname}/extra-casks.nix";
-mergedCasks = casks ++ import extraCasks;
+  extraCasks = builtins.toString ../darwin + "/${hostname}/extra-casks.nix";
+  mergedCasks = casks ++ import extraCasks;
 in {
   enable = true;
   brews = [
