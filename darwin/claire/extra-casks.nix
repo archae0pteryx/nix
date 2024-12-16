@@ -1,1 +1,1 @@
-[ "hammerspoon" "alfred" ]
+[ "hammerspoon" "alfred" "brave-browser" ]
