@@ -1,4 +1,5 @@
 { ... }: {
+  ripgrep.enable = true;
   starship.enable = true;
   starship.enableNushellIntegration = true;
   starship.enableFishIntegration = true;

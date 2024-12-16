@@ -30,8 +30,8 @@ in {
   brews = [
     "adwaita-icon-theme"
     "gtk4"
-    "handbrake"
     "libheif"
+    "handbrake" # cli version
     "libraw"
     "librsvg"
     "luarocks"

@@ -1,6 +1,6 @@
 { userHome, hostname, pkgs, ... }: {
   programs.home-manager.enable = true;
-
+  programs.ripgrep.enable = true;
   programs.starship = {
     enable = true;
     enableNushellIntegration = true;
