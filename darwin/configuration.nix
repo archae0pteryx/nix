@@ -13,7 +13,7 @@ let
 in {
   # remove before upgrading to sequoia
   # ids.uids.nixbld = 300;
-  ids.uids.nixbld = 350;
+  ids.uids = import ./${hostname}/nixbld.nix;
 
   nix.package = pkgs.nix;
   nix.extraOptions = ''
