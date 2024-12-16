@@ -4,6 +4,8 @@
     NSGlobalDomain = {
       AppleInterfaceStyle = "Dark";
       AppleShowAllExtensions = true;
+      AppleSpacesSwitchOnActivate = true;
+      AppleWindowTabbingMode = "always";
       AppleShowAllFiles = true;
       NSAutomaticWindowAnimationsEnabled = false;
       NSDocumentSaveNewDocumentsToCloud = false;
@@ -12,6 +14,9 @@
       "com.apple.mouse.tapBehavior" = 1;
       "com.apple.sound.beep.feedback" = 1;
       "com.apple.springing.enabled" = false;
+    };
+    spaces = {
+      spans-displays = true;
     };
     dock = {
       orientation = "left";
@@ -59,14 +64,9 @@
       type = "png";
     };
     smb = { NetBIOSName = "${hostname}"; };
-    spaces = { spans-displays = true; };
     trackpad = {
       Clicking = true;
       TrackpadRightClick = true;
-    };
-    universalaccess = {
-      reduceMotion = true;
-      reduceTransparency = true;
     };
   };
   startup = { chime = false; };

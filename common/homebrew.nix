@@ -4,6 +4,7 @@ let
     "amethyst"
     "anythingllm"
     "aptakube"
+    "appcleaner"
     "backblaze"
     "balenaetcher"
     "beekeeper-studio"
@@ -19,6 +20,7 @@ let
     "transmission"
     "unetbootin"
     "vlc"
+    "visual-studio-code"
   ];
   extraCasks = builtins.toString ../darwin + "/${hostname}/extra-casks.nix";
   mergedCasks = casks ++ import extraCasks;
