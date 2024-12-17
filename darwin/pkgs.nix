@@ -6,17 +6,15 @@ in {
   home.packages = [
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
     google-cloud-sdk
-    pkgs.alacritty
     pkgs.argo
     pkgs.argocd
-    pkgs.audacity
+
     pkgs.autoconf
     pkgs.awscli
     pkgs.chromedriver
     pkgs.cmake
     pkgs.colima
     pkgs.devbox
-    pkgs.discord
     pkgs.dive
     pkgs.dnsutils
     pkgs.docker
@@ -28,17 +26,15 @@ in {
     pkgs.k9s
     pkgs.keepassxc
     pkgs.kind
-    pkgs.kitty
     pkgs.kubectl
     pkgs.kubectx
     pkgs.kubernetes-helm
-    pkgs.logseq
     pkgs.meld
     pkgs.neovim
     pkgs.nixfmt-classic
     pkgs.nmap
     pkgs.nushell
-    pkgs.obsidian
+    # pkgs.obsidian
     pkgs.openssl
     pkgs.opentofu
     pkgs.pipx

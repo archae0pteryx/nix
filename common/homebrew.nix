@@ -2,6 +2,11 @@
 let
   casks = [
     "amethyst"
+    "audacity"
+    "alacritty"
+    "discord"
+    "kitty"
+    "logseq"
     "anythingllm"
     "aptakube"
     "appcleaner"
