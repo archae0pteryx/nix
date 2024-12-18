@@ -31,6 +31,7 @@ in {
     LD_LIBRARY_PATH = "${pkgs.pkg-config}/lib:/opt/homebrew/lib:$LD_LIBRARY_PATH";
     NVM_DIR = "${userHome}/.nvm";
     GSETTINGS_SCHEMA_DIR = "/usr/local/share/glib-2.0/schemas";
+    KUBECTL_EXTERNAL_DIFF = "meld";
     XDG_DATA_DIR = "${pkgs.xdg-user-dirs}/share";
   };
   nixpkgs.config.allowUnfree = true;

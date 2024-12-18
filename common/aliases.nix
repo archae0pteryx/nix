@@ -37,4 +37,5 @@
   fabricconfig = "code $HOME/.config/fabric";
   fabshell = "fabric -p shell";
   fabp = "fabric -p";
+  fab = "fabric -p ai";
 }
