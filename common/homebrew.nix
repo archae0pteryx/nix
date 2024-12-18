@@ -40,6 +40,7 @@ in {
     "librsvg"
     "luarocks"
     "rustup"
+    "xsel"
   ];
   casks = mergedCasks;
   global = { autoUpdate = true; };
