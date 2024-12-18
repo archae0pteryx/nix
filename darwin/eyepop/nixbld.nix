@@ -1,3 +1,3 @@
 {
-    nixbld = 300;
+    nixbld = 350;
 }
