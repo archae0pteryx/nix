@@ -19,13 +19,15 @@
       "com.apple.sound.beep.feedback" = 0;
       "com.apple.springing.enabled" = false;
     };
-    spaces = { spans-displays = false; };
+    spaces = {
+      spans-displays = false;
+    };
     dock = {
       orientation = "left";
       show-recents = false;
       autohide = true;
-      autohide-delay = 0.1;
-      expose-animation-duration = 0.1;
+      autohide-delay = 0.0;
+      expose-animation-duration = 0.0;
       expose-group-by-app = false;
       # launchanim = false;
       # mru-spaces = false;
@@ -53,7 +55,7 @@
       ShowStatusBar = true;
       _FXShowPosixPathInTitle = true;
       _FXSortFoldersFirst = false;
-      _FXSortFoldersFirstOnDesktop = true;
+      # _FXSortFoldersFirstOnDesktop = true;
     };
     loginwindow = {
       GuestEnabled = false;

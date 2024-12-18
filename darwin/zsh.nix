@@ -5,7 +5,6 @@
   autocd = true;
   antidote.enable = true;
   antidote.plugins = [ "agkozak/zsh-z" ];
-  shellAliases = import ./${hostname}/extra-aliases.nix;
   syntaxHighlighting.enable = true;
   initExtra = ''
     . "$HOME/.cargo/env"
