@@ -22,7 +22,7 @@ in {
   environment.systemPackages = with pkgs; [ vim tmux rustup ];
   environment.shells = [ pkgs.bash pkgs.zsh ];
   environment.variables = {
-    EDITOR = "vim";
+    EDITOR = "nvim";
     CARGO_HOME = "${userHome}/.cargo";
     GOPATH = "${userHome}/Code/go";
     GOBIN = "${userHome}/Code/go/bin";

@@ -8,7 +8,6 @@ in {
     google-cloud-sdk
     pkgs.argo
     pkgs.argocd
-
     pkgs.autoconf
     pkgs.awscli
     pkgs.chromedriver
