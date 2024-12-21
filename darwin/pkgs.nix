@@ -32,22 +32,23 @@ in {
     pkgs.neovim
     pkgs.nixfmt-classic
     pkgs.nmap
-    pkgs.nushell
+    # pkgs.nushell
     # pkgs.obsidian
     pkgs.openssl
     pkgs.opentofu
-    pkgs.pipx
+    # pkgs.pipx
     pkgs.pkg-config
-    pkgs.python311
+    pkgs.poetry
+    # pkgs.python311
     pkgs.qbittorrent
-    pkgs.slack
+    # pkgs.slack
     pkgs.speedtest-cli
     pkgs.spotify
     pkgs.stern
     pkgs.teller
     pkgs.terraform
     pkgs.terragrunt
-    pkgs.utm
+    # pkgs.utm
     pkgs.zoom-us
   ];
 }

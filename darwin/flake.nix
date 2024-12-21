@@ -7,10 +7,10 @@
     darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    mac-app-util.url = "github:hraban/mac-app-util";
+    # mac-app-util.url = "github:hraban/mac-app-util";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, darwin, mac-app-util, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, darwin, ... }:
     let
       systemConfigs = {
         eyepop = {
@@ -38,7 +38,7 @@
             ./configuration.nix
             # "${config.hostname}/configuration.nix"
 
-            mac-app-util.darwinModules.default
+            # mac-app-util.darwinModules.default
             home-manager.darwinModules.home-manager
           ];
         }) systemConfigs;
