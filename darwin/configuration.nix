@@ -1,4 +1,4 @@
-{ pkgs, lib, systemArch, systemUser, hostname, userHome, ... }:
+{ pkgs, lib, systemArch, systemUser, hostname, userHome, mac-app-util, ... }:
 let
   homeManager = import ./home-manager.nix {
     inherit pkgs lib systemUser systemArch hostname userHome;
@@ -59,6 +59,7 @@ in {
   homebrew = import ../common/homebrew.nix { inherit hostname; };
   system = import ./system-prefs.nix { inherit hostname; };
   home-manager = {
+
     useGlobalPkgs = true;
     useUserPackages = true;
     users.${systemUser} = combinedHomeManager;

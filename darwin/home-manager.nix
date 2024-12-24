@@ -16,5 +16,4 @@
   xdg.configFile."kitty/kitty.conf".text = builtins.readFile ../common/kitty.conf;
   # xdg.configFile."amethyst/amethyst.yml".text =
   #   builtins.readFile ../common/amethyst.yml;
-  
 }
