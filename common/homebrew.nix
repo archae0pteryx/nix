@@ -2,27 +2,28 @@
 let
   casks = [
     "amethyst"
-    "audacity"
-    "cursor"
-    "discord"
-    "logseq"
     "appcleaner"
+    "audacity"
     "backblaze"
     "balenaetcher"
     "beekeeper-studio"
     "copyq"
+    "cursor"
+    "discord"
     "dupeguru"
     "figma"
     "firefox"
     "headlamp"
     "kitty"
+    "logseq"
     "megasync"
     "mullvadvpn"
+    "obsidian"
     "openlens"
     "postman"
     "unetbootin"
-    "vlc"
     "visual-studio-code"
+    "vlc"
   ];
   extraCasks = builtins.toString ../darwin + "/${hostname}/extra-casks.nix";
   mergedCasks = casks ++ import extraCasks;
