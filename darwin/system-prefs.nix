@@ -1,6 +1,10 @@
 { hostname, ... }: {
   stateVersion = 4;
   defaults = {
+    universalaccess = {
+      reduceMotion = true;
+      reduceTransparency = true;
+    };
     NSGlobalDomain = {
       AppleInterfaceStyle = "Dark";
       AppleShowAllExtensions = true;
@@ -15,9 +19,7 @@
       "com.apple.sound.beep.feedback" = 0;
       "com.apple.springing.enabled" = false;
     };
-    spaces = {
-      spans-displays = false;
-    };
+    spaces = { spans-displays = false; };
     dock = {
       orientation = "left";
       show-recents = false;
@@ -41,11 +43,12 @@
       FXPreferredViewStyle = "Nlsv";
       FXRemoveOldTrashItems = true;
       NewWindowTarget = "Home";
+      QuitMenuItem = true;
       # NewWindowTargetPath = "file:///Users/foo/long%20cat%20pics";
       ShowExternalHardDrivesOnDesktop = true;
       ShowHardDrivesOnDesktop = true;
       ShowMountedServersOnDesktop = true;
-      ShowPathbar = true;
+      ShowPathbar = false;
       ShowRemovableMediaOnDesktop = true;
       ShowStatusBar = true;
       _FXShowPosixPathInTitle = true;
@@ -57,14 +60,17 @@
       LoginwindowText = "8===)~";
       SHOWFULLNAME = false;
     };
-    menuExtraClock = { ShowDayOfWeek = true; };
+    menuExtraClock = { ShowDayOfWeek = true; ShowAMPM = false; };
     screencapture = {
       show-thumbnail = false;
       location = "~/Desktop";
       type = "png";
     };
-    smb = { NetBIOSName = "${hostname}"; };
-    ServerDescription = "${hostname}";
+    smb = {
+      NetBIOSName = "${hostname}";
+      ServerDescription = "${hostname}";
+    };
+
     trackpad = {
       Clicking = true;
       TrackpadRightClick = true;
