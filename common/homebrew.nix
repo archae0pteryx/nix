@@ -39,6 +39,7 @@ in {
     "libraw"
     "librsvg"
     "luarocks"
+    "podman"
     "rustup"
     "xsel"
     "irssi"
