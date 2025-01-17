@@ -37,6 +37,7 @@ in {
     pkgs.pkg-config
     pkgs.pipx
     pkgs.qbittorrent
+    pkgs.realvnc-vnc-viewer
     pkgs.slack
     pkgs.speedtest-cli
     pkgs.spotify

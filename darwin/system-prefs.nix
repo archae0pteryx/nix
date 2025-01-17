@@ -12,11 +12,11 @@
       NSUseAnimatedFocusRing = false;
       "com.apple.keyboard.fnState" = true;
       "com.apple.mouse.tapBehavior" = 1;
-      "com.apple.sound.beep.feedback" = 1;
+      "com.apple.sound.beep.feedback" = 0;
       "com.apple.springing.enabled" = false;
     };
     spaces = {
-      spans-displays = true;
+      spans-displays = false;
     };
     dock = {
       orientation = "left";
@@ -25,8 +25,8 @@
       autohide-delay = 0.1;
       expose-animation-duration = 0.1;
       expose-group-by-app = false;
-      launchanim = false;
-      mru-spaces = false;
+      # launchanim = false;
+      # mru-spaces = false;
       # persistent-apps = {};
       # persistent-others = {};
       tilesize = 40;
@@ -64,6 +64,7 @@
       type = "png";
     };
     smb = { NetBIOSName = "${hostname}"; };
+    ServerDescription = "${hostname}";
     trackpad = {
       Clicking = true;
       TrackpadRightClick = true;

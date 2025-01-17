@@ -5,7 +5,8 @@
   diff-so-fancy.enable = true;
   extraConfig = {
     init.defaultBranch = "main";
-    pull.rebase = "true";
+    pull.rebase = "false";
+    pull.ff = "only";
     core.editor = "code --wait";
     core.excludesfile = "${userHome}/.gitignore";
     color.ui = "auto";

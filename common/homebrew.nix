@@ -10,6 +10,7 @@ let
     "copyq"
     "cursor"
     "discord"
+    "drawio"
     "dupeguru"
     "figma"
     "firefox"
@@ -21,6 +22,7 @@ let
     "obsidian"
     "openlens"
     "postman"
+    "trezor-suite"
     "unetbootin"
     "visual-studio-code"
     "vlc"
@@ -39,6 +41,8 @@ in {
     "luarocks"
     "rustup"
     "xsel"
+    "irssi"
+    "talosctl"
   ];
   casks = mergedCasks;
   global = { autoUpdate = true; };
