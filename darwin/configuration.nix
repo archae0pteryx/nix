@@ -26,7 +26,7 @@ in {
     CARGO_HOME = "${userHome}/.cargo";
     GOPATH = "${userHome}/Code/go";
     GOBIN = "${userHome}/Code/go/bin";
-    PATH = "${userHome}/.local/bin:${userHome}/Code/go/bin:${userHome}/.cargo/bin:/opt/homebrew/bin:$PATH:${userHome}/Scripts/bin";
+    PATH = "${userHome}/.local/bin:${userHome}/Code/go/bin:${userHome}/.cargo/bin:/opt/homebrew/bin:${userHome}/Scripts/bin:$PATH";
     PKG_CONFIG_PATH = "${pkgs.pkg-config}/lib/pkgconfig:/opt/homebrew/lib/pkgconfig:$PKG_CONFIG_PATH";
     LD_LIBRARY_PATH = "${pkgs.pkg-config}/lib:/opt/homebrew/lib:$LD_LIBRARY_PATH";
     NVM_DIR = "${userHome}/.nvm";

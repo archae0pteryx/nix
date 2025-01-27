@@ -32,6 +32,7 @@ in {
     pkgs.neovim
     pkgs.nixfmt-classic
     pkgs.nmap
+    pkgs.ollama
     pkgs.openssl
     pkgs.opentofu
     pkgs.pkg-config

@@ -15,21 +15,13 @@
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
     [ -s "$NVM_DIR/zsh_completion" ] && \. "$NVM_DIR/zsh_completion"
 
-    manage_tmux_session() {
-        if ! command -v tmux &> /dev/null; then
-            echo "tmux is not installed. Please install tmux to use this feature."
-            return
-        fi
-
-        if [ -z "$TMUX" ]; then
-            SESSION="foobar"
-            tmux new-session -s "$SESSION"
-        fi
-    }
+    source <(podman completion zsh)
 
     case $- in
         *i*)
-            manage_tmux_session
+            if [ -z "$TMUX" ]; then
+                $HOME/Scripts/bin/sessionizer
+            fi
             ;;
         *)
             ;;
