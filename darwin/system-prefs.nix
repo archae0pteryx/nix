@@ -1,10 +1,10 @@
 { hostname, ... }: {
   stateVersion = 4;
   defaults = {
-    universalaccess = {
-      reduceMotion = true;
-      reduceTransparency = true;
-    };
+    # universalaccess = {
+    #   reduceMotion = true;
+    #   reduceTransparency = true;
+    # };
     NSGlobalDomain = {
       AppleInterfaceStyle = "Dark";
       AppleShowAllExtensions = true;
