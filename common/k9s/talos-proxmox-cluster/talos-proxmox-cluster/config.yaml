@@ -1,0 +1,26 @@
+k9s:
+  # The name of the context parent cluster
+  cluster: talos-proxmox-cluster
+  readOnly: false          # [NEW!] you can now single out a given context and make it readonly. Woof!
+  skin: in_the_navy        # [NEW!] you can also skin individual contexts. Woof Woof!
+  # Tracks namespace configuration
+  namespace:
+    # Active namespace
+    active: all
+    # Disable k9s favorites ns updates.
+    lockFavorites: false
+    # Favorite namespaces.
+    favorites:
+    - all
+    - ingress-nginx
+    - kube-system
+    - metallb-system
+  # Active view
+  view:
+    active: dp
+  # Feature gates toggle k9s features
+  featureGates:
+    # Enable/Disable nodeShell
+    nodeShell: true
+  # Default port forward host
+  portForwardAddress: localhost

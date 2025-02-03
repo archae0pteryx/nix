@@ -33,6 +33,7 @@ in {
     GSETTINGS_SCHEMA_DIR = "/usr/local/share/glib-2.0/schemas";
     KUBECTL_EXTERNAL_DIFF = "meld";
     XDG_DATA_DIR = "${pkgs.xdg-user-dirs}/share";
+    K9S_CONFIG_DIR = "${userHome}/.config/k9s";
   };
   nixpkgs.config.allowUnfree = true;
   # nixpkgs.config.permittedInsecurePackages = [
