@@ -1,9 +1,14 @@
-{ userHome, hostname, pkgs, ... }: {
-  imports =
-    [ ./pkgs.nix (import ./programs.nix { inherit hostname pkgs userHome; }) ];
-
+{ userHome, hostname, pkgs, ... }:
+let
+commonAliases = import ../common/aliases.nix;
+extraAliases = import ./${hostname}/extra-aliases.nix;
+mergedAliases = commonAliases // extraAliases;
+in
+{
+  imports = [ ./pkgs.nix (import ./programs.nix { inherit hostname pkgs userHome; }) ];
+  
   home.sessionVariables = { EDITOR = "vim"; };
-  home.shellAliases = import ../common/aliases.nix;
+  home.shellAliases = mergedAliases;
 
   home.stateVersion = "24.11";
 
