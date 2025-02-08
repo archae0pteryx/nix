@@ -33,17 +33,34 @@ in {
   brews = [
     "adwaita-icon-theme"
     "gtk4"
-    "libheif"
     "handbrake" # cli version
-    "libraw"
-    "librsvg"
-    "luarocks"
+    "irssi"
+    # "libheif" # gst
+    # "libraw" # gst
+    # "librsvg" # gst
+    # "autoconf" 
+    # "automake" 
+    # "bazel"
+    # "bison" 
+    # "flex" 
+    "gcc" 
+    # "json-c"
+    # "check"
+    # "libtool"
+    # "libyaml" # gst
+    # "libsoup" # gst
+    # "luarocks"
+    # "meson" # gst
     "mkcert"
+    # "ninja"
+    # "lmdb" # gst
+    # "opencv"
+    # "pcre" # gst
     "podman"
     "rustup"
-    "xsel"
-    "irssi"
+    # "talloc"  # gst
     "talosctl"
+    "xsel"
   ];
   casks = mergedCasks;
   global = { autoUpdate = true; };

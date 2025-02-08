@@ -11,7 +11,7 @@ in {
     pkgs.autoconf
     pkgs.awscli
     pkgs.chromedriver
-    pkgs.cmake
+    # pkgs.cmake
     pkgs.colima
     pkgs.devbox
     pkgs.dive
@@ -35,7 +35,7 @@ in {
     pkgs.ollama
     pkgs.openssl
     pkgs.opentofu
-    pkgs.pkg-config
+    # pkgs.pkg-config
     pkgs.pipx
     pkgs.qbittorrent
     pkgs.realvnc-vnc-viewer
@@ -43,7 +43,7 @@ in {
     pkgs.speedtest-cli
     pkgs.spotify
     pkgs.stern
-    pkgs.teller
+    # pkgs.teller
     pkgs.terraform
     pkgs.terragrunt
     pkgs.zoom-us
