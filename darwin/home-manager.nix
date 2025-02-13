@@ -20,8 +20,8 @@ in
       recursive = true;
     };
   };
-  xdg.configFile."starship.toml".text =
-    builtins.readFile ../common/starship.toml;
+  # xdg.configFile."starship.toml".text =
+  #   builtins.readFile ../common/starship.toml;
   xdg.configFile."alacritty/alacritty.toml".text =
     builtins.readFile ../common/alacritty.toml;
   xdg.configFile."kitty/kitty.conf".text =
