@@ -3,10 +3,12 @@ let
   casks = [
     "amethyst"
     "appcleaner"
+    "arc"
     "audacity"
     "backblaze"
     "balenaetcher"
     "beekeeper-studio"
+    "bitwarden"
     "copyq"
     "cursor"
     "discord"
@@ -51,6 +53,7 @@ in {
     # "libsoup" # gst
     # "luarocks"
     # "meson" # gst
+    # "tailscale"
     "mkcert"
     # "ninja"
     # "lmdb" # gst
