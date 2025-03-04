@@ -66,10 +66,10 @@ in {
     "xsel"
   ];
   casks = mergedCasks;
-  global = { autoUpdate = true; };
+  # global = { autoUpdate = true; };
   onActivation = {
-    autoUpdate = true;
-    upgrade = true;
-    cleanup = "uninstall";
+    # autoUpdate = true;
+    # upgrade = true;
+    cleanup = "zap";
   };
 }
