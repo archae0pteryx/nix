@@ -9,22 +9,23 @@ let
     "balenaetcher"
     "beekeeper-studio"
     "bitwarden"
+    "chrome-browser"
     "copyq"
     "cursor"
     "discord"
-    "drawio"
-    "dupeguru"
-    "figma"
+    # "drawio"
+    # "dupeguru"
+    # "figma"
     "firefox"
     "kitty"
     "logseq"
     "megasync"
-    "mullvadvpn"
+    # "mullvadvpn"
     "obsidian"
     "openlens"
     "postman"
     "trezor-suite"
-    "unetbootin"
+    # "unetbootin"
     "visual-studio-code"
     "vlc"
   ];
@@ -33,8 +34,8 @@ let
 in {
   enable = true;
   brews = [
-    "adwaita-icon-theme"
-    "gtk4"
+    # # "adwaita-icon-theme"
+    # "gtk4"
     "handbrake" # cli version
     "irssi"
     # "libheif" # gst

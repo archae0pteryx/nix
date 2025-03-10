@@ -10,11 +10,12 @@
     . "$HOME/.cargo/env"
     
     source <(fzf --zsh)
-    
+    eval "$(starship init zsh)"
+
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
     [ -s "$NVM_DIR/zsh_completion" ] && \. "$NVM_DIR/zsh_completion"
 
-    source <(podman completion zsh)
+    # source <(podman completion zsh)
 
     for pattern_file in $HOME/.config/fabric/patterns/*; do
         # Get the base name of the file (i.e., remove the directory path)
