@@ -9,26 +9,26 @@ let
     "balenaetcher"
     "beekeeper-studio"
     "bitwarden"
-    # "chrome-browser"
     "copyq"
     "cursor"
     "discord"
-    # "drawio"
-    # "dupeguru"
-    # "figma"
     "firefox"
     "grandperspective"
     "kitty"
+    "keepassxc"
     "logseq"
     "megasync"
-    # "mullvadvpn"
+    # "meld"
     "obsidian"
     "openlens"
     "postman"
+    "slack"
+    "spotify"
     "trezor-suite"
-    # "unetbootin"
+    "qbittorrent"
     "visual-studio-code"
     "vlc"
+    "zoom"
   ];
   extraCasks = builtins.toString ../darwin + "/${hostname}/extra-casks.nix";
   mergedCasks = casks ++ import extraCasks;
@@ -57,7 +57,7 @@ in {
     # "meson" # gst
     # "tailscale"
     "mkcert"
-    # "ninja"
+     # "ninja"
     # "lmdb" # gst
     # "opencv"
     # "pcre" # gst

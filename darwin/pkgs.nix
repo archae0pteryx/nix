@@ -6,13 +6,13 @@ in {
 
   home.packages = [
     # (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
+    pkgs.nerd-fonts.fira-code
     google-cloud-sdk
     pkgs.argo
     pkgs.argocd
     pkgs.autoconf
     pkgs.awscli
     pkgs.chromedriver
-    # pkgs.cmake
     pkgs.colima
     pkgs.devbox
     pkgs.dive
@@ -24,7 +24,6 @@ in {
     pkgs.go
     pkgs.jq
     pkgs.k9s
-    pkgs.keepassxc
     pkgs.kind
     pkgs.kubectl
     pkgs.kubectx
@@ -36,17 +35,11 @@ in {
     pkgs.ollama
     pkgs.openssl
     pkgs.opentofu
-    # pkgs.pkg-config
     pkgs.pipx
-    pkgs.qbittorrent
-    pkgs.realvnc-vnc-viewer
-    pkgs.slack
     pkgs.speedtest-cli
-    pkgs.spotify
     pkgs.stern
-    # pkgs.teller
+    pkgs.teller
     pkgs.terraform
     pkgs.terragrunt
-    pkgs.zoom-us
   ];
 }
