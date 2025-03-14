@@ -10,7 +10,7 @@
     # mac-app-util.url = "github:hraban/mac-app-util";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, darwin, mac-app-util, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, darwin, ... }:
     let
       systemConfigs = {
         eyepop = {

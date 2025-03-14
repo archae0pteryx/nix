@@ -28,7 +28,7 @@
       autohide = true;
       autohide-delay = 0.0;
       expose-animation-duration = 0.0;
-      expose-group-by-app = false;
+      # expose-group-by-app = false; # GONE...
       # launchanim = false;
       # mru-spaces = false;
       # persistent-apps = {};

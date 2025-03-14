@@ -1,4 +1,4 @@
-{ pkgs, lib, systemArch, systemUser, hostname, userHome, mac-app-util, ... }:
+{ pkgs, lib, systemArch, systemUser, hostname, userHome, ... }:
 let
   homeManager = import ./home-manager.nix {
     inherit pkgs lib systemUser systemArch hostname userHome;
@@ -11,9 +11,9 @@ let
 
   combinedHomeManager = lib.recursiveUpdate homeManager extraHomeManager;
 in {
-  # remove before upgrading to sequoia
-  # ids.uids.nixbld = 300;
+ 
   ids.uids = import ./${hostname}/nixbld.nix;
+  ids.gids.nixbld = 350;
 
   nix.package = pkgs.nix;
   nix.extraOptions = ''
@@ -39,19 +39,9 @@ in {
     XDG_DATA_DIR = "${pkgs.xdg-user-dirs}/share";
     K9S_CONFIG_DIR = "${userHome}/.config/k9s";
   };
-  nixpkgs.config = {
-    substituters =
-      [ "https://cache.nixos.org" "https://nix-community.cachix.org" ];
-    trusted-public-keys = [
-      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-    ];
-  };
+
   nixpkgs.config.allowUnfree = true;
-  # nixpkgs.config.permittedInsecurePackages = [
-  #   "electron-27.3.11"
-  # ];
-  services.nix-daemon.enable = true;
+
 
   programs.zsh.enable = true;
   programs.bash.enable = true;

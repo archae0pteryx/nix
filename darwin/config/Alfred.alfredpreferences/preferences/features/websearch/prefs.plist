@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>customSites</key>
+	<dict>
+		<key>925E5D2B-8F96-4B42-B622-CD97B7890423</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>giphy</string>
+			<key>spaces</key>
+			<string>-</string>
+			<key>text</key>
+			<string>Giphy</string>
+			<key>url</key>
+			<string>https://giphy.com/search/{query}</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
