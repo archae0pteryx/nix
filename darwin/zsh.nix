@@ -8,7 +8,6 @@
   syntaxHighlighting.enable = true;
   initExtra = ''
     . "$HOME/.cargo/env"
-    
     source <(fzf --zsh)
     eval "$(starship init zsh)"
 

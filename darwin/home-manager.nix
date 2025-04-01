@@ -20,6 +20,7 @@ in
       recursive = true;
     };
   };
+  home.sessionPath = [ "${userHome}/.local/bin" ];
   # xdg.configFile."starship.toml".text =
   #   builtins.readFile ../common/starship.toml;
   xdg.configFile."alacritty/alacritty.toml".text =

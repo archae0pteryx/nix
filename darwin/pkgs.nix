@@ -23,11 +23,15 @@ in {
     pkgs.geckodriver
     pkgs.go
     pkgs.jq
+    pkgs.kcl
     pkgs.k9s
     pkgs.kind
     pkgs.kubectl
     pkgs.kubectx
     pkgs.kubernetes-helm
+    pkgs.pipx
+    pkgs.python311
+    pkgs.pkg-config
     pkgs.meld
     pkgs.neovim
     pkgs.nixfmt-classic
@@ -35,7 +39,6 @@ in {
     pkgs.ollama
     pkgs.openssl
     pkgs.opentofu
-    pkgs.pipx
     pkgs.speedtest-cli
     pkgs.stern
     pkgs.teller

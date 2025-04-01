@@ -1,11 +1,11 @@
 { hostname, ... }:
 let
   casks = [
+    "alacritty"
     "amethyst"
     "appcleaner"
     "arc"
     "audacity"
-    "backblaze"
     "balenaetcher"
     "beekeeper-studio"
     "bitwarden"
@@ -18,7 +18,6 @@ let
     "keepassxc"
     "logseq"
     "megasync"
-    # "meld"
     "obsidian"
     "openlens"
     "postman"
@@ -26,6 +25,7 @@ let
     "spotify"
     "trezor-suite"
     "qbittorrent"
+    "vivaldi"
     "visual-studio-code"
     "vlc"
     "zoom"
@@ -38,7 +38,8 @@ in {
     # # "adwaita-icon-theme"
     # "gtk4"
     "handbrake" # cli version
-    "irssi"
+    # "irssi"
+    "libffi"
     # "libheif" # gst
     # "libraw" # gst
     # "librsvg" # gst
@@ -46,8 +47,10 @@ in {
     # "automake" 
     # "bazel"
     # "bison" 
-    # "flex" 
+    # "flex"
+    "docker-slim"
     "gcc" 
+    "lynx"
     # "json-c"
     # "check"
     # "libtool"
@@ -68,10 +71,10 @@ in {
     "xsel"
   ];
   casks = mergedCasks;
-  # global = { autoUpdate = true; };
+  global = { autoUpdate = true; };
   onActivation = {
-    # autoUpdate = true;
-    # upgrade = true;
+    autoUpdate = true;
+    upgrade = true;
     cleanup = "zap";
   };
 }
