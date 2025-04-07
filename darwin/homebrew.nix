@@ -14,6 +14,7 @@ let
     "discord"
     "firefox"
     "grandperspective"
+    "github"
     "kitty"
     "keepassxc"
     "logseq"
