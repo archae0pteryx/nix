@@ -7,7 +7,7 @@ in
 {
   imports = [ ./pkgs.nix (import ./programs.nix { inherit hostname pkgs userHome; }) ];
   
-  home.sessionVariables = { EDITOR = "vim"; GOPATH = "${userHome}/Code/go"; GOBIN = "${userHome}/Code/go/bin"; };
+  home.sessionVariables = { EDITOR = "vim"; };
   home.shellAliases = mergedAliases;
 
   home.stateVersion = "24.11";
