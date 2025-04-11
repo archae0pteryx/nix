@@ -13,21 +13,21 @@ let
     "cursor"
     "discord"
     "firefox"
-    "grandperspective"
     "github"
-    "kitty"
+    "grandperspective"
     "keepassxc"
+    "kitty"
     "logseq"
     "megasync"
     "obsidian"
     "openlens"
     "postman"
+    "qbittorrent"
     "slack"
     "spotify"
     "trezor-suite"
-    "qbittorrent"
-    "vivaldi"
     "visual-studio-code"
+    "vivaldi"
     "vlc"
     "zoom"
   ];
@@ -36,38 +36,14 @@ let
 in {
   enable = true;
   brews = [
-    # # "adwaita-icon-theme"
-    # "gtk4"
-    "handbrake" # cli version
-    # "irssi"
-    "libffi"
-    # "libheif" # gst
-    # "libraw" # gst
-    # "librsvg" # gst
-    # "autoconf" 
-    # "automake" 
-    # "bazel"
-    # "bison" 
-    # "flex"
     "docker-slim"
     "gcc" 
+    "handbrake" # cli version
+    "libffi"
     "lynx"
-    # "json-c"
-    # "check"
-    # "libtool"
-    # "libyaml" # gst
-    # "libsoup" # gst
-    # "luarocks"
-    # "meson" # gst
-    # "tailscale"
     "mkcert"
-     # "ninja"
-    # "lmdb" # gst
-    # "opencv"
-    # "pcre" # gst
     "podman"
     "rustup"
-    # "talloc"  # gst
     "talosctl"
     "xsel"
   ];
