@@ -13,7 +13,7 @@ in
   home.stateVersion = "24.11";
 
   home.file = { ".vimrc".source = ../common/vimrc; };
-  home.file = { ".tmux.conf".source = ../common/tmux.conf; };
+  home.file = { ".tmux.conf".source = ../common/tmux.darwin.conf; };
   home.file = {
     "Scripts" = {
       source = ../common/scripts;
