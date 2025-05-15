@@ -1,29 +1,25 @@
 { hostname, ... }:
 let
   casks = [
+    # "aerospace"
     "alacritty"
     "amethyst"
     "appcleaner"
-    # "arc"
     "audacity"
     "balenaetcher"
     "beekeeper-studio"
     "bitwarden"
-    "copyq"
+    "blender"
     "comfyui"
     "cursor"
     "discord"
     "drawio"
     "firefox"
     "github"
-    "godot"
-    # "grandperspective"
     "keepassxc"
     "kitty"
-    # "lm-studio"
     "logseq"
     "megasync"
-    # "msty"
     "obsidian"
     "openlens"
     "postman"
@@ -36,7 +32,6 @@ let
     "vivaldi"
     "vlc"
     "zoom"
-    "aerospace"
   ];
   extraCasks = builtins.toString ../darwin + "/${hostname}/extra-casks.nix";
   mergedCasks = casks ++ import extraCasks;
@@ -47,13 +42,13 @@ in {
     "gcc" 
     "handbrake" # cli version
     "libffi"
+    "luarocks"
     "lynx"
     "mkcert"
     "redis"
     "podman"
     "rustup"
     "talosctl"
-    "xsel"
   ];
   casks = mergedCasks;
   global = { autoUpdate = true; };
