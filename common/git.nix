@@ -5,9 +5,8 @@
   diff-so-fancy.enable = true;
   extraConfig = {
     init.defaultBranch = "main";
-    pull.rebase = "false";
-    pull.ff = "only";
-    core.editor = "code --wait";
+    pull.rebase = "true";
+    core.editor = "vim";
     core.excludesfile = "${userHome}/.gitignore";
     color.ui = "auto";
     commit.gpgsign = true;
