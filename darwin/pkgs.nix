@@ -11,7 +11,7 @@ in {
     pkgs.awscli
     pkgs.bun
     pkgs.chromedriver
-    pkgs.colima
+    # pkgs.colima
     pkgs.devbox
     pkgs.dnsutils
     pkgs.docker
@@ -29,12 +29,12 @@ in {
     pkgs.nerd-fonts.fira-code
     pkgs.nixfmt-classic
     pkgs.nmap
-    pkgs.openjdk23
-    pkgs.openssl
-    pkgs.pipx
-    pkgs.pkg-config
-    pkgs.python311
-    pkgs.speedtest-cli
+    # pkgs.openssl
+    pkgs.opentofu
+    # pkgs.pipx
+    # pkgs.pkg-config
+    # pkgs.python311
+    # pkgs.speedtest-cli
     pkgs.stern
   ];
 }

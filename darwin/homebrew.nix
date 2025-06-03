@@ -4,7 +4,7 @@ let
     "amethyst"
     "appcleaner"
     "balenaetcher"
-    "beekeeper-studio"
+    # "beekeeper-studio"
     "bitwarden"
     "cursor"
     "figma"
