@@ -1,7 +1,6 @@
 { hostname, ... }:
 let
   casks = [
-    # "aerospace"
     "alacritty"
     "amethyst"
     "appcleaner"
@@ -13,12 +12,10 @@ let
     "comfyui"
     "cursor"
     "discord"
-    "drawio"
     "firefox"
     "github"
     "iterm2"
     "keepassxc"
-    # "kitty"
     "logseq"
     "megasync"
     "miniconda"
@@ -30,9 +27,7 @@ let
     "spotify"
     "telegram"
     "trezor-suite"
-    # "ui-tars"
     "visual-studio-code"
-    # "vivaldi"
     "vlc"
     "zoom"
   ];
@@ -44,14 +39,14 @@ in {
     "docker-slim"
     "gcc" 
     "handbrake" # cli version
-    "libffi"
     "luarocks"
-    "lynx"
+    "k9s"
     "mkcert"
     "redis"
     "podman"
     "rustup"
     "talosctl"
+    "yq"
   ];
   casks = mergedCasks;
   global = { autoUpdate = true; };

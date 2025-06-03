@@ -7,14 +7,11 @@ in {
   home.packages = [
     # (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
     google-cloud-sdk
-    pkgs.argo
-    pkgs.argocd
     pkgs.autoconf
     pkgs.awscli
     pkgs.chromedriver
     pkgs.colima
     pkgs.devbox
-    pkgs.dive
     pkgs.dnsutils
     pkgs.docker
     pkgs.ffmpeg
@@ -22,10 +19,8 @@ in {
     pkgs.geckodriver
     pkgs.go
     pkgs.go-task
-    pkgs.jq
-    pkgs.k9s
+    pkgs.graphviz
     pkgs.kcl
-    pkgs.kind
     pkgs.kubectl
     pkgs.kubectx
     pkgs.kubernetes-helm
@@ -35,6 +30,7 @@ in {
     pkgs.nixfmt-classic
     pkgs.nmap
     pkgs.ollama
+    pkgs.openjdk23
     pkgs.openssl
     pkgs.opentofu
     pkgs.pipx
@@ -42,9 +38,7 @@ in {
     pkgs.python311
     pkgs.speedtest-cli
     pkgs.stern
-    pkgs.teller
     pkgs.terraform
     pkgs.terragrunt
-    pkgs.yq
   ];
 }
