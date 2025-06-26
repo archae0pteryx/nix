@@ -35,4 +35,5 @@
   kc = "kubectl config";
   p = "ping 8.8.8.8";
   fabricconfig = "cursor $HOME/.config/fabric";
+  claude = "$HOME/.claude/local/claude";
 }

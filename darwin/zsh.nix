@@ -15,10 +15,10 @@
     export PATH="$HOME/.local/bin:$PATH"
     export GOPATH="$HOME/Code/go"
     export GOBIN="$HOME/Code/go/bin"
-    export NVM_DIR="$HOME/.nvm"
 
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-    [ -s "$NVM_DIR/zsh_completion" ] && \. "$NVM_DIR/zsh_completion"
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+    [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 
     for pattern_file in $HOME/.config/fabric/patterns/*; do
         # Get the base name of the file (i.e., remove the directory path)
