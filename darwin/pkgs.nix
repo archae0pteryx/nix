@@ -24,7 +24,6 @@ in {
     pkgs.kubectl
     pkgs.kubectx
     pkgs.kubernetes-helm
-    pkgs.meld
     pkgs.neovim
     pkgs.nerd-fonts.fira-code
     pkgs.nixfmt-classic

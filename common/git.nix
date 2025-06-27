@@ -2,21 +2,47 @@
   enable = true;
   userName = "archae0pteryx";
   userEmail = "github@pocketcereal.com";
-  diff-so-fancy.enable = true;
+  delta = {
+    enable = true;
+    options = {
+      navigate = true;
+      lineNumbers = true;
+      sideBySide = true;
+      syntaxHighlighting = true;
+    };
+  };
   extraConfig = {
-    init.defaultBranch = "main";
-    pull.rebase = "true";
-    core.editor = "vim";
-    core.excludesfile = "${userHome}/.gitignore";
-    color.ui = "auto";
-    commit.gpgsign = true;
-    gpg.format = "ssh";
+    init = {
+      defaultBranch = "main";
+    };
+    merge = {
+      conflictstyle = "diff3";
+    };
+    pull = {
+      rebase = "true";
+    };
+    core = {
+      editor = "vim";
+    };
+    color = {
+      ui = "auto";
+    };
+    commit = {
+      gpgsign = true;
+    };
+    gpg = {
+      format = "ssh";
+    };
     user.signingkey = "${userHome}/.ssh/signing_ed25519.pub";
-    push.autoSetupRemote = true;
-    rerere.enabled = true;
-    diff.tool = "meld";
+    push = {
+      autoSetupRemote = true;
+    };
+    rerere = {
+      enabled = true;
+    };
   };
   ignores = [
+    "~.*"
     ".DS_Store"
     "node_modules"
     "tmp"
@@ -31,5 +57,10 @@
     "___*"
     ".env"
     "*.secret*"
+    ".claude"
+    "CLAUDE*"
+    ".cursor"
+    ".cursorrules"
+    ".cursorignore"
   ];
 }

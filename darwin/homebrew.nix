@@ -1,8 +1,9 @@
 { hostname, ... }:
 let
   casks = [
+    "aerospace"
     "alacritty"
-    "amethyst"
+    # "amethyst"
     "appcleaner"
     "audacity"
     "balenaetcher"
@@ -20,6 +21,7 @@ let
     "keepassxc"
     "logseq"
     "megasync"
+    "meld"
     "miniconda"
     "obsidian"
     "openlens"
@@ -37,7 +39,9 @@ let
   mergedCasks = casks ++ import extraCasks;
 in {
   enable = true;
+  taps = ["nikitabobko/aerospace"];
   brews = [
+    "difftastic"
     "docker-slim"
     "gcc" 
     # "handbrake" # cli version
