@@ -1,7 +1,8 @@
 { hostname, ... }:
 let
   casks = [
-    "aerospace"
+    # "aerospace"
+    "amethyst"
     "alacritty"
     # "amethyst"
     "appcleaner"

@@ -5,3 +5,4 @@ tmp
 venv
 .idea
 ___*
+env.nix

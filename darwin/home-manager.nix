@@ -3,11 +3,12 @@ let
 commonAliases = import ../common/aliases.nix;
 extraAliases = import ./${hostname}/extra-aliases.nix;
 mergedAliases = commonAliases // extraAliases;
+envVars = import ../common/env.nix;
 in
 {
   imports = [ ./pkgs.nix (import ./programs.nix { inherit hostname pkgs userHome; }) ];
   
-  home.sessionVariables = { EDITOR = "vim"; };
+  home.sessionVariables = envVars // { EDITOR = "vim"; };
   home.shellAliases = mergedAliases;
 
   home.stateVersion = "24.11";
