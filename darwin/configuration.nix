@@ -25,7 +25,6 @@ in {
 
   nixpkgs.config.allowUnfree = true;
 
-
   programs.zsh.enable = true;
   programs.bash.enable = true;
   users = {

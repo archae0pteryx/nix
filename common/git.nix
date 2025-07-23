@@ -62,5 +62,6 @@
     ".cursor"
     ".cursorrules"
     ".cursorignore"
+    ".worktree*"
   ];
 }

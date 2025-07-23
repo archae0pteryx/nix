@@ -10,7 +10,7 @@
   dcdv = "docker compose down --remove-orphans -v";
   alacrittyconfig = "vim $HOME/.config/alacritty";
   kittyconfig = "vim $HOME/.config/kitty";
-  nixconfig = "cursor $HOME/.config/nix";
+  nixconfig = "code $HOME/.config/nix";
   c = "cd $HOME/Code";
   ga = "git add";
   gc = "git commit -S -m";
@@ -34,6 +34,5 @@
   kns = "kubens";
   kc = "kubectl config";
   p = "ping 8.8.8.8";
-  fabricconfig = "cursor $HOME/.config/fabric";
-  claude = "$HOME/.claude/local/claude";
+  fabricconfig = "code $HOME/.config/fabric";
 }

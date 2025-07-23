@@ -41,7 +41,6 @@
     k = "kubectl";
     kns = "kubens";
     kc = "kubectl config";
-    codespace = "code $HOME/Code/eyepop/eyepop.code-workspace";
     p = "ping 8.8.8.8";
     kapply = "devbox run kapply";
     kdiff = "devbox run kdiff";
@@ -58,6 +57,9 @@
     source <(fzf --zsh)
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
     [ -s "$NVM_DIR/zsh_completion" ] && \. "$NVM_DIR/zsh_completion"
+    source <(gh completion --zsh)
+
+    source <(fzf --zsh)
   '';
   initExtra = ''
     bindkey '^F' end-of-line
@@ -73,9 +75,6 @@
     bindkey '^P' autosuggest-up
     bindkey '^N' autosuggest-down
     bindkey '^I' autosuggest-accept
-
-    source <(fzf --zsh)
-
     
   '';
 }

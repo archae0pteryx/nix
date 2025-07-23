@@ -11,12 +11,15 @@
 
     source <(fzf --zsh)
     eval "$(starship init zsh)"
-    
-    export PATH="$HOME/.local/bin:$PATH"
+
+    source $HOME/.config/env_exports
     export GOPATH="$HOME/Code/go"
     export GOBIN="$HOME/Code/go/bin"
-
+    export KUBECTL_EXTERNAL_DIFF=meld
     export NVM_DIR="$HOME/.nvm"
+
+    export OLLAMA_HOST=https://ollama.kitty-tetra.ts.net
+
     [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
     [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 
@@ -35,6 +38,5 @@
         local video_link="$1"
         fabric -y "$video_link" --transcript
     }
-
   '';
 }

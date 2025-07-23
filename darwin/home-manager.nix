@@ -3,12 +3,11 @@ let
 commonAliases = import ../common/aliases.nix;
 extraAliases = import ./${hostname}/extra-aliases.nix;
 mergedAliases = commonAliases // extraAliases;
-envVars = import ../common/env.nix;
 in
 {
   imports = [ ./pkgs.nix (import ./programs.nix { inherit hostname pkgs userHome; }) ];
   
-  home.sessionVariables = envVars // { EDITOR = "vim"; };
+  home.sessionVariables = { EDITOR = "vim"; };
   home.shellAliases = mergedAliases;
 
   home.stateVersion = "24.11";
@@ -21,7 +20,7 @@ in
       recursive = true;
     };
   };
-  home.sessionPath = [ "${userHome}/.local/bin" "${userHome}/Code/eyepop/eyepop-cli/bin" ];
+  home.sessionPath = [ "${userHome}/.local/bin" "${userHome}/Code/eyepop/eyepop-cli/bin" "${userHome}/.opencode/bin" ];
   # xdg.configFile."starship.toml".text =
   #   builtins.readFile ../common/starship.toml;
   xdg.configFile."alacritty/alacritty.toml".text =

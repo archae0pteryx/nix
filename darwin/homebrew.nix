@@ -18,6 +18,7 @@ let
     "firefox"
     "github"
     "gimp"
+    "grandperspective"
     "iterm2"
     "keepassxc"
     "logseq"
@@ -34,6 +35,7 @@ let
     "trezor-suite"
     "visual-studio-code"
     "vlc"
+    "void"
     "zoom"
   ];
   extraCasks = builtins.toString ../darwin + "/${hostname}/extra-casks.nix";
