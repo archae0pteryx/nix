@@ -9,6 +9,7 @@ in {
     google-cloud-sdk
     pkgs.autoconf
     pkgs.awscli
+    pkgs.bun
     pkgs.chromedriver
     pkgs.colima
     pkgs.devbox

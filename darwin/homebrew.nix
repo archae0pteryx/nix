@@ -10,6 +10,7 @@ let
     "balenaetcher"
     "beekeeper-studio"
     "bitwarden"
+    "blackhole-2ch"
     "blender"
     "comfyui"
     "cursor"
@@ -31,6 +32,7 @@ let
     "qbittorrent"
     "slack"
     "spotify"
+    "superwhisper"
     # "telegram"
     "trezor-suite"
     "visual-studio-code"
@@ -44,6 +46,7 @@ in {
   enable = true;
   taps = ["nikitabobko/aerospace"];
   brews = [
+    "argocd"
     "difftastic"
     "docker-slim"
     "gcc" 
@@ -51,12 +54,14 @@ in {
     # "luarocks"
     "k6"
     "k9s"
+    "kind"
     "mkcert"
     "nvm"
     "redis"
     # "podman"
     "rustup"
     "talosctl"
+    "uv"
     "yq"
   ];
   casks = mergedCasks;

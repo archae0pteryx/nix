@@ -17,7 +17,7 @@
     export GOBIN="$HOME/Code/go/bin"
     export KUBECTL_EXTERNAL_DIFF=meld
     export NVM_DIR="$HOME/.nvm"
-
+    export PATH="$HOME/.krew/bin:$PATH"
     export OLLAMA_HOST=https://ollama.kitty-tetra.ts.net
 
     [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
