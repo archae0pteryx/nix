@@ -11,7 +11,11 @@
 
     source <(fzf --zsh)
     eval "$(starship init zsh)"
-
+    source <(gh completion -s zsh)
+    source <(kubectl completion zsh)
+    source <(docker completion zsh)
+    source <(helm completion zsh)
+    source <(kind completion zsh)
     source $HOME/.config/env_exports
     export GOPATH="$HOME/Code/go"
     export GOBIN="$HOME/Code/go/bin"

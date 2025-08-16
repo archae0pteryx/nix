@@ -57,6 +57,7 @@ in {
     "kind"
     "mkcert"
     "nvm"
+    "ollama"
     "redis"
     # "podman"
     "rustup"

@@ -29,7 +29,6 @@ in {
     pkgs.nerd-fonts.fira-code
     pkgs.nixfmt-classic
     pkgs.nmap
-    pkgs.ollama
     pkgs.openjdk23
     pkgs.openssl
     pkgs.opentofu
