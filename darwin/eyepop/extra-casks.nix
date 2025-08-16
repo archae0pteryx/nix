@@ -1,1 +1,9 @@
-[]
+[
+    "alacritty"
+    "blender"
+    "audacity"
+    "comfyui"
+    "openlens"
+    "beekeeper-studio"
+    "blackhole-2ch"
+]
