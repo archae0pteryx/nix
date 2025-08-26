@@ -11,6 +11,7 @@ let
     "firefox"
     "github"
     "gimp"
+    "google-chrome"
     "grandperspective"
     "iterm2"
     "keepassxc"
@@ -35,6 +36,8 @@ let
     "talosctl"
     "uv"
     "yq"
+    # tap
+    "idb-companion"
   ];
   extraCasks = builtins.toString ../darwin + "/${hostname}/extra-casks.nix";
   mergedCasks = casks ++ import extraCasks;
@@ -42,6 +45,9 @@ let
   mergedBrews = brews ++ import extraBrew;
 in {
   enable = true;
+  taps = [
+    "facebook/fb"
+  ];
   brews = mergedBrews;
   casks = mergedCasks;
   global = { autoUpdate = true; };

@@ -3,6 +3,7 @@
     "blender"
     "audacity"
     "comfyui"
+    "http-toolkit"
     "openlens"
     "beekeeper-studio"
     "blackhole-2ch"
