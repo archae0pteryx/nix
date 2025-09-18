@@ -19,6 +19,7 @@ in {
   nix.extraOptions = ''
     experimental-features = nix-command flakes
     trusted-users = root ${systemUser}
+    sandbox = false
   '';
   environment.systemPackages = with pkgs; [ vim tmux ];
   environment.shells = [ pkgs.bash pkgs.zsh ];

@@ -7,4 +7,5 @@
     "openlens"
     "beekeeper-studio"
     "blackhole-2ch"
+    "superwhisper"
 ]
