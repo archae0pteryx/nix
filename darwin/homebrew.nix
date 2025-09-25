@@ -6,6 +6,9 @@ let
     "balenaetcher"
     # "beekeeper-studio"
     "bitwarden"
+    "blackhole-2ch"
+    # "blender"
+    # "comfyui"
     "cursor"
     "figma"
     "firefox"
@@ -30,7 +33,7 @@ let
   brews = [
     "k9s"
     "kind"
-    "mkcert"
+    # "mkcert"
     "nvm"
     "ollama"
     "opentofu"
