@@ -31,13 +31,10 @@ in {
     pkgs.nmap
     pkgs.openjdk23
     pkgs.openssl
-    pkgs.opentofu
     pkgs.pipx
     pkgs.pkg-config
     pkgs.python311
     pkgs.speedtest-cli
     pkgs.stern
-    pkgs.terraform
-    pkgs.terragrunt
   ];
 }

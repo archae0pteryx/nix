@@ -33,6 +33,8 @@ let
     "mkcert"
     "nvm"
     "ollama"
+    "opentofu"
+    "terragrunt"
     "talosctl"
     "uv"
     "yq"
