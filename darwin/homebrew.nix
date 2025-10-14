@@ -10,6 +10,7 @@ let
     # "blender"
     # "comfyui"
     "cursor"
+    "colima"
     "figma"
     "firefox"
     "github"
@@ -42,7 +43,7 @@ let
     "uv"
     "yq"
     # tap
-    "idb-companion"
+
   ];
   extraCasks = builtins.toString ../darwin + "/${hostname}/extra-casks.nix";
   mergedCasks = casks ++ import extraCasks;

@@ -1,1 +1,1 @@
-[ "hammerspoon" "alfred" "brave-browser" "wireshark"  ]
+[ "hammerspoon" "alfred" "brave-browser" "wireshark-app"  ]

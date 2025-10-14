@@ -6,4 +6,5 @@
     # "handbrake" # cli version
     "nvm"
     "watchman"
+    "idb-companion"
 ]
