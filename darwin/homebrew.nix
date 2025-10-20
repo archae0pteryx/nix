@@ -10,7 +10,6 @@ let
     # "blender"
     # "comfyui"
     "cursor"
-    "colima"
     "figma"
     "firefox"
     "github"
@@ -35,6 +34,7 @@ let
     "k9s"
     "kind"
     # "mkcert"
+    "colima"
     "nvm"
     "ollama"
     "opentofu"
@@ -42,6 +42,7 @@ let
     "talosctl"
     "uv"
     "yq"
+    "qemu"
     # tap
 
   ];
