@@ -54,6 +54,7 @@ in {
   enable = true;
   taps = [
     "facebook/fb"
+    "mobile-dev-inc/tap"
   ];
   brews = mergedBrews;
   casks = mergedCasks;

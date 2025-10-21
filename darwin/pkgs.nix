@@ -1,27 +1,25 @@
-{ pkgs, ... }:
+{ pkgs, hostname, ... }:
 let
-  google-cloud-sdk = pkgs.google-cloud-sdk.withExtraComponents
-    [ pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin ];
+  extraPkgs = import ./${hostname}/extra-pkgs.nix { inherit pkgs; };
 in {
-
   home.packages = [
     # (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
-    google-cloud-sdk
-    pkgs.autoconf
+    # google-cloud-sdk
+    # pkgs.colima
+    # pkgs.graphviz
+    # pkgs.kcl
+    # pkgs.openssl
+    # pkgs.pipx
+    # pkgs.speedtest-cli
     pkgs.awscli
     pkgs.bun
-    pkgs.chromedriver
-    # pkgs.colima
     pkgs.devbox
     pkgs.dnsutils
     pkgs.docker
     pkgs.ffmpeg
     pkgs.fzf
-    pkgs.geckodriver
     pkgs.go
     pkgs.go-task
-    pkgs.graphviz
-    pkgs.kcl
     pkgs.kubectl
     pkgs.kubectx
     pkgs.kubernetes-helm
@@ -29,12 +27,8 @@ in {
     pkgs.nerd-fonts.fira-code
     pkgs.nixfmt-classic
     pkgs.nmap
-    # pkgs.openssl
-    pkgs.opentofu
-    # pkgs.pipx
-    # pkgs.pkg-config
-    # pkgs.python311
-    # pkgs.speedtest-cli
+    pkgs.python312
+    pkgs.ripgrep
     pkgs.stern
-  ];
+  ] ++ extraPkgs;
 }

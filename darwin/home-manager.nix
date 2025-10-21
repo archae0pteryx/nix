@@ -5,7 +5,7 @@ extraAliases = import ./${hostname}/extra-aliases.nix;
 mergedAliases = commonAliases // extraAliases;
 in
 {
-  imports = [ ./pkgs.nix (import ./programs.nix { inherit hostname pkgs userHome; }) ];
+  imports = [ (import ./pkgs.nix { inherit hostname pkgs; }) (import ./programs.nix { inherit hostname pkgs userHome; }) ];
   
   home.sessionVariables = { EDITOR = "vim"; };
   home.shellAliases = mergedAliases;

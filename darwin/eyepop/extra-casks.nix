@@ -1,6 +1,7 @@
 [
     "alacritty"
     "blender"
+    "gcloud-cli"
     "audacity"
     "comfyui"
     "http-toolkit"

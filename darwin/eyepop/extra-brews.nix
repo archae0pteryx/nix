@@ -1,9 +1,10 @@
 [
+    "maestro"
     "argo"
     "difftastic"
     "docker-slim"
     "gcc" 
-    # "handbrake" # cli version
+    # "microsoft-remote-desktop"
     "nvm"
     "watchman"
     "idb-companion"
