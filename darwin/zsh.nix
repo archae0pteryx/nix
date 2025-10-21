@@ -22,7 +22,7 @@
     export KUBECTL_EXTERNAL_DIFF=meld
     export NVM_DIR="$HOME/.nvm"
     export OLLAMA_HOST=https://ollama.kitty-tetra.ts.net
-
+    export CARGO_HOME="$HOME/.cargo"
     [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
     [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 

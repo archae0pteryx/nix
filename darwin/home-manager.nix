@@ -20,7 +20,13 @@ in
       recursive = true;
     };
   };
-  home.sessionPath = [ "${userHome}/.local/bin" "${userHome}/Code/eyepop/eyepop-cli/bin" "${userHome}/.bun/bin" "${userHome}/.cargo/bin" "${userHome}/Code/go/bin" ];
+  home.sessionPath = [ 
+    "${userHome}/.local/bin" 
+    "${userHome}/Code/eyepop/eyepop-cli/bin" 
+    "${userHome}/.bun/bin" 
+    "${userHome}/.cargo/bin" 
+    "${userHome}/Code/go/bin" 
+  ];
   # xdg.configFile."starship.toml".text =
   #   builtins.readFile ../common/starship.toml;
   xdg.configFile."alacritty/alacritty.toml".text =

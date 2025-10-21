@@ -1,11 +1,12 @@
 [
-    "maestro"
     "argo"
     "difftastic"
     "docker-slim"
     "gcc" 
-    # "microsoft-remote-desktop"
+    "idb-companion"
+    "maestro"
     "nvm"
     "watchman"
-    "idb-companion"
+    "whisper-cpp"
+    # "microsoft-remote-desktop"
 ]
