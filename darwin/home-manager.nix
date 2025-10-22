@@ -25,7 +25,9 @@ in
     "${userHome}/Code/eyepop/eyepop-cli/bin" 
     "${userHome}/.bun/bin" 
     "${userHome}/.cargo/bin" 
-    "${userHome}/Code/go/bin" 
+    "${userHome}/Code/go/bin"
+    "/opt/homebrew/opt/postgresql@17/bin"
+    "/opt/homebrew/opt/mysql-client/bin"
   ];
   # xdg.configFile."starship.toml".text =
   #   builtins.readFile ../common/starship.toml;
