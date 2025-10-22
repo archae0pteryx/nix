@@ -4,7 +4,6 @@
     "docker-slim"
     "gcc" 
     "idb-companion"
-    "maestro"
     "mysql-client"
     "nvm"
     "postgresql@17"

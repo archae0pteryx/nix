@@ -1,6 +1,6 @@
 ''
   export LDFLAGS="-L/opt/homebrew/lib"
   export CPPFLAGS="-I/opt/homebrew/include"
-  export PKG_CONFIG_PATH="/opt/homebrew/lib/pkgconfig"
+  export PKG_CONFIG_PATH="/opt/homebrew/lib/pkgconfig:/opt/homebrew/Library/Homebrew/os/mac/pkgconfig:$PKG_CONFIG_PATH"
   
 ''
