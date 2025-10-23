@@ -10,4 +10,5 @@
   sterninstance = "stern --context staging -n eyepop-sessions session -c session --exclude agent";
   sternwebapi = "stern --context staging -n web-api web-api -c web-api";
   sterndataset = "stern --context staging -n dataset-api dataset-api -c dataset-api";
+  pocketcereal = "cursor $HOME/Code/pocketcereal/pocketcereal-api.code-workspace";
 }
