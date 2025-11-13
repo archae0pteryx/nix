@@ -26,8 +26,8 @@ in
     "${userHome}/.bun/bin" 
     "${userHome}/.cargo/bin" 
     "${userHome}/Code/go/bin"
-    "/opt/homebrew/opt/postgresql@17/bin"
-    "/opt/homebrew/opt/mysql-client/bin"
+    "/opt/homebrew/Cellar/postgresql@17/17.6/bin"
+    "/opt/homebrew/Cellar/mysql-client/9.5.0/bin"
   ];
   # xdg.configFile."starship.toml".text =
   #   builtins.readFile ../common/starship.toml;

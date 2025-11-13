@@ -23,7 +23,7 @@ in {
     source $HOME/.config/env_exports
     export GOPATH="$HOME/Code/go"
     export GOBIN="$HOME/Code/go/bin"
-    export KUBECTL_EXTERNAL_DIFF=meld
+
     export NVM_DIR="$HOME/.nvm"
     export OLLAMA_HOST=https://ollama.kitty-tetra.ts.net
     export CARGO_HOME="$HOME/.cargo"

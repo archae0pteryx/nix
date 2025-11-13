@@ -4,6 +4,7 @@
     "docker-slim"
     "gcc" 
     "idb-companion"
+    "colordiff"
     "mysql-client"
     "nvm"
     "postgresql@17"
