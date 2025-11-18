@@ -63,5 +63,7 @@
     ".cursorrules"
     ".cursorignore"
     ".worktree*"
+    "___*"
+    ".devbox"
   ];
 }
