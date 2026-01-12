@@ -1,1 +1,1 @@
-[ "hammerspoon" "alfred" "brave-browser" "wireshark-app"  ]
+[ "hammerspoon" "alfred" "brave-browser" "gcloud-cli"]

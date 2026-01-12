@@ -1,1 +1,15 @@
-[]
+[
+    "argo"
+    "cocoapods"
+    "colordiff"
+    "gcc" 
+    "idb-companion"
+    "libpq"
+    "libyaml"
+    "mysql-client"
+    "nvm"
+    "postgresql@14"
+    "watchman"
+    "wget"
+    "python@3.13"
+]
