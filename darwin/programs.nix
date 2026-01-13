@@ -9,14 +9,6 @@
   };
 
   programs.git = import ../common/git.nix { inherit userHome; };
-  programs.gitui = {
-    enable = true;
-  };
-  programs.git-worktree-switcher = {
-    enable = true;
-    enableZshIntegration = true;
-    enableBashIntegration = true;
-  };
   programs.gh = {
     enable = true;
     gitCredentialHelper.enable = true;

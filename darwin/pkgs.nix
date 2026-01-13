@@ -27,9 +27,6 @@ in {
     pkgs.nerd-fonts.fira-code
     pkgs.nixfmt-classic
     pkgs.nmap
-    pkgs.OVMFFull
-    pkgs.python312
-    pkgs.ripgrep
     pkgs.stern
   ] ++ extraPkgs;
 }

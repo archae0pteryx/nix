@@ -2,7 +2,6 @@
     "argo"
     "cocoapods"
     "colordiff"
-    "gcc" 
     "idb-companion"
     "libpq"
     "libyaml"
