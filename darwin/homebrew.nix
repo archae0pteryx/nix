@@ -2,23 +2,23 @@
 let
   casks = [
     "amethyst"
-    "appcleaner"
-    "balenaetcher"
-    # "beekeeper-studio"
+#    "appcleaner"
+#    "balenaetcher"
+#    # "beekeeper-studio"
     "bitwarden"
-    "blackhole-2ch"
-    # "blender"
-    # "comfyui"
+#    "blackhole-2ch"
+#    # "blender"
+#    # "comfyui"
     "cursor"
     "figma"
     "firefox"
     "github"
     "gimp"
     "google-chrome"
-    "grandperspective"
+#    "grandperspective"
     "iterm2"
     "keepassxc"
-    "logseq"
+#    "logseq"
     "megasync"
     "meld"
     "obsidian"
@@ -36,13 +36,13 @@ let
     # "mkcert"
     "colima"
     "nvm"
-    "ollama"
+    #"ollama"
     "opentofu"
     "terragrunt"
     "talosctl"
     "uv"
     "yq"
-    "qemu"
+    #"qemu"
     # tap
 
   ];
@@ -53,8 +53,8 @@ let
 in {
   enable = true;
   taps = [
-    "facebook/fb"
-    "mobile-dev-inc/tap"
+    #"facebook/fb"
+    #"mobile-dev-inc/tap"
   ];
   brews = mergedBrews;
   casks = mergedCasks;

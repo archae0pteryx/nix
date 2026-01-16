@@ -12,7 +12,7 @@ let
   combinedHomeManager = lib.recursiveUpdate homeManager extraHomeManager;
 in {
  
-  ids.uids = import ./${hostname}/nixbld.nix;
+#  ids.uids = import ./${hostname}/nixbld.nix;
   ids.gids.nixbld = 350;
 
   nix.package = pkgs.nix;
@@ -36,8 +36,8 @@ in {
       shell = pkgs.zsh;
       openssh.authorizedKeys.keyFiles = [
         ../common/ssh/claire.local.pub
-        ../common/ssh/eyepop.local.pub
-        ../common/ssh/nixos.local.pub
+#        ../common/ssh/eyepop.local.pub
+#        ../common/ssh/nixos.local.pub
       ];
     };
   };
