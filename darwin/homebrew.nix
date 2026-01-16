@@ -37,7 +37,7 @@ let
     "colima"
     "nvm"
     #"ollama"
-    "opentofu"
+    "stow"
     "terragrunt"
     "talosctl"
     "uv"

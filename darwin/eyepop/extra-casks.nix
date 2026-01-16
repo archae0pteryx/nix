@@ -1,11 +1,8 @@
 [
     "alacritty"
-    "blender"
+    "claude-code"
     "gcloud-cli"
     "audacity"
-    "comfyui"
-    "http-toolkit"
-    "openlens"
     "beekeeper-studio"
     "blackhole-2ch"
     "superwhisper"

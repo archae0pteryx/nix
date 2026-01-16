@@ -36,7 +36,7 @@ in {
       shell = pkgs.zsh;
       openssh.authorizedKeys.keyFiles = [
         ../common/ssh/claire.local.pub
-#        ../common/ssh/eyepop.local.pub
+       ../common/ssh/eyepop.local.pub
 #        ../common/ssh/nixos.local.pub
       ];
     };

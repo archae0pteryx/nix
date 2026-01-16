@@ -34,7 +34,7 @@
       format = "ssh";
     };
     user.signingkey = "${userHome}/.ssh/signing_ed25519.pub";
-    user.sshkey = "${userHome}/.ssh/github_eyepop_ssh.pub";
+    user.sshkey = "${userHome}/.ssh/id_ed25519.pub";
     push = {
       autoSetupRemote = true;
     };

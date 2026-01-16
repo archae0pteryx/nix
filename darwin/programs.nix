@@ -11,6 +11,7 @@
   programs.git = import ../common/git.nix { inherit userHome; };
   programs.gh = {
     enable = true;
+    settings.git_protocol = "ssh";
     gitCredentialHelper.enable = true;
   };
   programs.gpg.enable = true;

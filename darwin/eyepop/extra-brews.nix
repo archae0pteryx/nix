@@ -10,9 +10,12 @@
 #    "libyaml"
 #    "mysql-client"
 #    "nvm"
+    "rustup"
     "postgresql@14"
     "watchman"
     "wget"
+    "maestro"
+    "opentofu"
 #    "whisper-cpp"
 #    # "microsoft-remote-desktop"
 ]
