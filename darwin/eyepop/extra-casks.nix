@@ -6,4 +6,5 @@
     "beekeeper-studio"
     "blackhole-2ch"
     "superwhisper"
+    "maestro"
 ]

@@ -6,6 +6,7 @@ let
 #    "balenaetcher"
 #    # "beekeeper-studio"
     "bitwarden"
+    "brave-browser"
 #    "blackhole-2ch"
 #    # "blender"
 #    # "comfyui"
