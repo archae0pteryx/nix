@@ -1,11 +1,13 @@
 { userHome, hostname, pkgs, ... }:
 let
-commonAliases = import ../common/aliases.nix;
-extraAliases = import ./${hostname}/extra-aliases.nix;
-mergedAliases = commonAliases // extraAliases;
+  brewPrefix = if pkgs.stdenv.isAarch64 then "/opt/homebrew" else "/usr/local";
+  commonAliases = import ../common/aliases.nix;
+  extraAliases = import ./${hostname}/extra-aliases.nix;
+  mergedAliases = commonAliases // extraAliases;
+  extraPaths = import ./${hostname}/extra-paths.nix { inherit brewPrefix; };
 in
 {
-  imports = [ (import ./pkgs.nix { inherit hostname pkgs; }) (import ./programs.nix { inherit hostname pkgs userHome; }) ];
+  imports = [ (import ./pkgs.nix { inherit hostname pkgs; }) (import ./programs.nix { inherit hostname pkgs userHome brewPrefix; }) ];
   
   home.sessionVariables = { EDITOR = "vim"; };
   home.shellAliases = mergedAliases;
@@ -20,13 +22,15 @@ in
       recursive = true;
     };
   };
-  home.sessionPath = [ 
-    "${userHome}/.local/bin" 
-    "${userHome}/Code/eyepop/eyepop-cli/bin" 
-    "${userHome}/.bun/bin" 
-    "${userHome}/.cargo/bin" 
+  home.sessionPath = [
+    "${brewPrefix}/bin"
+    "${brewPrefix}/sbin"
+    "${userHome}/.local/bin"
+    "${userHome}/Code/eyepop/eyepop-cli/bin"
+    "${userHome}/.bun/bin"
+    "${userHome}/.cargo/bin"
     "${userHome}/Code/go/bin"
-  ];
+  ] ++ extraPaths;
   # xdg.configFile."starship.toml".text =
   #   builtins.readFile ../common/starship.toml;
  # xdg.configFile."alacritty/alacritty.toml".text =

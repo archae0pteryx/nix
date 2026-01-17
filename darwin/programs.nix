@@ -1,4 +1,4 @@
-{ userHome, hostname, pkgs, ... }: {
+{ userHome, hostname, pkgs, brewPrefix, ... }: {
   programs.home-manager.enable = true;
   programs.ripgrep.enable = true;
   programs.starship = {
@@ -19,5 +19,5 @@
     enable = true;
     forwardAgent = true;
   };
-  programs.zsh = import ./zsh.nix { inherit hostname; };
+  programs.zsh = import ./zsh.nix { inherit hostname brewPrefix; };
 }
