@@ -11,15 +11,16 @@ in {
   antidote.plugins = [ "agkozak/zsh-z" ];
   syntaxHighlighting.enable = true;
   initExtra = extraEnv + ''
-    . "$HOME/.cargo/env"
+    [ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
-    source <(fzf --zsh)
-    eval "$(starship init zsh)"
-    source <(gh completion -s zsh)
-    source <(kubectl completion zsh)
-    source <(docker completion zsh)
-    source <(helm completion zsh)
-    source <(kind completion zsh)
+    command -v fzf &>/dev/null && source <(fzf --zsh)
+    command -v starship &>/dev/null && eval "$(starship init zsh)"
+    command -v gh &>/dev/null && source <(gh completion -s zsh)
+    command -v kubectl &>/dev/null && source <(kubectl completion zsh)
+    command -v docker &>/dev/null && source <(docker completion zsh)
+    command -v helm &>/dev/null && source <(helm completion zsh)
+    command -v kind &>/dev/null && source <(kind completion zsh)
+    command -v cargo &>/dev/null && source <(cargo completions zsh)
     #source $HOME/.config/env_exports
     export GOPATH="$HOME/Code/go"
     export GOBIN="$HOME/Code/go/bin"
