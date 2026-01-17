@@ -4,19 +4,19 @@ let
     "amethyst"
 #    "appcleaner"
 #    "balenaetcher"
-#    # "beekeeper-studio"
+#    "beekeeper-studio"
     "bitwarden"
     "brave-browser"
-#    "blackhole-2ch"
-#    # "blender"
-#    # "comfyui"
+#   "blackhole-2ch"
+#   "blender"
+#   "comfyui"
     "cursor"
     "figma"
     "firefox"
     "github"
     "gimp"
     "google-chrome"
-#    "grandperspective"
+#   "grandperspective"
     "iterm2"
     "keepassxc"
 #    "logseq"
@@ -32,6 +32,7 @@ let
     "zoom"
   ];
   brews = [
+    "bun"
     "k9s"
     "kind"
     # "mkcert"
@@ -44,8 +45,6 @@ let
     "uv"
     "yq"
     #"qemu"
-    # tap
-
   ];
   extraCasks = ./${hostname}/extra-casks.nix;
   mergedCasks = casks ++ import extraCasks;
@@ -54,8 +53,9 @@ let
 in {
   enable = true;
   taps = [
-    #"facebook/fb"
-    #"mobile-dev-inc/tap"
+    "oven-sh/bun"
+    "facebook/fb"
+    "mobile-dev-inc/tap"
   ];
   brews = mergedBrews;
   casks = mergedCasks;
