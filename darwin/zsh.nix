@@ -20,7 +20,6 @@ in {
     command -v docker &>/dev/null && source <(docker completion zsh)
     command -v helm &>/dev/null && source <(helm completion zsh)
     command -v kind &>/dev/null && source <(kind completion zsh)
-    command -v cargo &>/dev/null && source <(cargo completions zsh)
     #source $HOME/.config/env_exports
     export GOPATH="$HOME/Code/go"
     export GOBIN="$HOME/Code/go/bin"
