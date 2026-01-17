@@ -1,28 +1,35 @@
 { pkgs ? import <nixpkgs> {} }:
 (pkgs.buildFHSUserEnv {
   name = "cuda-env";
-  targetPkgs = pkgs: with pkgs; [ 
-    git
-    gitRepo
-    gnupg
-    autoconf
-    curl
-    procps
-    gnumake
-    util-linux
-    m4
-    gperf
-    unzip
-    cudatoolkit
-    linuxPackages.nvidia_x11
-    libGLU libGL
-    xorg.libXi xorg.libXmu freeglut
-    xorg.libXext xorg.libX11 xorg.libXv xorg.libXrandr zlib 
-    ncurses5
-    stdenv.cc
-    binutils
+  targetPkgs = pkgs: [
+    pkgs.git
+    pkgs.gitRepo
+    pkgs.gnupg
+    pkgs.autoconf
+    pkgs.curl
+    pkgs.procps
+    pkgs.gnumake
+    pkgs.util-linux
+    pkgs.m4
+    pkgs.gperf
+    pkgs.unzip
+    pkgs.cudatoolkit
+    pkgs.linuxPackages.nvidia_x11
+    pkgs.libGLU
+    pkgs.libGL
+    pkgs.xorg.libXi
+    pkgs.xorg.libXmu
+    pkgs.freeglut
+    pkgs.xorg.libXext
+    pkgs.xorg.libX11
+    pkgs.xorg.libXv
+    pkgs.xorg.libXrandr
+    pkgs.zlib
+    pkgs.ncurses5
+    pkgs.stdenv.cc
+    pkgs.binutils
   ];
-  multiPkgs = pkgs: with pkgs; [ zlib ];
+  multiPkgs = pkgs: [ pkgs.zlib ];
   runScript = "bash";
   profile = ''
     export CUDA_PATH=${pkgs.cudatoolkit}

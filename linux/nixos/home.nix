@@ -2,10 +2,9 @@
 {
   home.stateVersion = "24.05";
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [ "electron-27.3.11" ];
   home.username = "rimraf";
   home.homeDirectory = "/home/rimraf";
-	home.shellAliases = import ../../common/aliases.nix;
+  home.shellAliases = import ../../common/aliases.nix;
   home.sessionPath = [ "$HOME/.local/bin" ];
   home.sessionVariables = {
     EDITOR = "vim";
@@ -13,9 +12,10 @@
     LD_LIBRARY_PATH = lib.makeLibraryPath [ pkgs.stdenv.cc.cc pkgs.cudatoolkit ];
   };
   home.packages = import ./packages.nix { inherit pkgs; };
-  home.file = { ".vimrc".source = ../../common/vimrc; };
-  home.file = { ".tmux.conf".source = ../../common/tmux.conf; };
-  # home.file = { ".local/bin/nvidia-offload".source = "./scripts/nvidia-offload.sh"; };
+  home.file = {
+    ".vimrc".source = ../../common/vimrc;
+    ".tmux.conf".source = ../../common/tmux.conf;
+  };
 
   # xdg.configFile."rofi/open_rofi".text = builtins.readFile ./scripts/open_rofi;
   xdg.configFile."monitors/setup-monitors.sh".text =

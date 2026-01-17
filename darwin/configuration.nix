@@ -5,7 +5,7 @@ let
   };
 
   extraHomeManager =
-    import (builtins.toString ./. + "/${hostname}/extra-home-manager.nix") {
+    import ./${hostname}/extra-home-manager.nix {
       inherit pkgs lib systemUser systemArch hostname userHome;
     };
 
@@ -21,7 +21,7 @@ in {
     trusted-users = root ${systemUser}
     sandbox = false
   '';
-  environment.systemPackages = with pkgs; [ vim tmux ];
+  environment.systemPackages = [ pkgs.vim pkgs.tmux ];
   environment.shells = [ pkgs.bash pkgs.zsh ];
 
   nixpkgs.config.allowUnfree = true;

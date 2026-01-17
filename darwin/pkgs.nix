@@ -12,7 +12,6 @@ in {
     # pkgs.pipx
     # pkgs.speedtest-cli
     pkgs.awscli
-    pkgs.bun
     pkgs.devbox
     pkgs.dnsutils
     pkgs.docker

@@ -32,7 +32,7 @@ in [
     pkgs.hunspell
     pkgs.jq
     pkgs.k9s
-		pkgs.kind
+    pkgs.kind
     pkgs.keepassxc
     pkgs.kubectl
     pkgs.kubectx
@@ -54,7 +54,6 @@ in [
     pkgs.postman
     pkgs.python311
     pkgs.remmina
-    pkgs.ripgrep
     pkgs.ripgrep
     pkgs.slack
     pkgs.speedtest-cli

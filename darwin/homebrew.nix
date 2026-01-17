@@ -47,9 +47,9 @@ let
     # tap
 
   ];
-  extraCasks = builtins.toString ../darwin + "/${hostname}/extra-casks.nix";
+  extraCasks = ./${hostname}/extra-casks.nix;
   mergedCasks = casks ++ import extraCasks;
-  extraBrew = builtins.toString ../darwin + "/${hostname}/extra-brews.nix";
+  extraBrew = ./${hostname}/extra-brews.nix;
   mergedBrews = brews ++ import extraBrew;
 in {
   enable = true;
