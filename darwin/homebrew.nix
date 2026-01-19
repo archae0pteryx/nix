@@ -2,6 +2,7 @@
 let
   casks = [
     "amethyst"
+    "alfred"
 #    "appcleaner"
 #    "balenaetcher"
 #    "beekeeper-studio"
@@ -10,6 +11,7 @@ let
 #   "blackhole-2ch"
 #   "blender"
 #   "comfyui"
+    "claude"
     "cursor"
     "figma"
     "firefox"
@@ -27,6 +29,7 @@ let
     "qbittorrent"
     "slack"
     "spotify"
+    "tailscale-app"
     "trezor-suite"
     "vlc"
     "zoom"
