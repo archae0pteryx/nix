@@ -11,6 +11,7 @@
     "postgresql@14"
     "ruby"
     "rustup"
+    "sentry-cli"
     "watchman"
     "wget"
 #    "argo"

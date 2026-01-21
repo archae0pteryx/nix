@@ -1,10 +1,11 @@
 [
     "alacritty"
-    "claude-code"
-    "gcloud-cli"
     "audacity"
     "beekeeper-studio"
     "blackhole-2ch"
-    "superwhisper"
+    "claude-code"
+    "gcloud-cli"
+    "insomnia"
     "maestro"
+    "superwhisper"
 ]
