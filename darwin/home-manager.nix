@@ -25,8 +25,8 @@ in
   home.sessionPath = [
     "${brewPrefix}/bin"
     "${brewPrefix}/sbin"
+    "${brewPrefix}/opt/mysql-client@8.0/bin"
     "${userHome}/.local/bin"
-    "${userHome}/Code/eyepop/eyepop-cli/bin"
     "${userHome}/.bun/bin"
     "${userHome}/.cargo/bin"
     "${userHome}/Code/go/bin"
