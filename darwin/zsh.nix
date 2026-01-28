@@ -27,6 +27,6 @@ in {
     export NVM_DIR="$HOME/.nvm"
     export OLLAMA_HOST=https://ollama.kitty-tetra.ts.net
     export CARGO_HOME="$HOME/.cargo"
-
+    export SOPS_AGE_KEY_FILE=$HOME/.config/sops/age/keys.txt
   '';
 }

@@ -3,9 +3,9 @@
     "audacity"
     "beekeeper-studio"
     "blackhole-2ch"
+    "backblaze"
     "claude-code"
     "gcloud-cli"
-    "insomnia"
     "maestro"
     "superwhisper"
 ]

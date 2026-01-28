@@ -5,6 +5,7 @@
     "cocoapods"
     "colordiff"
     "diesel"
+    "golangci-lint"
     "kustomize"
     "libyaml"
     "mysql-client@8.0"
