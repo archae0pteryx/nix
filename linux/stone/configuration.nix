@@ -65,6 +65,11 @@
   # Printing
   services.printing.enable = true;
 
+  # GNOME Keyring (for VSCodium, credential storage)
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.login.enableGnomeKeyring = true;
+  security.pam.services.lightdm.enableGnomeKeyring = true;
+
   # User
   users.users.${username} = {
     isNormalUser = true;

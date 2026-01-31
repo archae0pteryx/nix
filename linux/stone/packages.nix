@@ -51,6 +51,10 @@
   pkgs.xfce4-clipman-plugin
   pkgs.wmctrl
 
+  # Keyring
+  pkgs.gcr
+  pkgs.seahorse
+
   # Fonts
   pkgs.nerd-fonts.fira-code
 ]
