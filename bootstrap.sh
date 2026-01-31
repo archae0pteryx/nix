@@ -2,10 +2,10 @@
 
 set -euo pipefail
 
-THIS_USER=$(whoami)
-HOSTNAME=$(scutil --get LocalHostName)
 GITHUB_USER=archae0pteryx
 GITHUB_EMAIL=github@pocketcereal.com
+NIX_REPO="https://github.com/archae0pteryx/nix"
+NIX_CONFIG_DIR="$HOME/.config/nix"
 
 log() {
     echo "[INFO] $*" >&2
@@ -29,6 +29,7 @@ ensure_sudo() {
         error "sudo authentication failed."
     fi
 
+    # Keep sudo alive
     while true; do
         sudo -n true
         sleep 60
@@ -36,93 +37,69 @@ ensure_sudo() {
     done &
 }
 
-git_config() {
-    git config --global user.name "$GITHUB_USER"
-    git config --global user.email "$GITHUB_EMAIL"
-}
-
-prompt_sudo() {
-    local message="${1:-This script requires sudo privileges}"
-    
-    echo "$message" >&2
-    ensure_sudo
-}
-
-setup_nix_darwin() {
-    mkdir -p ~/.config/nix-darwin
-    cd ~/.config/nix-darwin
-    nix flake init -t nix-darwin
-    sed -i '' "s/simple/$(scutil --get LocalHostName)/" flake.nix
-    nix run nix-darwin -- switch --flake ~/.config/nix-darwin
-    darwin-rebuild switch --flake ~/.config/nix-darwin
-}
-
-setup_nix_repo() {
-    git clone https://github.com/archae0pteryx/nix ~/.config/nix
-    cd ~/.config/nix
-
-}
-
-main() {
-    prompt_sudo "Bootstraping..." 
-    
-    cd ~
-
-    command -v git >/dev/null 2>&1 || error "git is not installed"
-    command -v curl >/dev/null 2>&1 || error "curl is not installed"
-
-    if ! command -v brew >/dev/null 2>&1; then
+install_homebrew() {
+    if ! command -v brew &>/dev/null; then
         log "Installing Homebrew..."
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
+}
 
-    if ! command -v nix >/dev/null 2>&1; then
+install_nix() {
+    if ! command -v nix &>/dev/null; then
         log "Installing Nix..."
         sh <(curl -L https://nixos.org/nix/install)
     fi
+}
 
+setup_ssh_key() {
     if [ ! -f ~/.ssh/id_ed25519 ]; then
+        log "Generating SSH key..."
         ssh-keygen -t ed25519 -f "$HOME/.ssh/id_ed25519" -N "" -q
-    fi
-
-    if [ ! -d ~/.config/nix-darwin ]; then
-        setup_nix_darwin
-    fi
-
-    if ! git config --get user.name; then
-        git_config
-    fi
-
-    if [ ! -d ~/.config/nix ]; then
-        setup_nix_repo
+        log "Add this key to GitHub: $(cat ~/.ssh/id_ed25519.pub)"
     fi
 }
 
-# Allow sourcing or direct execution
+setup_git_config() {
+    if ! git config --global --get user.name &>/dev/null; then
+        log "Configuring git..."
+        git config --global user.name "$GITHUB_USER"
+        git config --global user.email "$GITHUB_EMAIL"
+    fi
+}
+
+clone_nix_repo() {
+    if [ ! -d "$NIX_CONFIG_DIR" ]; then
+        log "Cloning nix config repo..."
+        git clone "$NIX_REPO" "$NIX_CONFIG_DIR"
+    fi
+}
+
+setup_nix_darwin() {
+    local hostname
+    hostname=$(scutil --get LocalHostName)
+
+    log "Setting up nix-darwin for $hostname..."
+    cd "$NIX_CONFIG_DIR"
+    nix run nix-darwin -- switch --flake "./darwin#$hostname"
+}
+
+main() {
+    command -v git >/dev/null 2>&1 || error "git is not installed"
+    command -v curl >/dev/null 2>&1 || error "curl is not installed"
+
+    log "Bootstrapping..."
+    ensure_sudo
+
+    install_homebrew
+    install_nix
+    setup_ssh_key
+    setup_git_config
+    clone_nix_repo
+    setup_nix_darwin
+
+    log "Done! Run 'task rebuild:<hostname>' to rebuild."
+}
+
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     main "$@"
 fi
-
-# #!/usr/bin/env bash
-
-# set -euo pipefail
-
-
-
-# # Optional: Prompt with a custom message
-
-
-# # Main script
-# main() {
-#     # Prompt for sudo with a custom message
-#     prompt_sudo "This script needs sudo to install system-wide tools"
-
-#     # Your script logic here
-#     sudo some_command
-#     sudo another_command
-# }
-
-# # Run main only if script is executed directly
-# if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-#     main "$@"
-# fi
