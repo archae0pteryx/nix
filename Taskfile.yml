@@ -1,0 +1,82 @@
+version: '3'
+
+vars:
+  NIX_CONFIG_DIR: "{{.ROOT_DIR}}"
+
+tasks:
+  # Darwin rebuilds
+  rebuild:eyepop:
+    desc: Rebuild darwin configuration for eyepop
+    cmds:
+      - darwin-rebuild switch --flake {{.NIX_CONFIG_DIR}}/darwin#eyepop
+
+  rebuild:claire:
+    desc: Rebuild darwin configuration for claire
+    cmds:
+      - darwin-rebuild switch --flake {{.NIX_CONFIG_DIR}}/darwin#claire
+
+  # NixOS rebuilds
+  rebuild:stone:
+    desc: Rebuild NixOS configuration for stone
+    cmds:
+      - sudo nixos-rebuild switch --flake {{.NIX_CONFIG_DIR}}/linux/stone#stone
+
+  # Darwin checks
+  check:darwin:
+    desc: Check darwin flake
+    dir: "{{.NIX_CONFIG_DIR}}/darwin"
+    cmds:
+      - nix flake check
+
+  check:eyepop:
+    desc: Check darwin flake (alias)
+    deps: [check:darwin]
+
+  check:claire:
+    desc: Check darwin flake (alias)
+    deps: [check:darwin]
+
+  # NixOS checks
+  check:stone:
+    desc: Check stone NixOS flake
+    dir: "{{.NIX_CONFIG_DIR}}/linux/stone"
+    cmds:
+      - nix flake check
+
+  # Check all
+  check:
+    desc: Check all flakes
+    cmds:
+      - task: check:darwin
+      - task: check:stone
+
+  # Update flake inputs
+  update:darwin:
+    desc: Update darwin flake inputs
+    dir: "{{.NIX_CONFIG_DIR}}/darwin"
+    cmds:
+      - nix flake update
+
+  update:stone:
+    desc: Update stone flake inputs
+    dir: "{{.NIX_CONFIG_DIR}}/linux/stone"
+    cmds:
+      - nix flake update
+
+  update:
+    desc: Update all flake inputs
+    cmds:
+      - task: update:darwin
+      - task: update:stone
+
+  # Format nix files
+  fmt:
+    desc: Format all nix files
+    cmds:
+      - nix run nixpkgs#nixfmt-classic -- {{.NIX_CONFIG_DIR}}/**/*.nix
+
+  # List available tasks
+  default:
+    desc: List available tasks
+    cmds:
+      - task --list

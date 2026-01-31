@@ -39,6 +39,7 @@
   # Git & Dev Tools
   pkgs.git
   pkgs.gh
+  pkgs.go-task
   pkgs.delta
   pkgs.ripgrep
   pkgs.jq
