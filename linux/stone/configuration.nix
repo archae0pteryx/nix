@@ -65,6 +65,9 @@ in {
   programs.firefox.enable = true;
   programs.git.enable = true;
 
+  # Enable nix-ld for dynamically linked executables (npm, etc.)
+  programs.nix-ld.enable = true;
+
   # User
   users.users.${username} = {
     isNormalUser = true;
