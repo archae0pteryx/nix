@@ -1,9 +1,13 @@
 { pkgs, hostname, username, ... }: {
   imports = [ ./hardware-configuration.nix ];
 
-  # Bootloader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # Bootloader (GRUB for this machine)
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub.useOSProber = true;
+
+  # Use latest kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Networking
   networking.hostName = hostname;
@@ -21,17 +25,45 @@
   # Locale/Time
   time.timeZone = "America/Los_Angeles";
   i18n.defaultLocale = "en_US.UTF-8";
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "en_US.UTF-8";
+    LC_IDENTIFICATION = "en_US.UTF-8";
+    LC_MEASUREMENT = "en_US.UTF-8";
+    LC_MONETARY = "en_US.UTF-8";
+    LC_NAME = "en_US.UTF-8";
+    LC_NUMERIC = "en_US.UTF-8";
+    LC_PAPER = "en_US.UTF-8";
+    LC_TELEPHONE = "en_US.UTF-8";
+    LC_TIME = "en_US.UTF-8";
+  };
 
   # X11 + XFCE
   services.xserver = {
     enable = true;
+    displayManager.lightdm.enable = true;
     desktopManager.xfce.enable = true;
     desktopManager.xterm.enable = false;
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
   };
-  services.displayManager.defaultSession = "xfce";
 
   # Enable xfconf for saving XFCE preferences
   programs.xfconf.enable = true;
+
+  # Audio (pipewire)
+  services.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
+
+  # Printing
+  services.printing.enable = true;
 
   # User
   users.users.${username} = {
@@ -69,7 +101,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # Minimal system packages
-  environment.systemPackages = with pkgs; [ vim git curl wget ];
+  environment.systemPackages = with pkgs; [ vim git curl wget tmux ];
 
-  system.stateVersion = "24.11";
+  system.stateVersion = "25.11";
 }
