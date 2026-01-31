@@ -11,4 +11,7 @@ in common // {
 
   # NixOS rebuild
   rebuild = "sudo nixos-rebuild switch --flake ~/.config/nix/linux/stone";
+
+  # Load .env file into current shell
+  loadenv = "set -a; source .env; set +a";
 }

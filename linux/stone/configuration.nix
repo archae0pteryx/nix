@@ -68,6 +68,12 @@ in {
   # Enable nix-ld for dynamically linked executables (npm, etc.)
   programs.nix-ld.enable = true;
 
+  # direnv for automatic .env/.envrc loading
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;  # Better nix integration
+  };
+
   # User
   users.users.${username} = {
     isNormalUser = true;
