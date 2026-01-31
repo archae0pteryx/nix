@@ -1,81 +1,70 @@
-{ pkgs, hostname, username, ... }: {
+{ config, pkgs, lib, ... }:
+
+let
+  hostname = "stone";
+  username = "nix";
+in {
   imports = [ ./hardware-configuration.nix ];
 
-  # Bootloader (GRUB for this machine)
+  # Bootloader (GRUB)
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
-
-  # Use latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Networking
   networking.hostName = hostname;
   networking.networkmanager.enable = true;
-
-  # Firewall - locked down inbound
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [ 22 ];
-    allowedUDPPorts = [ ];
     allowPing = false;
-    logRefusedConnections = true;
   };
 
   # Locale/Time
   time.timeZone = "America/Los_Angeles";
   i18n.defaultLocale = "en_US.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
 
   # X11 + XFCE
   services.xserver = {
     enable = true;
     displayManager.lightdm.enable = true;
     desktopManager.xfce.enable = true;
-    desktopManager.xterm.enable = false;
-    xkb = {
-      layout = "us";
-      variant = "";
-    };
+    xkb.layout = "us";
   };
 
-  # Enable xfconf for saving XFCE preferences
-  programs.xfconf.enable = true;
-
-  # Audio (pipewire)
+  # Audio
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
-    alsa.support32Bit = true;
     pulse.enable = true;
   };
 
-  # Printing
+  # Services
   services.printing.enable = true;
-
-  # GNOME Keyring (for VSCodium, credential storage)
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+      PermitRootLogin = "no";
+    };
+  };
   services.gnome.gnome-keyring.enable = true;
-  security.pam.services.login.enableGnomeKeyring = true;
   security.pam.services.lightdm.enableGnomeKeyring = true;
+
+  # Programs
+  programs.zsh.enable = true;
+  programs.xfconf.enable = true;
+  programs.firefox.enable = true;
+  programs.git.enable = true;
 
   # User
   users.users.${username} = {
     isNormalUser = true;
-    description = "nix";
-    extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
+    extraGroups = [ "networkmanager" "wheel" ];
     openssh.authorizedKeys.keyFiles = [
       ./keys/stone.pub
       ../../common/ssh/eyepop.local.pub
@@ -83,30 +72,36 @@
     ];
   };
 
-  # ZSH system-wide
-  programs.zsh.enable = true;
-  environment.pathsToLink = [ "/share/zsh" ];
+  # Packages
+  environment.systemPackages = with pkgs; [
+    # Shell/Terminal
+    vim neovim tmux fzf zsh-autosuggestions zsh-syntax-highlighting
 
-  # SSH server (hardened)
-  services.openssh = {
-    enable = true;
-    settings = {
-      PasswordAuthentication = false;
-      PermitRootLogin = "no";
-      KbdInteractiveAuthentication = false;
-    };
-  };
+    # Dev tools
+    git gh curl wget ripgrep jq htop unzip zip
 
-  # Nix settings
-  nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
-    trusted-users = [ "root" username ];
-  };
+    # Build essentials
+    gcc gnumake cmake pkg-config
 
+    # Languages
+    go rustup nodejs bun
+
+    # Network
+    nmap netcat-gnu net-tools dnsutils
+
+    # Apps
+    vscodium keepassxc
+
+    # XFCE
+    xfce4-clipman-plugin wmctrl
+
+    # Keyring
+    gcr seahorse
+  ];
+
+  # Nix
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
-
-  # Minimal system packages
-  environment.systemPackages = with pkgs; [ vim git curl wget tmux ];
 
   system.stateVersion = "25.11";
 }
