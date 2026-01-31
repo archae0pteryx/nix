@@ -33,33 +33,8 @@
       bindkey '^R' history-incremental-search-backward
     '';
 
-    # Shell aliases
-    shellAliases = {
-      # Navigation
-      l = "ls -la";
-      ".." = "cd ..";
-      "..." = "cd ../..";
-      "...." = "cd ../../..";
-
-      # Git
-      ga = "git add";
-      gc = "git commit";
-      gp = "git push";
-      gco = "git checkout";
-      gs = "git status";
-      gd = "git diff";
-
-      # Docker
-      dc = "docker compose";
-      dcb = "docker compose build";
-      dcd = "docker compose down";
-      dcu = "docker compose up";
-
-      # Tools
-      k = "kubectl";
-      tf = "terraform";
-      vim = "nvim";
-    };
+    # Shell aliases (imported from aliases.nix)
+    shellAliases = import ./aliases.nix;
   };
 
   # Environment variables available to all users

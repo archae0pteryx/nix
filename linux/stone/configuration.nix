@@ -91,6 +91,9 @@ in {
     # Languages
     go rustup nodejs bun
 
+    # Dev environments
+    devbox
+
     # Network
     nmap netcat-gnu net-tools dnsutils
 
