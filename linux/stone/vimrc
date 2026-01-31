@@ -1,0 +1,24 @@
+" Stone-specific vimrc with clipboard support
+
+" Basic settings
+set rnu
+set mouse=a
+set ignorecase
+set whichwrap+=<,>,h,l
+set backspace=eol,start,indent
+set wrap
+colorscheme habamax
+syntax on
+
+" Indentation
+set tabstop=2
+set shiftwidth=2
+set smarttab
+set expandtab
+set smartindent
+
+" Escape mapping
+inoremap jk <Esc>
+
+" Clipboard integration (X11)
+set clipboard=unnamedplus

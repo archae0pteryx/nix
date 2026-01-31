@@ -4,7 +4,10 @@ let
   hostname = "stone";
   username = "nix";
 in {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [
+    ./hardware-configuration.nix
+    ./zsh.nix
+  ];
 
   # Bootloader (GRUB)
   boot.loader.grub.enable = true;
@@ -54,8 +57,10 @@ in {
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.lightdm.enableGnomeKeyring = true;
 
+  # Docker
+  virtualisation.docker.enable = true;
+
   # Programs
-  programs.zsh.enable = true;
   programs.xfconf.enable = true;
   programs.firefox.enable = true;
   programs.git.enable = true;
@@ -64,7 +69,7 @@ in {
   users.users.${username} = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     openssh.authorizedKeys.keyFiles = [
       ./keys/stone.pub
       ../../common/ssh/eyepop.local.pub
@@ -75,7 +80,7 @@ in {
   # Packages
   environment.systemPackages = with pkgs; [
     # Shell/Terminal
-    vim neovim tmux fzf zsh-autosuggestions zsh-syntax-highlighting
+    vim neovim tmux fzf
 
     # Dev tools
     git gh curl wget ripgrep jq htop unzip zip
@@ -95,9 +100,30 @@ in {
     # XFCE
     xfce4-clipman-plugin wmctrl
 
+    # Clipboard (for vim integration)
+    xclip xsel
+
     # Keyring
     gcr seahorse
   ];
+
+  # User config files (vimrc, xfce shortcuts)
+  system.activationScripts.userConfigs = let
+    vimrc = ./vimrc;
+    xfceShortcuts = ./xfce4-keyboard-shortcuts.xml;
+  in ''
+    # Deploy vimrc
+    install -D -m 644 -o ${username} -g users ${vimrc} /home/${username}/.vimrc
+
+    # Deploy neovim config
+    mkdir -p /home/${username}/.config/nvim
+    install -m 644 -o ${username} -g users ${vimrc} /home/${username}/.config/nvim/init.vim
+
+    # Deploy XFCE keyboard shortcuts
+    mkdir -p /home/${username}/.config/xfce4/xfconf/xfce-perchannel-xml
+    install -m 644 -o ${username} -g users ${xfceShortcuts} /home/${username}/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
+    chown -R ${username}:users /home/${username}/.config
+  '';
 
   # Nix
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
