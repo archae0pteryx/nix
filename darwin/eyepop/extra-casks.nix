@@ -6,6 +6,7 @@
     "backblaze"
     "claude-code"
     "gcloud-cli"
+    "gitify"
     "maestro"
     "superwhisper"
 ]
