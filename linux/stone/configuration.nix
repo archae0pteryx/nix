@@ -56,7 +56,17 @@ in {
       PermitRootLogin = "no";
     };
   };
-  services.tailscale.enable = true;
+  services.tailscale = {
+    enable = true;
+    extraUpFlags = [
+      "--ssh"
+      "--advertise-tags=tag:isolated"
+    ];
+    # extraSetFlags for settings that use 'tailscale set' instead of 'up'
+    extraSetFlags = [
+      "--exit-node-allow-lan-access"
+    ];
+  };
 
   # Tailscale exit node optimizer - checks and switches to best Mullvad exit node
   systemd.services.tailscale-exit-node-check = {
