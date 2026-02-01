@@ -143,9 +143,10 @@ in {
     gcr seahorse
   ];
 
-  # User config files (vimrc, xfce shortcuts)
+  # User config files (vimrc, tmux, xfce shortcuts)
   system.activationScripts.userConfigs = let
     vimrc = ./vimrc;
+    tmuxConf = ../../common/tmux.conf;
     xfceShortcuts = ./xfce4-keyboard-shortcuts.xml;
   in ''
     # Deploy vimrc
@@ -154,6 +155,9 @@ in {
     # Deploy neovim config
     mkdir -p /home/${username}/.config/nvim
     install -m 644 -o ${username} -g users ${vimrc} /home/${username}/.config/nvim/init.vim
+
+    # Deploy tmux config
+    install -m 644 -o ${username} -g users ${tmuxConf} /home/${username}/.tmux.conf
 
     # Deploy XFCE keyboard shortcuts
     mkdir -p /home/${username}/.config/xfce4/xfconf/xfce-perchannel-xml
