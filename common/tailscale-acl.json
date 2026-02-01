@@ -1,0 +1,37 @@
+{
+  "tagOwners": {
+    "tag:isolated": ["autogroup:admin"],
+    "tag:admin": ["autogroup:admin"]
+  },
+
+  "groups": {
+    "group:admins": ["ryan@github"]
+  },
+
+  "acls": [
+    // Admins can SSH into isolated devices
+    {
+      "action": "accept",
+      "src": ["group:admins", "tag:admin"],
+      "dst": ["tag:isolated:22"]
+    },
+
+    // Isolated devices can use exit nodes (Mullvad)
+    {
+      "action": "accept",
+      "src": ["tag:isolated"],
+      "dst": ["autogroup:internet:*"]
+    }
+
+    // No other rules = stone cannot reach any tailnet device
+  ],
+
+  "ssh": [
+    {
+      "action": "accept",
+      "src": ["group:admins", "tag:admin"],
+      "dst": ["tag:isolated"],
+      "users": ["nix", "root"]
+    }
+  ]
+}

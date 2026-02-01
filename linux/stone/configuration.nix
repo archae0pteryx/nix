@@ -21,7 +21,9 @@ in {
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [ 22 ];
+    allowedUDPPorts = [ 41641 ];  # Tailscale
     allowPing = false;
+    trustedInterfaces = [ "tailscale0" ];  # Trust Tailscale interface
   };
 
   # Locale/Time
@@ -54,6 +56,7 @@ in {
       PermitRootLogin = "no";
     };
   };
+  services.tailscale.enable = true;
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.lightdm.enableGnomeKeyring = true;
 
@@ -80,9 +83,7 @@ in {
     shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     openssh.authorizedKeys.keyFiles = [
-      ./keys/stone.pub
       ../../common/ssh/eyepop.local.pub
-      ../../common/ssh/claire.local.pub
     ];
   };
 
