@@ -110,14 +110,28 @@ in {
     nix-direnv.enable = true;  # Better nix integration
   };
 
+  # Tailscale group for non-root CLI access
+  users.groups.tailscale = {};
+
   # User
   users.users.${username} = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "tailscale" ];
     openssh.authorizedKeys.keyFiles = [
       ../../common/ssh/eyepop.local.pub
     ];
+  };
+
+  # Allow tailscale group to access tailscaled socket
+  systemd.services.tailscaled.serviceConfig.SupplementaryGroups = [ "tailscale" ];
+  systemd.sockets.tailscaled = {
+    wantedBy = [ "sockets.target" ];
+    socketConfig = {
+      ListenStream = "/var/run/tailscale/tailscaled.sock";
+      SocketMode = "0660";
+      SocketGroup = "tailscale";
+    };
   };
 
   # Packages
