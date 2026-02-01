@@ -23,6 +23,8 @@
       <property name="&lt;Super&gt;e" type="string" value="thunar"/>
       <property name="Print" type="string" value="xfce4-screenshooter"/>
       <property name="&lt;Shift&gt;Print" type="string" value="xfce4-screenshooter -r"/>
+      <!-- Clipman clipboard history -->
+      <property name="&lt;Super&gt;&lt;Shift&gt;v" type="string" value="xfce4-clipman-history"/>
       <property name="override" type="bool" value="true"/>
     </property>
   </property>
