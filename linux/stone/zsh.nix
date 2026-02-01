@@ -9,8 +9,7 @@
 
     # Interactive shell initialization (sourced in .zshrc)
     interactiveShellInit = ''
-      # Load secrets from ~/.secrets.env if it exists
-      [ -f "$HOME/.secrets.env" ] && set -a && source "$HOME/.secrets.env" && set +a
+      [ -f "$HOME/.env" ] && set -a && source "$HOME/.env" && set +a
 
       # NVM setup
       export NVM_DIR="$([ -z "''${XDG_CONFIG_HOME-}" ] && printf %s "''${HOME}/.nvm" || printf %s "''${XDG_CONFIG_HOME}/nvm")"
@@ -44,8 +43,8 @@
   environment.sessionVariables = {
     EDITOR = "nvim";
     VISUAL = "nvim";
-    GOPATH = "$HOME/go";
-    GOBIN = "$HOME/go/bin";
+    GOPATH = "$HOME/Code/go";
+    GOBIN = "$HOME/Code/go/bin";
   };
 
   # Ensure PATH includes common directories
