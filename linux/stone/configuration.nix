@@ -57,6 +57,29 @@ in {
     };
   };
   services.tailscale.enable = true;
+
+  # Tailscale exit node optimizer - checks and switches to best Mullvad exit node
+  systemd.services.tailscale-exit-node-check = {
+    description = "Check and update Tailscale exit node";
+    after = [ "network-online.target" "tailscaled.service" ];
+    wants = [ "network-online.target" ];
+    path = [ pkgs.tailscale pkgs.jq pkgs.gnugrep ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.bash}/bin/bash ${./scripts/tailscale-exit-node-check.sh}";
+    };
+  };
+
+  systemd.timers.tailscale-exit-node-check = {
+    description = "Run Tailscale exit node check every 30 minutes";
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnBootSec = "5min";
+      OnUnitActiveSec = "30min";
+      RandomizedDelaySec = "5min";
+    };
+  };
+
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.lightdm.enableGnomeKeyring = true;
 
