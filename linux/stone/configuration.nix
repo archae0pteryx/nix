@@ -17,14 +17,19 @@ in {
 
   # Networking
   networking.hostName = hostname;
+
   networking.networkmanager.enable = true;
+  networking.nftables.enable = true;
   networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [ 22 ];
-    allowedUDPPorts = [ 41641 ];  # Tailscale
-    allowPing = false;
-    trustedInterfaces = [ "tailscale0" ];  # Trust Tailscale interface
+    checkReversePath = "loose";
   };
+  services.resolved.enable = true;
+  #  enable = true;
+  #  allowedTCPPorts = [ 22 ];
+  #  allowedUDPPorts = [ 41641 ];  # Tailscale
+  #  allowPing = false;
+  #  trustedInterfaces = [ "tailscale0" ];  # Trust Tailscale interface
+  #};
 
   # Locale/Time
   time.timeZone = "America/Los_Angeles";
@@ -56,17 +61,22 @@ in {
       PermitRootLogin = "no";
     };
   };
-  services.tailscale = {
-    enable = true;
-    extraUpFlags = [
-      "--ssh"
-      "--advertise-tags=tag:isolated"
-    ];
-    # extraSetFlags for settings that use 'tailscale set' instead of 'up'
-    extraSetFlags = [
-      "--exit-node-allow-lan-access"
-    ];
-  };
+   services.tailscale = {
+     enable = true;
+     openFirewall = true;
+     useRoutingFeatures = "client";
+     extraUpFlags = [
+       "--ssh"
+       "--operator=${username}"
+     ];
+     # extraSetFlags for settings that use 'tailscale set' instead of 'up'
+     extraSetFlags = [
+       "--accept-dns"
+       "--accept-routes"
+       "--exit-node-allow-lan-access"
+       "--netfilter-mode=nodivert"
+     ];
+   };
 
   # TODO: Tailscale exit node optimizer - disabled until script is fixed
   # systemd.services.tailscale-exit-node-check = {
@@ -96,10 +106,18 @@ in {
   # Docker
   virtualisation.docker.enable = true;
 
-  # Programs
-  programs.xfconf.enable = true;
-  programs.firefox.enable = true;
-  programs.git.enable = true;
+   # Programs
+   programs.xfconf.enable = true;
+   programs.firefox.enable = true;
+   programs.git = {
+     enable = true;
+     config = {
+       core.sshCommand = "ssh -i ~/.ssh/id_ed25519";
+       user.signingKey = "~/.ssh/signing_ed25519.pub";
+       commit.gpgSign = true;
+       gpg.format = "ssh";
+     };
+   };
 
   # Enable nix-ld for dynamically linked executables (npm, etc.)
   programs.nix-ld.enable = true;
@@ -110,29 +128,15 @@ in {
     nix-direnv.enable = true;  # Better nix integration
   };
 
-  # Tailscale group for non-root CLI access
-  users.groups.tailscale = {};
-
-  # User
-  users.users.${username} = {
-    isNormalUser = true;
-    shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" "docker" "tailscale" ];
-    openssh.authorizedKeys.keyFiles = [
-      ../../common/ssh/eyepop.local.pub
-    ];
-  };
-
-  # Allow tailscale group to access tailscaled socket
-  systemd.services.tailscaled.serviceConfig.SupplementaryGroups = [ "tailscale" ];
-  systemd.sockets.tailscaled = {
-    wantedBy = [ "sockets.target" ];
-    socketConfig = {
-      ListenStream = "/var/run/tailscale/tailscaled.sock";
-      SocketMode = "0660";
-      SocketGroup = "tailscale";
-    };
-  };
+   # User
+   users.users.${username} = {
+     isNormalUser = true;
+     shell = pkgs.zsh;
+     extraGroups = [ "networkmanager" "wheel" "docker" "tailscale" ];
+     openssh.authorizedKeys.keyFiles = [
+       ../../common/ssh/eyepop.local.pub
+     ];
+   };
 
   # Packages
   environment.systemPackages = with pkgs; [
