@@ -26,6 +26,12 @@
           BindAddress = "10.0.1.30";
         };
       };
+      "*.kitty-tetra.ts.net" = {
+        extraOptions = {
+          StrictHostKeyChecking = "no";
+          UserKnownHostsFile = "/dev/null";
+        };
+      };
     };
   };
   programs.zsh = import ./zsh.nix { inherit hostname brewPrefix; };

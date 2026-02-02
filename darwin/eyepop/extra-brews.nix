@@ -15,6 +15,7 @@
     "shellcheck"
     "cmake"
     "oven-sh/bun/bun"
+    "opencode"
     "postgresql@14"
     "ruby"
     "rustup"
