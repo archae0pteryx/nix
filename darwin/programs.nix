@@ -21,12 +21,11 @@
     matchBlocks = {
       "stone" = {
         hostname = "10.0.3.50";
-        user = "nix";
+        user = "bot";
         extraOptions = {
           BindAddress = "10.0.1.30";
         };
       };
-     
     };
   };
   programs.zsh = import ./zsh.nix { inherit hostname brewPrefix; };

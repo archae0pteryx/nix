@@ -15,6 +15,9 @@
     init = {
       defaultBranch = "main";
     };
+    lfs = {
+      enable = true;
+    };
     merge = {
       conflictstyle = "diff3";
     };

@@ -4,9 +4,10 @@
     "beekeeper-studio"
     "blackhole-2ch"
     "backblaze"
-    "claude-code"
+    # "claude-code"
     "gcloud-cli"
     "gitify"
     "maestro"
     "superwhisper"
+    "telegram"
 ]
