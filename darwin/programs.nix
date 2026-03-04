@@ -18,6 +18,7 @@
   programs.ssh = {
     enable = true;
     forwardAgent = true;
+    includes = [ "config.d/*" ];
     matchBlocks = {
       "stone" = {
         hostname = "10.0.3.50";

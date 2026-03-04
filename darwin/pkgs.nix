@@ -16,6 +16,7 @@ in {
     pkgs.dnsutils
     pkgs.docker
     pkgs.ffmpeg
+    pkgs.portaudio
     pkgs.fzf
     pkgs.go
     pkgs.go-task

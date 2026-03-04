@@ -1,5 +1,6 @@
 [
     "argo"
+    "argocd"
     "awscli"
     "cargo-binstall"
     "cocoapods"
