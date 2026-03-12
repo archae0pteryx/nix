@@ -22,16 +22,13 @@
     bindkey '^F' end-of-line
     bindkey '^A' beginning-of-line
     bindkey '^R' history-incremental-search-backward
-    bindkey '^P' up-line-or-history
-    bindkey '^N' down-line-or-history
+    bindkey '^P' autosuggest-up
+    bindkey '^N' autosuggest-down
     bindkey '^W' backward-kill-word
     bindkey '^U' backward-kill-line
     bindkey '^L' clear-screen
     bindkey '^E' autosuggest-accept
     bindkey '^D' autosuggest-execute
-    bindkey '^P' autosuggest-up
-    bindkey '^N' autosuggest-down
-    bindkey '^I' autosuggest-accept
 
     if [ -z "$TMUX" ]; then
       tmux attach -t TMUX || tmux new -s TMUX

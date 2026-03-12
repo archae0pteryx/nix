@@ -35,7 +35,6 @@ let
     "zoom"
   ];
   brews = [
-    "bun"
     "k9s"
     "kind"
     # "mkcert"

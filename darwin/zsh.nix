@@ -20,6 +20,18 @@ in {
     command -v docker &>/dev/null && source <(docker completion zsh)
     command -v helm &>/dev/null && source <(helm completion zsh)
     command -v kind &>/dev/null && source <(kind completion zsh)
+
+    bindkey '^F' end-of-line
+    bindkey '^A' beginning-of-line
+    bindkey '^R' history-incremental-search-backward
+    bindkey '^P' autosuggest-up
+    bindkey '^N' autosuggest-down
+    bindkey '^W' backward-kill-word
+    bindkey '^U' backward-kill-line
+    bindkey '^L' clear-screen
+    bindkey '^E' autosuggest-accept
+    bindkey '^D' autosuggest-execute
+
     #source $HOME/.config/env_exports
     export GOPATH="$HOME/Code/go"
     export GOBIN="$HOME/Code/go/bin"

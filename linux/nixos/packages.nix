@@ -78,5 +78,5 @@ in [
     pkgs.xorg.xmodmap
     pkgs.xsel
     pkgs.zip
-    (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
+    pkgs.nerd-fonts.fira-code
   ]

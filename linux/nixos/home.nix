@@ -27,10 +27,10 @@
   xdg.configFile."i3/config".text = builtins.readFile ./config/i3-config;
   xdg.configFile."i3status-rust/config.toml".text =
     builtins.readFile ./config/i3status-rust;
-  xdg.configFile."kitty/kitty.conf".text = builtins.readFile ../common/kitty.conf;
+  xdg.configFile."kitty/kitty.conf".text = builtins.readFile ../../common/kitty.conf;
   # xdg.configFile."xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml".text = builtins.readFile ./xfce4/xfce4-keyboard-shortcuts.xml;
 
-  programs = import ./programs.nix { inherit lib; };
+  programs = import ./programs.nix { inherit lib config; };
   services.gpg-agent = {
     enable = true;
     enableSshSupport = true;
@@ -45,7 +45,7 @@
         Description = "Display Setup Service";
         After = "xorg.target";
       };
-      Install = { WantedBy = [ "multi-user.target" ]; };
+      Install = { WantedBy = [ "graphical-session.target" ]; };
       Service = {
         RestartSec = 10;
         ExecStart = pkgs.writeShellScript "set-monitors" ''

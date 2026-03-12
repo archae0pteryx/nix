@@ -4,19 +4,10 @@ let
 in {
   home.packages = [
     # (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
-    # google-cloud-sdk
-    # pkgs.colima
-    # pkgs.graphviz
-    # pkgs.kcl
-    # pkgs.openssl
-    # pkgs.pipx
-    # pkgs.speedtest-cli
-    pkgs.awscli
     pkgs.devbox
     pkgs.dnsutils
     pkgs.docker
     pkgs.ffmpeg
-    pkgs.portaudio
     pkgs.fzf
     pkgs.go
     pkgs.go-task

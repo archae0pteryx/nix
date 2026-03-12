@@ -21,7 +21,6 @@ in {
     trusted-users = root ${systemUser}
     sandbox = false
   '';
-  environment.systemPackages = [ pkgs.vim pkgs.tmux ];
   environment.shells = [ pkgs.bash pkgs.zsh ];
 
   nixpkgs.config.allowUnfree = true;

@@ -1,5 +1,7 @@
-{ lib }:
-{
+{ lib, config }:
+let
+  home = config.home.homeDirectory;
+in {
   home-manager.enable = true;
   gpg.enable = true;
   ssh = {
@@ -11,8 +13,8 @@
   zsh = import ./zsh.nix;
   go = {
     enable = true;
-    goPath = "/home/rimraf/Code/go";
-    goBin = "/home/rimraf/Code/go/bin";
+    goPath = "${home}/Code/go";
+    goBin = "${home}/Code/go/bin";
   };
   gh = {
     enable = true;
@@ -31,11 +33,11 @@
       init.defaultBranch = "main";
       pull.rebase = "false";
       core.editor = "code --wait";
-      core.excludesfile = "~/.gitignore";
+      core.excludesfile = "${home}/.gitignore";
       color.ui = "auto";
       commit.gpgsign = true;
       gpg.format = "ssh";
-      user.signingkey = "~/.ssh/signing_rsa.pub";
+      user.signingkey = "${home}/.ssh/signing_rsa.pub";
       push.autoSetupRemote = true;
     };
     ignores = [
