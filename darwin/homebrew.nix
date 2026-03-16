@@ -1,27 +1,20 @@
 { hostname, ... }:
 let
   casks = [
-    "amethyst"
     "alfred"
-#    "appcleaner"
-#    "balenaetcher"
-#    "beekeeper-studio"
+    "amethyst"
+    "balenaetcher"
     "bitwarden"
     "brave-browser"
-#   "blackhole-2ch"
-#   "blender"
-#   "comfyui"
     "claude"
     "cursor"
     "figma"
     "firefox"
-    "github"
     "gimp"
+    "github"
     "google-chrome"
-#   "grandperspective"
     "iterm2"
     "keepassxc"
-#    "logseq"
     "megasync"
     "meld"
     "obsidian"
@@ -37,16 +30,13 @@ let
   brews = [
     "k9s"
     "kind"
-    # "mkcert"
     "colima"
     "nvm"
-    #"ollama"
     "stow"
     "terragrunt"
     "talosctl"
     "uv"
     "yq"
-    #"qemu"
   ];
   extraCasks = ./${hostname}/extra-casks.nix;
   mergedCasks = casks ++ import extraCasks;

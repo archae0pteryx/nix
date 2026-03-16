@@ -12,7 +12,7 @@ in {
   syntaxHighlighting.enable = true;
   initExtra = extraEnv + ''
     [ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
-
+    eval "$(brew shellenv)"
     command -v fzf &>/dev/null && source <(fzf --zsh)
     command -v starship &>/dev/null && eval "$(starship init zsh)"
     command -v gh &>/dev/null && source <(gh completion -s zsh)
