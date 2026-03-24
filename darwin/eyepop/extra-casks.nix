@@ -10,4 +10,5 @@
     "gitify"
     "superwhisper"
     "telegram"
+    "microsoft-openjdk"
 ]

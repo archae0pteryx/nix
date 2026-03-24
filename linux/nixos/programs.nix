@@ -7,6 +7,7 @@ in {
   ssh = {
     enable = true;
     forwardAgent = true;
+    includes = [ "config.d/*" ];
   };
 
   # fish = mergedFish;
