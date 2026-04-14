@@ -4,7 +4,7 @@
     "beekeeper-studio"
     "blackhole-2ch"
     "blender"
-    "backblaze"
+    # "backblaze"
     "discord"
     "gcloud-cli"
     "godot"

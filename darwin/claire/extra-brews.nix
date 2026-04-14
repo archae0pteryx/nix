@@ -6,7 +6,7 @@
     "libpq"
     "libyaml"
     "mysql-client"
-    "nvm"
+    # "nvm"
     "postgresql@14"
     "watchman"
     "wget"
