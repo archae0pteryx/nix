@@ -6,6 +6,7 @@
     "blender"
     # "backblaze"
     "discord"
+    "emdash"
     "gcloud-cli"
     "godot"
 #   "grandperspective"
