@@ -9,6 +9,7 @@ in {
     pkgs.docker
     pkgs.ffmpeg
     pkgs.fzf
+    pkgs.tmux
     pkgs.go
     pkgs.go-task
     pkgs.kubectl

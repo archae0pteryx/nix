@@ -15,4 +15,5 @@
     "telegram"
     "microsoft-openjdk"
     "raspberry-pi-imager"
+    "zed"
 ]
