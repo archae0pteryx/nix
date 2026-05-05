@@ -67,5 +67,6 @@
     "___*"
     ".devbox"
     ".serena"
+    ".claude/settings.local.json"
   ];
 }
