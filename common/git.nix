@@ -52,7 +52,6 @@
     "tmp"
     ".venv"
     "venv"
-    ".vscode"
     ".idea"
     ".terraform"
     ".terragrunt-cache"
@@ -61,13 +60,12 @@
     "___*"
     ".env"
     "*.secret*"
-    ".claude"
-    "CLAUDE*"
-    ".cursor"
     ".cursorrules"
     ".cursorignore"
     ".worktree*"
+    "worktree*"
     "___*"
     ".devbox"
+    ".serena"
   ];
 }

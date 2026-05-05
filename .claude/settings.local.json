@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(nix flake check:*)",
+      "Bash(curl:*)",
+      "Bash(ping:*)",
+      "Bash(zsh:*)",
+      "Bash(git config:*)"
+    ]
+  }
+}

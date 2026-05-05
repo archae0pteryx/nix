@@ -21,4 +21,10 @@
     includes = [ "config.d/*" ];
   };
   programs.zsh = import ./zsh.nix { inherit hostname brewPrefix; };
+  programs.bash = {
+    enable = true;
+    initExtra = ''
+      [ -f "$HOME/.env.shell" ] && set -a && source "$HOME/.env.shell" && set +a
+    '';
+  };
 }

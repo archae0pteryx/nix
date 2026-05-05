@@ -11,6 +11,7 @@ in {
   antidote.plugins = [ "agkozak/zsh-z" ];
   syntaxHighlighting.enable = true;
   initExtra = extraEnv + ''
+    [ -f "$HOME/.env.shell" ] && set -a && source "$HOME/.env.shell" && set +a
     [ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
     eval "$(brew shellenv)"
     command -v fzf &>/dev/null && source <(fzf --zsh)
