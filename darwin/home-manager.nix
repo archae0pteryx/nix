@@ -20,15 +20,10 @@ in
       recursive = true;
     };
     ".config/vim/vimrc".source = ../common/vimrc;
-    ".config/tmux/tmux.conf".source = ../common/tmux.darwin.conf;
     ".config/nvim" = {
       source = ../common/nvim;
       recursive = true;
     };
-    ".config/starship.toml".source = ../common/starship.toml;
-    ".config/alacritty/alacritty.toml".source = ../common/alacritty.toml;
-    ".config/ghostty/config".source = ../common/ghostty.toml;
-    ".config/kitty/kitty.conf".source = ../common/kitty.conf;
   };
 
   home.sessionPath = [
