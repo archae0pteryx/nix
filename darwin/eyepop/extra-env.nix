@@ -6,5 +6,4 @@
   export KUBECTL_EXTERNAL_DIFF="colordiff -N -u"
   export PATH="${brewPrefix}/opt/rustup/bin:$PATH"
   export EYEPOP_ROOT="${userHome}/Code/eyepop"
-  export FM_HOME="${userHome}/Code/firstmate-home"
 ''
