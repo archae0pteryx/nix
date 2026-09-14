@@ -11,11 +11,8 @@ in {
   antidote.plugins = [ "agkozak/zsh-z" ];
   syntaxHighlighting.enable = true;
   initExtra = extraEnv + ''
-    [ -f "$HOME/.env.shell" ] && set -a && source "$HOME/.env.shell" && set +a
     [ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
     eval "$(brew shellenv)"
-    [ -s "${brewPrefix}/opt/nvm/nvm.sh" ] && \. "${brewPrefix}/opt/nvm/nvm.sh"
-    [ -s "${brewPrefix}/opt/nvm/etc/bash_completion.d/nvm" ] && \. "${brewPrefix}/opt/nvm/etc/bash_completion.d/nvm"
     command -v fzf &>/dev/null && source <(fzf --zsh)
     command -v starship &>/dev/null && eval "$(starship init zsh)"
     command -v gh &>/dev/null && source <(gh completion -s zsh)

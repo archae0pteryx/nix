@@ -34,7 +34,6 @@ let
     "terragrunt"
     "talosctl"
     "uv"
-    "nvm"
     "yq"
   ];
   extraCasks = ./${hostname}/extra-casks.nix;

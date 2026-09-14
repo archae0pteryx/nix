@@ -19,13 +19,14 @@ in
       source = ../common/scripts;
       recursive = true;
     };
-  };
-
-  xdg.configFile = {
-    "vim/vimrc".source = ../common/vimrc;
-    "tmux/tmux.conf".source = ../common/tmux.darwin.conf;
-    "nvim/init.lua".source = ../common/nvim/init.lua;
-    "starship.toml".source = ../common/starship.toml;
+    ".config/vim/vimrc".source = ../common/vimrc;
+    ".config/tmux/tmux.conf".source = ../common/tmux.darwin.conf;
+    ".config/nvim" = {
+      source = ../common/nvim;
+      recursive = true;
+    };
+    ".config/starship.toml".source = ../common/starship.toml;
+    ".config/alacritty/alacritty.toml".source = ../common/alacritty.toml;
   };
 
   home.sessionPath = [
