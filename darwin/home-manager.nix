@@ -19,11 +19,6 @@ in
       source = ../common/scripts;
       recursive = true;
     };
-    ".config/vim/vimrc".source = ../common/vimrc;
-    ".config/nvim" = {
-      source = ../common/nvim;
-      recursive = true;
-    };
   };
 
   home.sessionPath = [

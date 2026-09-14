@@ -7,11 +7,12 @@
     enableBashIntegration = true;
   };
 
-  programs.git = import ../common/git.nix { inherit userHome; };
+  # git config lives in ~/.dotfiles (git package), including the gh
+  # credential helper.
   programs.gh = {
     enable = true;
     settings.git_protocol = "ssh";
-    gitCredentialHelper.enable = true;
+    gitCredentialHelper.enable = false;
   };
   programs.gpg.enable = true;
   programs.ssh = {

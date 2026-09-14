@@ -9,6 +9,8 @@ in {
     pkgs.docker
     pkgs.ffmpeg
     pkgs.fzf
+    pkgs.git
+    pkgs.delta
     pkgs.tmux
     pkgs.go
     pkgs.go-task
