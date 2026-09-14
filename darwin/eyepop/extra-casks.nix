@@ -1,5 +1,4 @@
 [
-    "alacritty"
     "audacity"
     "beekeeper-studio"
     "blackhole-2ch"

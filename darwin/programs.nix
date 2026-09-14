@@ -3,7 +3,6 @@
   programs.ripgrep.enable = true;
   programs.starship = {
     enable = true;
-    enableNushellIntegration = true;
     enableZshIntegration = true;
     enableBashIntegration = true;
   };
@@ -26,5 +25,15 @@
     initExtra = ''
       [ -f "$HOME/.env.shell" ] && set -a && source "$HOME/.env.shell" && set +a
     '';
+  };
+  programs.alacritty = {
+    enable = true;
+    settings = {
+      font = {
+        size = 16.0;
+        normal.family = "FiraCode Nerd Font";
+        normal.style = "Regular";
+      };
+    };
   };
 }

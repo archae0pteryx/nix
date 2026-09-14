@@ -15,13 +15,19 @@ in
   home.stateVersion = "24.11";
 
   home.file = {
-    ".vimrc".source = ../common/vimrc;
-    ".tmux.conf".source = ../common/tmux.darwin.conf;
     "Scripts" = {
       source = ../common/scripts;
       recursive = true;
     };
   };
+
+  xdg.configFile = {
+    "vim/vimrc".source = ../common/vimrc;
+    "tmux/tmux.conf".source = ../common/tmux.darwin.conf;
+    "nvim/init.lua".source = ../common/nvim/init.lua;
+    "starship.toml".source = ../common/starship.toml;
+  };
+
   home.sessionPath = [
     "${brewPrefix}/bin"
     "${brewPrefix}/sbin"
@@ -31,12 +37,4 @@ in
     "${userHome}/.cargo/bin"
     "${userHome}/Code/go/bin"
   ] ++ extraPaths;
-  # xdg.configFile."starship.toml".text =
-  #   builtins.readFile ../common/starship.toml;
- # xdg.configFile."alacritty/alacritty.toml".text =
-  #  builtins.readFile ../common/alacritty.toml;
-#  xdg.configFile."kitty/kitty.conf".text =
- #   builtins.readFile ../common/kitty.conf;
-  # xdg.configFile."amethyst/amethyst.yml".text =
-  #   builtins.readFile ../common/amethyst.yml;
 }

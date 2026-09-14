@@ -6,6 +6,4 @@
   export KUBECTL_EXTERNAL_DIFF="colordiff -N -u"
   export PATH="${brewPrefix}/opt/rustup/bin:$PATH"
   export EYEPOP_ROOT="${userHome}/Code/eyepop"
-  [ -s "${brewPrefix}/opt/nvm/nvm.sh" ] && \. "${brewPrefix}/opt/nvm/nvm.sh"
-  [ -s "${brewPrefix}/opt/nvm/etc/bash_completion.d/nvm" ] && \. "${brewPrefix}/opt/nvm/etc/bash_completion.d/nvm"
 ''
