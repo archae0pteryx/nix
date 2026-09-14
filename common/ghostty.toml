@@ -1,0 +1,19 @@
+# Ghostty terminal configuration
+
+# Fonts
+font-family = FiraCode Nerd Font
+font-size = 16
+
+# Window
+window-decoration = false
+window-height = 20
+window-width = 85%
+window-padding-x = 0
+window-padding-y = 0
+
+# Theme
+background = #1e1e2e
+foreground = #cdd6f4
+
+# Keybinds
+keybind = alt+cmd+up=toggle_window

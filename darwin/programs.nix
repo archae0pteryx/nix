@@ -22,5 +22,10 @@
   programs.zsh = import ./zsh.nix { inherit hostname brewPrefix userHome; };
   programs.bash = {
     enable = true;
+    initExtra = ''
+      [ -f "$HOME/.config/env_exports" ] && source "$HOME/.config/env_exports"
+      [ -s "${brewPrefix}/opt/nvm/nvm.sh" ] && \. "${brewPrefix}/opt/nvm/nvm.sh"
+      [ -s "${brewPrefix}/opt/nvm/etc/bash_completion.d/nvm" ] && \. "${brewPrefix}/opt/nvm/etc/bash_completion.d/nvm"
+    '';
   };
 }

@@ -27,6 +27,8 @@ in
     };
     ".config/starship.toml".source = ../common/starship.toml;
     ".config/alacritty/alacritty.toml".source = ../common/alacritty.toml;
+    ".config/ghostty/config".source = ../common/ghostty.toml;
+    ".config/kitty/kitty.conf".source = ../common/kitty.conf;
   };
 
   home.sessionPath = [

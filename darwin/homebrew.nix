@@ -9,11 +9,13 @@ let
     "cursor"
     "figma"
     "firefox"
+    "ghostty"
     "gimp"
     "github"
     "google-chrome"
     "iterm2"
     "keepassxc"
+    "kitty"
     "megasync"
     "meld"
     "obsidian"
@@ -34,6 +36,7 @@ let
     "terragrunt"
     "talosctl"
     "uv"
+    "nvm"
     "yq"
   ];
   extraCasks = ./${hostname}/extra-casks.nix;
