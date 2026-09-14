@@ -18,7 +18,6 @@ let
     "meld"
     "obsidian"
     "postman"
-    "qbittorrent"
     "slack"
     "spotify"
     "tailscale-app"
@@ -35,6 +34,7 @@ let
     "terragrunt"
     "talosctl"
     "uv"
+    "nvm"
     "yq"
   ];
   extraCasks = ./${hostname}/extra-casks.nix;
@@ -54,6 +54,5 @@ in {
   onActivation = {
     autoUpdate = true;
     upgrade = true;
-    cleanup = "uninstall";
   };
 }

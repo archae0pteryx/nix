@@ -20,7 +20,7 @@
     forwardAgent = true;
     includes = [ "config.d/*" ];
   };
-  programs.zsh = import ./zsh.nix { inherit hostname brewPrefix; };
+  programs.zsh = import ./zsh.nix { inherit hostname brewPrefix userHome; };
   programs.bash = {
     enable = true;
     initExtra = ''

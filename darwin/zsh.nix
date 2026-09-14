@@ -1,7 +1,7 @@
-{ hostname, brewPrefix, ... }:
+{ hostname, brewPrefix, userHome, ... }:
 
 let
-  extraEnv = import ./${hostname}/extra-env.nix { inherit brewPrefix; };
+  extraEnv = import ./${hostname}/extra-env.nix { inherit brewPrefix userHome; };
 in {
   enable = true;
   enableCompletion = true;
