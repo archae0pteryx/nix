@@ -11,7 +11,7 @@ in {
   antidote.enable = true;
   antidote.plugins = [ "agkozak/zsh-z" ];
   syntaxHighlighting.enable = true;
-  initExtra = extraEnv + ''
+  initContent = extraEnv + ''
     [ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
     eval "$(brew shellenv)"
     export NVM_DIR="$HOME/.nvm"

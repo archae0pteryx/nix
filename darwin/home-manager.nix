@@ -1,6 +1,6 @@
 { userHome, hostname, pkgs, ... }:
 let
-  brewPrefix = if pkgs.stdenv.isAarch64 then "/opt/homebrew" else "/usr/local";
+  brewPrefix = if pkgs.stdenv.hostPlatform.isAarch64 then "/opt/homebrew" else "/usr/local";
   commonAliases = import ../common/aliases.nix;
   extraAliases = import ./${hostname}/extra-aliases.nix;
   mergedAliases = commonAliases // extraAliases;

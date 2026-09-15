@@ -17,8 +17,20 @@
   programs.gpg.enable = true;
   programs.ssh = {
     enable = true;
-    forwardAgent = true;
+    enableDefaultConfig = false;
     includes = [ "config.d/*" ];
+    settings."*" = {
+      ForwardAgent = true;
+      AddKeysToAgent = "no";
+      Compression = false;
+      ServerAliveInterval = 0;
+      ServerAliveCountMax = 3;
+      HashKnownHosts = false;
+      UserKnownHostsFile = "~/.ssh/known_hosts";
+      ControlMaster = "no";
+      ControlPath = "~/.ssh/master-%r@%n:%p";
+      ControlPersist = "no";
+    };
   };
   programs.zsh = import ./zsh.nix { inherit hostname brewPrefix userHome; };
   programs.bash = {
