@@ -40,7 +40,9 @@ in {
   };
 
   homebrew = import ./homebrew.nix { inherit hostname; };
-  system = import ./system-prefs.nix { inherit hostname; };
+  system = import ./system-prefs.nix { inherit hostname; } // {
+    primaryUser = systemUser;
+  };
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;

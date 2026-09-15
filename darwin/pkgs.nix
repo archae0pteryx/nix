@@ -8,6 +8,7 @@ in {
     pkgs.dnsutils
     pkgs.docker
     pkgs.ffmpeg
+    pkgs.fd
     pkgs.fzf
     pkgs.git
     pkgs.delta
@@ -19,8 +20,9 @@ in {
     pkgs.kubernetes-helm
     pkgs.neovim
     pkgs.nerd-fonts.fira-code
-    pkgs.nixfmt-classic
+    pkgs.nixfmt
     pkgs.nmap
     pkgs.stern
+    pkgs.tree-sitter
   ] ++ extraPkgs;
 }

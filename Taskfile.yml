@@ -52,7 +52,7 @@ tasks:
   fmt:
     desc: Format all nix files
     cmds:
-      - nix run nixpkgs#nixfmt-classic -- {{.NIX_CONFIG_DIR}}/**/*.nix
+      - nix run nixpkgs#nixfmt -- {{.NIX_CONFIG_DIR}}/**/*.nix
 
   # List available tasks
   default:
