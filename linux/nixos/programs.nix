@@ -34,25 +34,36 @@ in {
       init.defaultBranch = "main";
       pull.rebase = "false";
       core.editor = "code --wait";
-      core.excludesfile = "${home}/.gitignore";
+      core.autocrlf = "input";
       color.ui = "auto";
       commit.gpgsign = true;
       gpg.format = "ssh";
       user.signingkey = "${home}/.ssh/signing_rsa.pub";
       push.autoSetupRemote = true;
     };
+    # Written to ~/.config/git/ignore. Do not set core.excludesfile alongside
+    # this; that overrides the XDG default and silently strips the whole list.
+    # Keep in sync with ~/.dotfiles/git/.config/git/ignore on darwin.
     ignores = [
+      "~.*"
       ".DS_Store"
       "node_modules"
       "tmp"
       ".venv"
       "venv"
-      ".vscode"
       ".idea"
       ".terraform"
       ".terragrunt-cache"
       "__pycache__"
       ".pytest_cache"
+      ".devbox"
+      "___*"
+      ".env"
+      "*.secret*"
+      # Trailing slash matters: a bare `worktree*` also matched any FILE whose
+      # name starts with "worktree", silently hiding tracked files.
+      ".worktree*/"
+      "worktree*/"
     ];
   };
   # direnv.enable = true;
